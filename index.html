@@ -16,7 +16,7 @@
       content="Helping startups launch and scale high-performance web and mobile products."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="./asset/hasnain%20Qureshi%20Web%20Developer%20full%20stack%20developer.jpeg" />
+    <meta property="og:image" content="./asset/hasnain-1.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,6 +27,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./skins/color-1.css" class="alternate-style" title="color-1" />
     <link rel="stylesheet" href="./skins/color-2.css" class="alternate-style" title="color-2" disabled />
@@ -36,10 +40,19 @@
     <link rel="stylesheet" href="./css/style-switcher.css" />
     <script src="https://cdn.jsdelivr.net/gh/hasnainqureshi1/chat-cdn@cf746b4bbfa22892b9dd57469fb5e1c233c26f88/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+ <script async src="https://tool.chatknot.com/static/mbqyz0q7Q6Xg5cDa/1d337261-c3d3-4c0c-862d-2cfccfb8fec8-1749587142104.js"></script>
+
+<!-- <script type="module" src="./js/three-scroll.js"></script> -->
+<script type="module" src="./js/premium-interactions.js"></script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   </head>
   <body class="dark is-loading">
     <div class="intro-overlay" aria-hidden="true">
+       <!-- Three.js scroll background -->
+  
+  
       <div class="intro-glow"></div>
       <div class="intro-lines">
         <span class="intro-line l1"></span>
@@ -49,12 +62,9 @@
         <span>Hasnain Qureshi</span>
         <span>Senior Full-Stack Engineer</span>
       </div>
-      <div class="intro-panels">
-        <div class="intro-panel p1"></div>
-        <div class="intro-panel p2"></div>
-        <div class="intro-panel p3"></div>
-      </div>
+      
     </div>
+    <div id="three-bg" aria-hidden="true"></div>
     <div class="site">
       <header class="header">
         <div class="container header_inner">
@@ -291,57 +301,11 @@
               <span class="eyebrow">Projects</span>
               <h2>Selected product work</h2>
             </div>
-            <div class="project_grid">
-              <article
-                class="project_card reveal scroll-3d project_modal_trigger"
-                data-title="ChatKnot - Conversational Lead Management Platform"
-                data-link="https://chatknot.com"
-                data-media="./asset/chatknot-1.png,./asset/chatknot-2.jpg"
-                data-problem="Businesses lose leads due to unstructured website chats."
-                data-solution="Built a multi-tenant conversational lead management system that converts chats into structured, trackable leads."
-                data-tech="React / Next.js / Node.js, Socket.io, MongoDB"
-                data-impact="Reliable chat-to-sales handoff|Scalable multi-brand architecture|AI-ready foundation"
-              >
-                <div class="project_media">
-                  <img src="./asset/chatknot-1.png" alt="ChatKnot product preview" />
-                  <div class="project_overlay">
-                    <span>View case study</span>
-                  </div>
-                </div>
-                <div class="project_body">
-                  <h3>ChatKnot - Conversational Lead Management Platform</h3>
-                  <p class="project_excerpt">
-                    Multi-tenant platform that turns website chats into structured sales-ready leads.
-                  </p>
-                  <div class="project_meta">
-                    <span>React</span>
-                    <span>Next.js</span>
-                    <span>Node.js</span>
-                  </div>
-                </div>
-              </article>
-
-              <article class="project_card reveal scroll-3d">
-                <div class="project_media placeholder">
-                  <div class="placeholder_copy">More projects incoming</div>
-                </div>
-                <div class="project_body">
-                  <h3>Next Project Drop</h3>
-                  <div class="project_block">
-                    <span class="project_label">Status</span>
-                    <p>Sharing more products and visuals soon.</p>
-                  </div>
-                  <div class="project_block">
-                    <span class="project_label">What to expect</span>
-                    <p>Startup MVPs, SaaS dashboards, and mobile apps.</p>
-                  </div>
-                </div>
-              </article>
-            </div>
+            <div class="project_grid" data-project-grid></div>
           </div>
         </section>
 
-        <section id="showcase" class="section">
+        <!-- <section id="showcase" class="section">
           <div class="container">
             <div class="section_heading reveal scroll-in">
               <span class="eyebrow">Showcase</span>
@@ -400,7 +364,7 @@
               </div>
             </div>
           </div>
-        </section>
+        </section> -->
 
         <div class="section-divider" aria-hidden="true">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -411,6 +375,12 @@
         <div class="project_modal" id="projectModal" aria-hidden="true">
           <div class="project_modal_backdrop" data-close-modal></div>
           <div class="project_modal_panel">
+            <button class="project_nav prev" data-project-prev aria-label="Previous project">
+              <i class="fa fa-chevron-left"></i>
+            </button>
+            <button class="project_nav next" data-project-next aria-label="Next project">
+              <i class="fa fa-chevron-right"></i>
+            </button>
             <button class="project_modal_close" data-close-modal aria-label="Close project details">
               <i class="fa fa-times"></i>
             </button>
@@ -448,6 +418,21 @@
                 </div>
               </div>
               <a class="btn modal_link" target="_blank" rel="noreferrer">Visit live</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="image_slider_modal" id="imageSlider" aria-hidden="true">
+          <div class="image_slider_backdrop" data-close-slider></div>
+          <div class="image_slider_panel">
+            <button class="image_slider_close" data-close-slider aria-label="Close image viewer">
+              <i class="fa fa-times"></i>
+            </button>
+            <div class="swiper image_swiper">
+              <div class="swiper-wrapper"></div>
+              <div class="swiper-button-prev" aria-label="Previous image"></div>
+              <div class="swiper-button-next" aria-label="Next image"></div>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
         </div>
@@ -680,7 +665,7 @@
               </div>
               <label>
                 Message
-                <textarea name="message" placeholder="Tell me about your project"></textarea>
+                <textarea name="message" class="message-area" placeholder="Tell me about your project"></textarea>
               </label>
               <button class="btn" type="submit">Send Message</button>
             </form>
@@ -715,7 +700,7 @@
     <div class="cursor-glow"></div>
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
-    <script>
+    <!-- <script>
       (function () {
         const track = document.querySelector('.reviews_track');
         if (!track) return;
@@ -733,9 +718,19 @@
           if (e.key === 'ArrowLeft') prev && prev.click();
         });
       })();
-    </script>
+    </script> -->
+    <!-- <script type="module" src="./js/three-scroll.js"></script> -->
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/projects-data.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/style-switcher.js"></script>
   </body>
 </html>
 
+<style>
+  #open-widget{
+  top:8px !important;
+}
+</style>
