@@ -132,6 +132,28 @@ const initScrollGsap = () => {
   ScrollTrigger.refresh();
 };
 
+// const initSkillsLogoScroll = () => {
+//   if (!window.gsap || !window.ScrollTrigger) return;
+//   const panel = document.querySelector(".skills_logo_panel");
+//   const projectsSection = document.querySelector("#projects");
+//   if (!panel || !projectsSection) return;
+
+//   gsap.timeline({
+//     scrollTrigger: {
+//       trigger: panel,
+//       start: "top 90%",
+//       endTrigger: projectsSection,
+//       end: "top 70%",
+//       scrub: true,
+//       pin: panel,
+//       pinSpacing: true
+//     }
+//   }).to(panel, {
+//     y: 40,
+//     ease: "none"
+//   });
+// };
+
 const initShowcase = () => {
   if (!showcaseTabs.length || !showcasePanel) return;
   const updatePanel = (tab) => {
@@ -333,6 +355,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
   runGsapIntro();
   initScrollGsap();
+  initSkillsLogoScroll();
   initCounters();
 });
 
