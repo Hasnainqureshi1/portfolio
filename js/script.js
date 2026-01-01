@@ -66,7 +66,7 @@ const initScrollGsap = () => {
     );
   });
 
-  gsap.utils.toArray(".stack_grid, .service_grid, .project_grid, .experience_grid, .reviews_track").forEach((grid) => {
+  gsap.utils.toArray(".stack_grid, .service_grid, .project_grid, .experience_grid ").forEach((grid) => {
     const items = grid.children;
     gsap.fromTo(
       items,
@@ -185,6 +185,33 @@ const initShowcase = () => {
   });
 
   updatePanel(showcaseTabs[0]);
+};
+
+const initReviewsSwiper = () => {
+  if (!window.Swiper) return;
+  const reviewsEl = document.querySelector(".reviews_swiper");
+  if (!reviewsEl) return;
+  new Swiper(reviewsEl, {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+      el: ".reviews_swiper .swiper-pagination",
+      clickable: true
+    },
+    navigation: {
+      nextEl: ".reviews_swiper_nav .swiper-button-next",
+      prevEl: ".reviews_swiper_nav .swiper-button-prev"
+    },
+    breakpoints: {
+      700: {
+        slidesPerView: 2
+      },
+      1100: {
+        slidesPerView: 3
+      }
+    }
+  });
 };
 
 const initCounters = () => {
@@ -349,13 +376,16 @@ window.addEventListener("DOMContentLoaded", () => {
   renderProjects();
   initProjectModal();
   initShowcase();
+  initReviewsSwiper();
   if (prefersReducedMotion) {
     markLoaded();
     return;
   }
   runGsapIntro();
   initScrollGsap();
-  initSkillsLogoScroll();
+  if (typeof initSkillsLogoScroll === "function") {
+    initSkillsLogoScroll();
+  }
   initCounters();
 });
 

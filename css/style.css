@@ -32,6 +32,10 @@ html {
 }
 
 body {
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 96px;
+}
+body {
   min-height: 100vh;
   font-family: "Manrope", sans-serif;
   color: var(--text);
@@ -390,6 +394,9 @@ body.is-loaded .site {
 
 .section {
   padding: 96px 0;
+  scroll-snap-align: start;
+  scroll-margin-top: 96px;
+  min-height: 100vh;
 }
 
 .section_heading {
@@ -506,7 +513,7 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .hero_copy {
@@ -1294,30 +1301,6 @@ body.is-loaded {
   width: fit-content;
 }
 
-.reviews_wrap {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 16px;
-  align-items: center;
-  margin-top: 24px;
-}
-
-.reviews_track {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(240px, 1fr);
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 12px 8px;
-  scrollbar-width: none;
-}
-
-.reviews_track::-webkit-scrollbar {
-  display: none;
-}
-
 .review_card {
   background: var(--surface);
   border-radius: 20px;
@@ -1350,22 +1333,43 @@ body.dark .review_frame {
   display: block;
 }
 
-.reviews_nav {
+.reviews_slider {
+  position: relative;
+  margin-top: 24px;
+}
+
+.reviews_swiper {
+  padding: 40px 40px 48px;
+}
+
+.reviews_swiper .swiper-slide {
+  display: flex;
+  height: auto;
+}
+
+.reviews_swiper_nav .swiper-button-prev,
+.reviews_swiper_nav .swiper-button-next {
+  color: var(--text);
   height: 44px;
   width: 44px;
   border-radius: 50%;
   border: 1px solid var(--border);
   background: var(--surface-2);
-  color: var(--text);
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  transition: transform 0.2s ease, border 0.2s ease;
+  box-shadow: 0 16px 40px rgba(2, 6, 23, 0.25);
 }
 
-.reviews_nav:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--skin-color) 40%, var(--border));
+.reviews_swiper_nav .swiper-button-prev::after,
+.reviews_swiper_nav .swiper-button-next::after {
+  font-size: 16px;
+}
+
+.reviews_swiper .swiper-pagination-bullet {
+  background: color-mix(in srgb, var(--skin-color) 70%, transparent);
+  opacity: 0.55;
+}
+
+.reviews_swiper .swiper-pagination-bullet-active {
+  opacity: 1;
 }
 
 .showcase_grid {
@@ -1510,11 +1514,8 @@ body.dark .review_frame {
 }
 
 @media (max-width: 900px) {
-  .reviews_wrap {
-    grid-template-columns: 1fr;
-  }
-
-  .reviews_nav {
+  .reviews_swiper_nav .swiper-button-prev,
+  .reviews_swiper_nav .swiper-button-next {
     display: none;
   }
 
@@ -1812,33 +1813,6 @@ input,
   }
 }
 
-/* Reviews section styles */
-.reviews_wrap {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 8px;
-}
-
-.reviews_track {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  padding: 8px 4px;
-  scrollbar-width: thin;
-}
-
-.reviews_track::-webkit-scrollbar {
-  height: 8px;
-}
-
-.reviews_track::-webkit-scrollbar-thumb {
-  background: color-mix(in srgb, var(--skin-color) 30%, transparent);
-  border-radius: 999px;
-}
-
 .review_card {
   min-width: 320px;
   flex: 0 0 320px;
@@ -1850,12 +1824,12 @@ input,
   scroll-snap-align: center;
   display: grid;
   place-items: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .review_card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 30px 80px rgba(2,6,23,0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 26px 70px rgba(2, 6, 23, 0.32);
 }
 
 .review_card img {
@@ -1865,24 +1839,11 @@ input,
   border-radius: 12px;
 }
 
-.reviews_nav {
-  height: 44px;
-  width: 44px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  background: var(--surface-2);
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  color: var(--text);
-}
-
 @media (max-width: 900px) {
   .review_card { min-width: 280px; flex: 0 0 280px; }
 }
 
 @media (max-width: 600px) {
-  .reviews_nav { display: none; }
   .review_card { min-width: 260px; flex: 0 0 260px; }
 }
 #three-bg {
@@ -2128,8 +2089,8 @@ input,
 
 .nav a{
   position: relative;
-  padding: 10px 4px;
-  opacity: 0.78;
+  padding: 10px 10px;
+  opacity: 0.88;
   transition: opacity 200ms ease;
 }
 
