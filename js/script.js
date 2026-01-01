@@ -463,17 +463,9 @@ window.addEventListener("hashchange", () => {
 // });
 
 const modal = document.getElementById("projectModal");
-const modalTitle = document.querySelector(".modal_title");
-const modalSummary = document.querySelector(".modal_summary");
-const modalProblem = document.querySelector(".modal_problem");
-const modalSolution = document.querySelector(".modal_solution");
-const modalTech = document.querySelector(".modal_tech");
-const modalImpact = document.querySelector(".modal_impact");
-const modalLink = document.querySelector(".modal_link");
-const modalMediaSlot = document.querySelector(".modal_media_slot");
-const modalPrev = document.querySelector("[data-modal-prev]");
-const modalNext = document.querySelector("[data-modal-next]");
 const modalCloseTriggers = document.querySelectorAll("[data-close-modal]");
+const projectSwiperEl = document.querySelector(".project_swiper");
+const projectSwiperWrapper = document.querySelector(".project_swiper .swiper-wrapper");
 const sliderModal = document.getElementById("imageSlider");
 const sliderWrapper = document.querySelector(".image_swiper .swiper-wrapper");
 const sliderCloseTriggers = document.querySelectorAll("[data-close-slider]");
@@ -487,9 +479,10 @@ const showcaseLink = document.querySelector(".showcase_link");
 const impactValues = document.querySelectorAll(".impact_value");
 const projectGrid = document.querySelector("[data-project-grid]");
 
-let modalMedia = [];
-let modalIndex = 0;
-let swiperInstance = null;
+let imageSwiperInstance = null;
+let projectSwiperInstance = null;
+let projectMediaSwipers = [];
+let sliderMedia = [];
 
 const createProjectCard = (project) => {
   const article = document.createElement("article");
@@ -547,6 +540,7 @@ const createProjectCard = (project) => {
   article.dataset.solution = project.solution || "";
   article.dataset.tech = project.tech || "";
   article.dataset.impact = (project.impact || []).join("|");
+  article.dataset.projectId = project.id || "";
 
   const media = document.createElement("div");
   media.className = "project_media";
@@ -611,41 +605,215 @@ const renderProjects = () => {
   });
 };
 
-const renderModalMedia = () => {
-  if (!modalMediaSlot) return;
-  modalMediaSlot.innerHTML = "";
-  modalMediaSlot.classList.remove("is-tall-media");
-  const src = modalMedia[modalIndex];
-  if (!src) return;
-  if (src.endsWith(".mp4") || src.endsWith(".webm")) {
-    const video = document.createElement("video");
-    video.src = src;
-    video.autoplay = true;
-    video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
-    modalMediaSlot.appendChild(video);
-  } else {
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = "Project media";
-    const applyOrientationClass = () => {
-      const isTall = img.naturalHeight / img.naturalWidth > 1.2;
-      modalMediaSlot.classList.toggle("is-tall-media", isTall);
-    };
-    if (img.complete) {
-      applyOrientationClass();
-    } else {
-      img.addEventListener("load", applyOrientationClass);
+const getProjectData = () =>
+  Array.isArray(window.projectsData) ? window.projectsData : [];
+
+const destroyProjectMediaSwipers = () => {
+  projectMediaSwipers.forEach((instance) => instance.destroy(true, true));
+  projectMediaSwipers = [];
+};
+
+const buildProjectSlides = (projects) => {
+  if (!projectSwiperWrapper) return;
+  projectSwiperWrapper.innerHTML = "";
+
+  projects.forEach((project) => {
+    const slide = document.createElement("div");
+    slide.className = "swiper-slide";
+    slide.dataset.projectId = project.id || "";
+
+    const mediaWrap = document.createElement("div");
+    mediaWrap.className = "project_modal_media";
+
+    const mediaSwiper = document.createElement("div");
+    mediaSwiper.className = "swiper project_media_swiper";
+    const mediaSwiperWrapper = document.createElement("div");
+    mediaSwiperWrapper.className = "swiper-wrapper";
+    const mediaItems = Array.isArray(project.media) ? project.media : [];
+
+    if (!mediaItems.length) {
+      const mediaSlide = document.createElement("div");
+      mediaSlide.className = "swiper-slide";
+      const placeholder = document.createElement("div");
+      placeholder.className = "placeholder_copy";
+      placeholder.textContent = "Project preview";
+      mediaSlide.appendChild(placeholder);
+      mediaSwiperWrapper.appendChild(mediaSlide);
     }
-    modalMediaSlot.appendChild(img);
+
+    mediaItems.forEach((src, index) => {
+      const mediaSlide = document.createElement("div");
+      mediaSlide.className = "swiper-slide";
+      if (src.endsWith(".mp4") || src.endsWith(".webm")) {
+        const video = document.createElement("video");
+        video.src = src;
+        video.controls = true;
+        video.playsInline = true;
+        mediaSlide.appendChild(video);
+      } else {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = project.title ? `${project.title} media` : "Project media";
+        img.addEventListener("click", () => openSlider(mediaItems, index));
+        mediaSlide.appendChild(img);
+      }
+      mediaSwiperWrapper.appendChild(mediaSlide);
+    });
+
+    const mediaPrev = document.createElement("div");
+    mediaPrev.className = "swiper-button-prev";
+    const mediaNext = document.createElement("div");
+    mediaNext.className = "swiper-button-next";
+    const mediaPagination = document.createElement("div");
+    mediaPagination.className = "swiper-pagination";
+
+    mediaSwiper.appendChild(mediaSwiperWrapper);
+    mediaSwiper.appendChild(mediaPrev);
+    mediaSwiper.appendChild(mediaNext);
+    mediaSwiper.appendChild(mediaPagination);
+    mediaWrap.appendChild(mediaSwiper);
+
+    const body = document.createElement("div");
+    body.className = "project_modal_body";
+
+    const headerBlock = document.createElement("div");
+    const tag = document.createElement("p");
+    tag.className = "modal_tag";
+    tag.textContent = "Project";
+    const title = document.createElement("h3");
+    title.className = "modal_title";
+    title.textContent = project.title || "";
+    const summary = document.createElement("p");
+    summary.className = "modal_summary";
+    summary.textContent = project.description || "";
+    headerBlock.appendChild(tag);
+    headerBlock.appendChild(title);
+    headerBlock.appendChild(summary);
+
+    const grid = document.createElement("div");
+    grid.className = "modal_grid";
+
+    const problemBlock = document.createElement("div");
+    const problemLabel = document.createElement("span");
+    problemLabel.className = "project_label";
+    problemLabel.textContent = "Problem";
+    const problemText = document.createElement("p");
+    problemText.className = "modal_problem";
+    problemText.textContent = project.problem || "";
+    problemBlock.appendChild(problemLabel);
+    problemBlock.appendChild(problemText);
+
+    const solutionBlock = document.createElement("div");
+    const solutionLabel = document.createElement("span");
+    solutionLabel.className = "project_label";
+    solutionLabel.textContent = "Solution";
+    const solutionText = document.createElement("p");
+    solutionText.className = "modal_solution";
+    solutionText.textContent = project.solution || "";
+    solutionBlock.appendChild(solutionLabel);
+    solutionBlock.appendChild(solutionText);
+
+    const techBlock = document.createElement("div");
+    const techLabel = document.createElement("span");
+    techLabel.className = "project_label";
+    techLabel.textContent = "Tech";
+    const techText = document.createElement("p");
+    techText.className = "modal_tech";
+    techText.textContent = project.tech || "";
+    techBlock.appendChild(techLabel);
+    techBlock.appendChild(techText);
+
+    const impactBlock = document.createElement("div");
+    const impactLabel = document.createElement("span");
+    impactLabel.className = "project_label";
+    impactLabel.textContent = "Impact";
+    const impactList = document.createElement("ul");
+    impactList.className = "modal_impact";
+    (project.impact || []).forEach((impact) => {
+      if (!impact) return;
+      const li = document.createElement("li");
+      li.textContent = impact;
+      impactList.appendChild(li);
+    });
+    impactBlock.appendChild(impactLabel);
+    impactBlock.appendChild(impactList);
+
+    grid.appendChild(problemBlock);
+    grid.appendChild(solutionBlock);
+    grid.appendChild(techBlock);
+    grid.appendChild(impactBlock);
+
+    const link = document.createElement("a");
+    link.className = "btn modal_link";
+    link.textContent = "Visit live";
+    link.target = "_blank";
+    link.rel = "noreferrer";
+    link.href = project.link || "#";
+    link.style.display = project.link ? "inline-flex" : "none";
+
+    body.appendChild(headerBlock);
+    body.appendChild(grid);
+    body.appendChild(link);
+
+    slide.appendChild(mediaWrap);
+    slide.appendChild(body);
+    projectSwiperWrapper.appendChild(slide);
+  });
+};
+
+const initProjectMediaSwipers = () => {
+  destroyProjectMediaSwipers();
+  document.querySelectorAll(".project_media_swiper").forEach((element) => {
+    const slideCount = element.querySelectorAll(".swiper-slide").length;
+    const prevEl = element.querySelector(".swiper-button-prev");
+    const nextEl = element.querySelector(".swiper-button-next");
+    const paginationEl = element.querySelector(".swiper-pagination");
+    const instance = new Swiper(element, {
+      slidesPerView: 1,
+      loop: slideCount > 1,
+      navigation: {
+        prevEl,
+        nextEl
+      },
+      pagination: {
+        el: paginationEl,
+        clickable: true
+      }
+    });
+    projectMediaSwipers.push(instance);
+  });
+};
+
+const openProjectModal = (index) => {
+  if (!modal || !projectSwiperEl || !projectSwiperWrapper) return;
+  const projects = getProjectData();
+  if (!projects.length) return;
+
+  buildProjectSlides(projects);
+  initProjectMediaSwipers();
+
+  if (projectSwiperInstance) {
+    projectSwiperInstance.destroy(true, true);
   }
+
+  projectSwiperInstance = new Swiper(projectSwiperEl, {
+    slidesPerView: 1,
+    initialSlide: Math.max(0, index || 0),
+    navigation: {
+      nextEl: ".project_swiper_nav .swiper-button-next",
+      prevEl: ".project_swiper_nav .swiper-button-prev"
+    }
+  });
+
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
 };
 
 const buildSliderSlides = () => {
   if (!sliderWrapper) return;
   sliderWrapper.innerHTML = "";
-  modalMedia.forEach((src) => {
+  sliderMedia.forEach((src) => {
     const slide = document.createElement("div");
     slide.className = "swiper-slide";
     if (src.endsWith(".mp4") || src.endsWith(".webm")) {
@@ -664,19 +832,20 @@ const buildSliderSlides = () => {
   });
 };
 
-const openSlider = (startIndex) => {
+const openSlider = (mediaList, startIndex) => {
   if (!sliderModal || !sliderWrapper || !window.Swiper) return;
-  if (!modalMedia.length) return;
+  sliderMedia = Array.isArray(mediaList) ? mediaList : [];
+  if (!sliderMedia.length) return;
   buildSliderSlides();
   sliderModal.classList.add("open");
   sliderModal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
 
-  if (swiperInstance) {
-    swiperInstance.destroy(true, true);
+  if (imageSwiperInstance) {
+    imageSwiperInstance.destroy(true, true);
   }
-  swiperInstance = new Swiper(".image_swiper", {
-    loop: modalMedia.length > 1,
+  imageSwiperInstance = new Swiper(".image_swiper", {
+    loop: sliderMedia.length > 1,
     initialSlide: Math.max(0, startIndex || 0),
     navigation: {
       nextEl: ".image_swiper .swiper-button-next",
@@ -703,45 +872,29 @@ const closeSlider = () => {
   }
 };
 
-const openModal = (card) => {
-  if (!modal) return;
-  modalMedia = (card.dataset.media || "").split(",").map((item) => item.trim()).filter(Boolean);
-  modalIndex = 0;
-
-  modalTitle.textContent = card.dataset.title || "";
-  modalSummary.textContent = card.dataset.summary || "";
-  modalProblem.textContent = card.dataset.problem || "";
-  modalSolution.textContent = card.dataset.solution || "";
-  modalTech.textContent = card.dataset.tech || "";
-  modalLink.href = card.dataset.link || "#";
-  modalLink.style.display = card.dataset.link ? "inline-flex" : "none";
-
-  modalImpact.innerHTML = "";
-  (card.dataset.impact || "").split("|").map((item) => item.trim()).filter(Boolean).forEach((impact) => {
-    const li = document.createElement("li");
-    li.textContent = impact;
-    modalImpact.appendChild(li);
-  });
-
-  renderModalMedia();
-  modal.classList.add("open");
-  modal.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-};
-
 const closeModal = () => {
   if (!modal) return;
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
+  if (projectSwiperInstance) {
+    projectSwiperInstance.destroy(true, true);
+    projectSwiperInstance = null;
+  }
+  destroyProjectMediaSwipers();
 };
 
 const initProjectModal = () => {
   const modalTriggers = document.querySelectorAll(".project_modal_trigger");
   const projectCards = document.querySelectorAll(".project_card");
+  const projects = getProjectData();
 
   modalTriggers.forEach((card) => {
-    card.addEventListener("click", () => openModal(card));
+    card.addEventListener("click", () => {
+      const projectId = card.dataset.projectId;
+      const index = projects.findIndex((project) => project.id === projectId);
+      openProjectModal(index >= 0 ? index : 0);
+    });
   });
 
   projectCards.forEach((card) => {
@@ -778,29 +931,6 @@ window.addEventListener("keydown", (event) => {
     closeModal();
   }
 });
-
-if (modalPrev && modalNext) {
-  modalPrev.addEventListener("click", () => {
-    if (!modalMedia.length) return;
-    modalIndex = (modalIndex - 1 + modalMedia.length) % modalMedia.length;
-    renderModalMedia();
-  });
-
-  modalNext.addEventListener("click", () => {
-    if (!modalMedia.length) return;
-    modalIndex = (modalIndex + 1) % modalMedia.length;
-    renderModalMedia();
-  });
-}
-
-if (modalMediaSlot) {
-  modalMediaSlot.addEventListener("click", (event) => {
-    const target = event.target;
-    if (target && target.tagName === "IMG") {
-      openSlider(modalIndex);
-    }
-  });
-}
 
 sliderCloseTriggers.forEach((trigger) => {
   trigger.addEventListener("click", closeSlider);
