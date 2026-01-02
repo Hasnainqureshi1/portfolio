@@ -19,6 +19,24 @@ const revealOnScroll = () => {
 window.addEventListener("load", revealOnScroll);
 window.addEventListener("scroll", revealOnScroll);
 
+const initAnchorScroll = () => {
+  const anchors = document.querySelectorAll("a[href^=\"#\"]");
+  if (!anchors.length) return;
+  anchors.forEach((anchor) => {
+    anchor.addEventListener("click", (event) => {
+      const href = anchor.getAttribute("href");
+      if (!href || href.length < 2) return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      event.preventDefault();
+      history.pushState(null, "", href);
+      requestAnimationFrame(() => {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  });
+};
+
 const initScrollGsap = () => {
   if (!window.gsap || !window.ScrollTrigger) return;
   gsap.registerPlugin(ScrollTrigger);
@@ -185,6 +203,50 @@ const initShowcase = () => {
   });
 
   updatePanel(showcaseTabs[0]);
+};
+
+const initMobileNav = () => {
+  const toggle = document.querySelector(".nav_toggle");
+  const panel = document.querySelector(".nav_panel");
+  const header = document.querySelector(".header");
+  if (!toggle || !panel || !header) return;
+
+  const closeNav = () => {
+    panel.classList.remove("is-open");
+    toggle.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+  };
+
+  const openNav = () => {
+    panel.classList.add("is-open");
+    toggle.classList.add("is-open");
+    toggle.setAttribute("aria-expanded", "true");
+  };
+
+  toggle.addEventListener("click", () => {
+    if (panel.classList.contains("is-open")) {
+      closeNav();
+    } else {
+      openNav();
+    }
+  });
+
+  panel.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeNav);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!panel.classList.contains("is-open")) return;
+    if (!header.contains(event.target)) {
+      closeNav();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) {
+      closeNav();
+    }
+  });
 };
 
 const initReviewsSwiper = () => {
@@ -376,7 +438,9 @@ window.addEventListener("DOMContentLoaded", () => {
   renderProjects();
   initProjectModal();
   initShowcase();
+  initMobileNav();
   initReviewsSwiper();
+  initAnchorScroll();
   if (prefersReducedMotion) {
     markLoaded();
     return;

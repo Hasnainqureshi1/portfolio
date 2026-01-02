@@ -13,6 +13,10 @@
   --muted: #4b5563;
   --border: #e3e7ee;
   --shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+  --glass: rgba(255, 255, 255, 0.85);
+  --glass-2: rgba(255, 255, 255, 0.65);
+  --stroke: rgba(15, 23, 42, 0.08);
+  --stroke-2: rgba(59, 130, 246, 0.22);
   --radius: 18px;
   --container: 1200px;
 }
@@ -25,6 +29,10 @@ body.dark {
   --muted: #9ba3af;
   --border: #1f242c;
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  --glass: rgba(18, 22, 30, 0.62);
+  --glass-2: rgba(18, 22, 30, 0.4);
+  --stroke: rgba(255, 255, 255, 0.08);
+  --stroke-2: rgba(110, 140, 255, 0.14);
 }
 
 html {
@@ -32,7 +40,6 @@ html {
 }
 
 body {
-  scroll-snap-type: y mandatory;
   scroll-padding-top: 96px;
 }
 body {
@@ -394,7 +401,6 @@ body.is-loaded .site {
 
 .section {
   padding: 96px 0;
-  scroll-snap-align: start;
   scroll-margin-top: 96px;
   min-height: 100vh;
 }
@@ -481,6 +487,38 @@ p {
   flex-wrap: wrap;
 }
 
+.nav_toggle {
+  display: none;
+  height: 44px;
+  width: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.nav_toggle span {
+  width: 18px;
+  height: 2px;
+  background: var(--text);
+  display: block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav_toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav_toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav_toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 .nav a {
   font-size: 0.95rem;
   color: var(--muted);
@@ -1702,7 +1740,10 @@ label {
   font-size: 0.9rem;
   color: var(--muted);
 }
-
+.class-skills{
+  padding-top: 0px;
+   scroll-margin-top: 0px;
+}
 input,
 .message-area {
   border-radius: 12px;
@@ -1809,13 +1850,39 @@ input,
 
 @media (max-width: 900px) {
   .header_inner {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
   }
 
-  .nav {
+  .nav_toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .nav_panel {
     width: 100%;
-    justify-content: flex-start;
+    order: 3;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    margin-top: 8px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-8px);
+    transition: max-height 0.3s ease, opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .nav_panel.is-open {
+    max-height: 520px;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .hero_grid {
@@ -1950,11 +2017,7 @@ input,
     radial-gradient(1200px 900px at 30% 70%, rgba(0,0,0,0.18), rgba(0,0,0,0.88));
 }
 /* ---------------- Premium depth language */
-:root{
-  --glass: rgba(18, 22, 30, 0.62);
-  --glass-2: rgba(18, 22, 30, 0.40);
-  --stroke: rgba(255,255,255,0.08);
-  --stroke-2: rgba(110,140,255,0.14);
+body.dark{
   --shadow: 0 20px 60px rgba(0,0,0,0.55);
 }
 
@@ -2095,11 +2158,18 @@ input,
   inset:0;
   pointer-events:none;
   background:
+    radial-gradient(900px 600px at 70% 25%, rgba(90,140,255,0.08), transparent 60%),
+    radial-gradient(1200px 900px at 35% 75%, rgba(15,23,42,0.12), rgba(15,23,42,0.2));
+}
+
+body.dark #three-bg::after{
+  background:
     radial-gradient(900px 600px at 70% 25%, rgba(90,140,255,0.14), transparent 60%),
     radial-gradient(1200px 900px at 35% 75%, rgba(0,0,0,0.22), rgba(0,0,0,0.92));
 }
+
 /* Premium glass header */
-.header{
+body.dark .header{
   position: sticky;
   top: 0;
   z-index: 50;
@@ -2110,9 +2180,21 @@ input,
   transition: background 250ms ease, border-color 250ms ease;
 }
 
-.header--scrolled{
+body.dark .header--scrolled{
   background: rgba(10, 14, 22, 0.62);
   border-bottom: 1px solid rgba(110,140,255,0.14);
+}
+
+body:not(.dark) .header{
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+body:not(.dark) .header--scrolled{
+  background: color-mix(in srgb, var(--bg) 84%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--skin-color) 20%, var(--border));
 }
 
 .nav{

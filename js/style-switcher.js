@@ -45,7 +45,7 @@ if (storedTheme) {
 
 const storedColor = localStorage.getItem("color");
 if (!storedColor) {
-  localStorage.setItem("color", "color-1");
+  localStorage.setItem("color", "color-2");
 }
 
 applyActiveStyle();
