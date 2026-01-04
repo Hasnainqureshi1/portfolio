@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Sitemap: https://hasnainqureshi.online/sitemap.xml
+
+# Block common dev folders (if present)
+Disallow: /node_modules/
+Disallow: /.git/
+
+# If you use query-strings for tracking you can allow crawling but
+# prefer canonical URLs for indexing.

@@ -508,6 +508,11 @@ p {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
+.nav_toggle i {
+  font-size: 18px;
+  color: var(--text);
+}
+
 .nav_toggle.is-open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
