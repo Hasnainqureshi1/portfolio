@@ -73,6 +73,75 @@
         "image": "https://hasnainqureshi.online/asset/hasnain-1.png"
       }
     </script>
+      (function () {
+        // Existing GA/event wiring block preserved earlier in the file.
+      })();
+    </script>
+    <script>
+      // Contact form submission: try platform API then fallback to Netlify function then to Formspree
+      (function () {
+        const form = document.getElementById('contactForm');
+        const status = document.getElementById('contactStatus');
+        if (!form) return;
+
+        form.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          status.textContent = 'Sending...';
+
+          const formData = new FormData(form);
+          const payload = {
+            name: formData.get('name') || '',
+            email: formData.get('email') || '',
+            message: formData.get('message') || ''
+          };
+
+          // Try Vercel-style API first
+          async function tryEndpoint(url) {
+            try {
+              const res = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+              });
+              if (res.ok) return true;
+            } catch (err) {
+              // ignore
+            }
+            return false;
+          }
+
+          const endpoints = ['/api/send-email', '/.netlify/functions/send-email'];
+          let sent = false;
+          for (const ep of endpoints) {
+            sent = await tryEndpoint(ep);
+            if (sent) break;
+          }
+
+          if (sent) {
+            status.textContent = 'Message sent — thank you! I will reply soon.';
+            form.reset();
+            // fire GA event if gtag available
+            if (typeof gtag === 'function') gtag('event', 'contact_form_submit', { method: 'api' });
+            return;
+          }
+
+          // Fallback: submit the form to the action (Formspree or similar)
+          try {
+            status.textContent = 'Submitting via fallback...';
+            form.removeEventListener('submit', arguments.callee);
+            form.submit();
+          } catch (err) {
+            status.textContent = 'Failed to send. Please email husnainqureshi134@gmail.com directly.';
+          }
+        });
+      })();
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
   </head>
   <body class="dark is-loading">
     <div class="intro-overlay" aria-hidden="true">
@@ -685,7 +754,7 @@
                 </a>
               </div>
             </div>
-            <form class="contact_form reveal">
+            <form id="contactForm" class="contact_form reveal" method="post" action="https://formspree.io/f/your-form-id">
               <div class="form_row">
                 <label>
                   Name
@@ -701,6 +770,7 @@
                 <textarea name="message" class="message-area" placeholder="What’s currently slowing your product down?"></textarea>
               </label>
               <button class="btn" type="submit">Send Message</button>
+              <div id="contactStatus" aria-live="polite" style="margin-top:8px;color:var(--muted);font-size:0.95rem"></div>
             </form>
           </div>
         </section>
@@ -759,6 +829,40 @@
     <script defer src="./js/projects-data.js"></script>
     <script defer src="./js/script.js"></script>
     <script defer src="./js/style-switcher.js"></script>
+    <!-- GA4 conversion/event wiring for contact and scheduling -->
+    <script>
+      (function () {
+        function sendEvent(name, params) {
+          if (typeof gtag === 'function') {
+            try { gtag('event', name, params || {}); } catch (e) { }
+          }
+        }
+
+        // Contact form submit
+        var form = document.querySelector('.contact_form');
+        if (form) {
+          form.addEventListener('submit', function () {
+            sendEvent('contact_form_submit', { method: 'website' });
+          });
+        }
+
+        // Calendly scheduling clicks
+        var calendlyLinks = document.querySelectorAll('a[href*="calendly.com"]');
+        calendlyLinks.forEach(function (a) {
+          a.addEventListener('click', function () {
+            sendEvent('schedule_call_click', { method: 'calendly' });
+          });
+        });
+
+        // Mailto clicks
+        var mailLinks = document.querySelectorAll('a[href^="mailto:"]');
+        mailLinks.forEach(function (a) {
+          a.addEventListener('click', function () {
+            sendEvent('email_click');
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
 

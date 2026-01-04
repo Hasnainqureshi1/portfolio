@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Case Study — Real-time Systems & Scaling | Hire Senior Full-Stack Engineer</title>
+    <meta name="description" content="Case study: Building and scaling a real-time conversational platform. Hire Senior Full-Stack Engineer to design scalable systems and real-time APIs." />
+    <link rel="canonical" href="https://hasnainqureshi.online/project-case-study-2.html" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <article>
+        <h1>Designing a scalable real-time conversational platform</h1>
+        <p class="eyebrow">Case Study · Real-time · WebSocket · Scaling</p>
+        <p>
+          I led engineering on a real-time messaging product that required low-latency updates, multi-tenant isolation, and predictable scaling. The project combined event-driven architecture with pragmatic operational controls to deliver a reliable product under load.
+        </p>
+
+        <h2>Problem</h2>
+        <p>
+          The existing system used polling and suffered from high database load and inconsistent message delivery at scale. Customers experienced delays and out-of-order events during busy periods.
+        </p>
+
+        <h2>Solution</h2>
+        <p>
+          We introduced WebSockets backed by a lightweight broker and a message queue for durability. Each tenant received scoped channels and rate limits. We separated read-heavy workflows into eventual-consistency reads with cache priming and used worker queues for heavy processing tasks.
+        </p>
+
+        <h2>Work done</h2>
+        <p>
+          The work included schema changes to support sharding, adding Redis channels for pub/sub, deploying horizontally-scaled websocket nodes, and creating graceful reconnect logic to handle transient failures. Monitoring and synthetic tests were added to detect message lag and backpressure.
+        </p>
+
+        <h2>Impact</h2>
+        <ul>
+          <li>Message delivery success rate improved to 99.9%.</li>
+          <li>Operational costs were predictable and scaled linearly with clients.</li>
+          <li>Customer satisfaction improved due to reliable real-time updates.</li>
+        </ul>
+
+        <p>
+          <a href="/index.html">Back to portfolio</a>
+        </p>
+      </article>
+    </main>
+  </body>
+</html>
