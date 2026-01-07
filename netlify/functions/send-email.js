@@ -12,7 +12,7 @@ exports.handler = async function (event, context) {
     return { statusCode: 400, body: JSON.stringify({ error: 'Invalid JSON' }) };
   }
 
-  const { name, email, message } = body;
+  const { name, email, message, utm_source, utm_medium, utm_campaign, utm_term, utm_content, referrer } = body;
   if (!name || !email || !message) {
     return { statusCode: 400, body: JSON.stringify({ error: 'Missing fields' }) };
   }
@@ -28,13 +28,15 @@ exports.handler = async function (event, context) {
       },
     });
 
-    const to = process.env.TO_EMAIL || 'husnainqureshi134@gmail.com';
+    const to = process.env.TO_EMAIL || 'hasnainqureshi134@gmail.com';
+
+    const meta = `UTM Source: ${utm_source || 'n/a'}\nUTM Medium: ${utm_medium || 'n/a'}\nUTM Campaign: ${utm_campaign || 'n/a'}\nUTM Term: ${utm_term || 'n/a'}\nUTM Content: ${utm_content || 'n/a'}\nReferrer: ${referrer || 'n/a'}\n\n`;
 
     await transporter.sendMail({
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
       to,
       subject: `Portfolio contact from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      text: `${meta}Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
 
     return { statusCode: 200, body: JSON.stringify({ ok: true }) };

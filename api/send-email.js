@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, message } = req.body || {};
+  const { name, email, message, utm_source, utm_medium, utm_campaign, utm_term, utm_content, referrer } = req.body || {};
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Missing fields' });
   }
@@ -21,13 +21,15 @@ export default async function handler(req, res) {
       },
     });
 
-    const to = process.env.TO_EMAIL || 'husnainqureshi134@gmail.com';
+    const to = process.env.TO_EMAIL || 'hasnainqureshi134@gmail.com';
+
+    const meta = `UTM Source: ${utm_source || 'n/a'}\nUTM Medium: ${utm_medium || 'n/a'}\nUTM Campaign: ${utm_campaign || 'n/a'}\nUTM Term: ${utm_term || 'n/a'}\nUTM Content: ${utm_content || 'n/a'}\nReferrer: ${referrer || 'n/a'}\n\n`;
 
     await transporter.sendMail({
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
       to,
       subject: `Portfolio contact from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      text: `${meta}Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
 
     return res.status(200).json({ ok: true });

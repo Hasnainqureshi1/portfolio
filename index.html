@@ -753,6 +753,12 @@
               </div>
             </div>
             <form id="contactForm" class="contact_form reveal" method="post" action="https://formspree.io/f/mbdlqydb">
+              <input type="hidden" name="utm_source" id="utm_source" />
+              <input type="hidden" name="utm_medium" id="utm_medium" />
+              <input type="hidden" name="utm_campaign" id="utm_campaign" />
+              <input type="hidden" name="utm_term" id="utm_term" />
+              <input type="hidden" name="utm_content" id="utm_content" />
+              <input type="hidden" name="referrer" id="referrer" />
               <div class="form_row">
                 <label>
                   Name
@@ -836,14 +842,6 @@
           }
         }
 
-        // Contact form submit
-        var form = document.querySelector('.contact_form');
-        if (form) {
-          form.addEventListener('submit', function () {
-            sendEvent('contact_form_submit', { method: 'website' });
-          });
-        }
-
         // Calendly scheduling clicks
         var calendlyLinks = document.querySelectorAll('a[href*="calendly.com"]');
         calendlyLinks.forEach(function (a) {
@@ -858,6 +856,81 @@
           a.addEventListener('click', function () {
             sendEvent('email_click');
           });
+        });
+      })();
+    </script>
+
+    <script>
+      (function () {
+        const form = document.getElementById('contactForm');
+        const status = document.getElementById('contactStatus');
+        if (!form) return;
+
+        // Populate UTM/referrer hidden fields from URL params or localStorage
+        (function populateUtmAndReferrer() {
+          try {
+            const params = new URLSearchParams(window.location.search);
+            const keys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+            keys.forEach(function(k){
+              const val = params.get(k) || localStorage.getItem(k) || '';
+              if (val) localStorage.setItem(k, val);
+              const el = document.getElementById(k);
+              if (el) el.value = localStorage.getItem(k) || '';
+            });
+            const ref = document.referrer || localStorage.getItem('referrer') || '';
+            if (ref) localStorage.setItem('referrer', ref);
+            const refEl = document.getElementById('referrer');
+            if (refEl) refEl.value = localStorage.getItem('referrer') || '';
+          } catch (e) {
+            // ignore
+          }
+        })();
+
+        form.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          if (status) status.textContent = 'Sending...';
+
+          const formData = new FormData(form);
+          const payload = Object.fromEntries(formData.entries());
+
+          // Try serverless endpoints
+          async function tryEndpoint(url) {
+            try {
+              const res = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+              });
+              return res.ok;
+            } catch (err) {
+              return false;
+            }
+          }
+
+          const endpoints = ['/api/send-email', '/.netlify/functions/send-email'];
+          let sent = false;
+          for (const ep of endpoints) {
+            sent = await tryEndpoint(ep);
+            if (sent) break;
+          }
+
+          if (sent) {
+            if (status) status.textContent = 'Message sent — thank you! I will reply soon.';
+            form.reset();
+            if (typeof gtag === 'function') {
+              gtag('event', 'contact_form_submit', { method: 'api', utm_source: payload.utm_source || '', referrer: payload.referrer || '' });
+            }
+            return;
+          }
+
+          // Fallback: submit the form to the action (Formspree)
+          try {
+            if (status) status.textContent = 'Submitting via fallback...';
+            form.removeEventListener('submit', arguments.callee);
+            form.submit();
+          } catch (err) {
+            if (status) status.textContent = 'Failed to send. Please email hasnainqureshi134@gmail.com directly.';
+          }
         });
       })();
     </script>
