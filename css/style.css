@@ -251,8 +251,8 @@ ul {
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
   opacity: 0;
   transform: translateZ(-320px) rotateX(14deg) rotateY(-18deg) scale(0.96);
-  /* filter: blur(6px) removed — static filter on animated element forces non-composited paint */
-
+  /* filter: blur(6px) removed — static filter forces non-composited paint */
+}
 .intro-panel.p2 {
   transform: translateZ(-380px) rotateX(18deg) rotateY(14deg) scale(0.94);
 }
@@ -440,8 +440,8 @@ ul {
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
   opacity: 0;
   transform: translateZ(-320px) rotateX(14deg) rotateY(-18deg) scale(0.96);
-  /* filter: blur(6px) removed — static filter on animated element forces paint on composited layers */
-
+  /* filter: blur(6px) removed — static filter forces non-composited paint */
+}
 .intro-panel.p2 {
   transform: translateZ(-380px) rotateX(18deg) rotateY(14deg) scale(0.94);
 }
