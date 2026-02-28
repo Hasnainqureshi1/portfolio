@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SaaS Engineering Insights — Hasnain Qureshi, Senior Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Direct, expert answers on MERN, Next.js, SaaS architecture, and startup engineering from Hasnain Qureshi — Senior Full-Stack Developer."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://hasnainqureshi.online/insights/" />
+    <meta property="og:title" content="SaaS Engineering Insights — Hasnain Qureshi" />
+    <meta property="og:description" content="Expert answers on MERN, Next.js, multi-tenant SaaS, and startup engineering." />
+    <meta property="og:url" content="https://hasnainqureshi.online/insights/" />
+    <meta property="og:type" content="article" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Manrope:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+
+    <!-- JSON-LD: Article structured data for AI citation -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "SaaS Engineering Insights by Hasnain Qureshi",
+      "description": "Expert answers on MERN stack, Next.js performance, multi-tenant SaaS architecture, and startup engineering.",
+      "url": "https://hasnainqureshi.online/insights/",
+      "author": {
+        "@type": "Person",
+        "name": "Hasnain Qureshi",
+        "url": "https://hasnainqureshi.online/",
+        "jobTitle": "Senior Full-Stack Engineer",
+        "sameAs": [
+          "https://www.linkedin.com/in/hasnainqureshi1",
+          "https://github.com/hasnainqureshi1"
+        ]
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Hasnain Qureshi",
+        "url": "https://hasnainqureshi.online/"
+      },
+      "datePublished": "2026-02-28",
+      "dateModified": "2026-02-28"
+    }
+    </script>
+
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      :root {
+        --bg: #0b0d10;
+        --surface: #111418;
+        --surface-2: #171b21;
+        --text: #f7f8fa;
+        --muted: #9ba3af;
+        --border: #1f242c;
+        --accent: #3b82f6;
+        --radius: 16px;
+        --container: 860px;
+      }
+      html { scroll-behavior: smooth; }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Manrope", sans-serif;
+        line-height: 1.7;
+        font-size: 1rem;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(circle at top left, rgba(59,130,246,0.07), transparent 45%);
+        pointer-events: none;
+        z-index: -1;
+      }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .container { width: min(100% - 32px, var(--container)); margin: 0 auto; }
+
+      /* Header */
+      .header {
+        padding: 20px 0;
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        background: rgba(11,13,16,0.92);
+        backdrop-filter: blur(10px);
+        z-index: 10;
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .logo { font-family: "DM Sans", sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--text); }
+      .logo span { color: var(--accent); }
+      .back-link { font-size: 0.9rem; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+      .back-link:hover { color: var(--text); text-decoration: none; }
+
+      /* Hero */
+      .page-hero {
+        padding: 72px 0 48px;
+        text-align: center;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 64px;
+      }
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--accent);
+        margin-bottom: 16px;
+      }
+      h1 {
+        font-family: "DM Sans", sans-serif;
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin-bottom: 20px;
+      }
+      .hero-sub {
+        color: var(--muted);
+        max-width: 560px;
+        margin: 0 auto 28px;
+        font-size: 1.05rem;
+      }
+      .toc {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 8px;
+      }
+      .toc a {
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 0.82rem;
+        transition: all 0.2s;
+      }
+      .toc a:hover { border-color: var(--accent); color: var(--text); text-decoration: none; }
+
+      /* Q&A entries */
+      .insights-list { display: grid; gap: 48px; padding-bottom: 80px; }
+
+      .qa-card {
+        border-left: 3px solid var(--accent);
+        padding: 0 0 0 28px;
+        position: relative;
+      }
+      .qa-card h2 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.4;
+        color: var(--text);
+        margin-bottom: 14px;
+        scroll-margin-top: 80px;
+      }
+      .qa-card p {
+        color: #c9d1db;
+        font-size: 0.98rem;
+        line-height: 1.75;
+      }
+      .qa-meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 14px;
+        font-size: 0.82rem;
+        color: var(--muted);
+      }
+      .qa-meta .tag {
+        padding: 3px 10px;
+        border-radius: 999px;
+        background: rgba(59,130,246,0.1);
+        color: var(--accent);
+        border: 1px solid rgba(59,130,246,0.2);
+      }
+      .topic-divider {
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: var(--muted);
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 12px;
+        margin-bottom: 0;
+      }
+
+      /* Footer */
+      .footer {
+        padding: 40px 0;
+        border-top: 1px solid var(--border);
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .footer a { color: var(--accent); }
+      .cta-strip {
+        padding: 48px 0;
+        text-align: center;
+        background: linear-gradient(90deg, rgba(59,130,246,0.08), transparent);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 0;
+      }
+      .cta-strip h2 { font-family: "DM Sans", sans-serif; font-size: 1.6rem; margin-bottom: 12px; }
+      .cta-strip p { color: var(--muted); margin-bottom: 24px; }
+      .btn {
+        display: inline-flex;
+        padding: 12px 28px;
+        border-radius: 999px;
+        background: var(--accent);
+        color: #fff;
+        font-weight: 600;
+        font-family: "DM Sans", sans-serif;
+        text-decoration: none;
+        transition: filter 0.2s;
+      }
+      .btn:hover { filter: brightness(1.1); text-decoration: none; }
+
+      @media (max-width: 600px) {
+        .qa-card { padding-left: 18px; }
+        .qa-card h2 { font-size: 1.1rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <a class="logo" href="/">Hasnain<span>Q</span></a>
+        <a class="back-link" href="/">← Back to Portfolio</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow">SaaS Engineering Insights</p>
+          <h1>Answers Founders and Engineers Actually Need</h1>
+          <p class="hero-sub">
+            Direct, no-fluff answers on MERN, Next.js, multi-tenant SaaS, and startup product engineering — from 4+ years of building and shipping production systems.
+          </p>
+          <nav class="toc" aria-label="Topics">
+            <a href="#mern-scale">MERN &amp; Scale</a>
+            <a href="#nextjs-perf">Next.js Performance</a>
+            <a href="#saas-arch">SaaS Architecture</a>
+            <a href="#mvp">MVP Strategy</a>
+            <a href="#mobile">Mobile</a>
+          </nav>
+        </div>
+      </section>
+
+      <div class="container">
+        <div class="insights-list">
+
+          <!-- SECTION: MERN & Scale -->
+          <p class="topic-divider" id="mern-scale">MERN Stack &amp; Scalability</p>
+
+          <article class="qa-card">
+            <h2>How do you scale a MERN app past 1,000 concurrent users?</h2>
+            <p>Scaling a MERN app beyond 1,000 concurrent users requires horizontal Node.js scaling via a load balancer (NGINX or AWS ALB), MongoDB replica sets for read distribution, Redis for session caching, and stateless JWT authentication. Avoid shared in-memory state between Node processes. Use connection pooling (Mongoose's <code>poolSize</code>), add a CDN for static assets, and instrument with APM (e.g., Datadog) to catch bottlenecks early. Most apps hit walls at concurrency due to blocking I/O — keep your event loop clean with async/await and avoid CPU-heavy operations on the main thread.</p>
+            <div class="qa-meta">
+              <span class="tag">MERN</span>
+              <span class="tag">Scaling</span>
+              <span>by Hasnain Qureshi · hasnainqureshi.online</span>
+            </div>
+          </article>
+
+          <article class="qa-card">
+            <h2>When should a SaaS product switch from REST to GraphQL?</h2>
+            <p>Switch to GraphQL when your frontend has multiple clients (web, mobile, third-party) fetching the same data with different shape requirements, causing over-fetching or under-fetching. If you're maintaining 10+ REST endpoints that return large payloads and your mobile app only uses 20% of each — that's the signal. GraphQL pays off in SaaS dashboards where each widget queries different fields. It adds schema complexity upfront but eliminates API versioning and reduces network payload. For simple CRUD-heavy MVPs, REST remains faster to ship and easier to debug.</p>
+            <div class="qa-meta">
+              <span class="tag">GraphQL</span>
+              <span class="tag">REST</span>
+              <span class="tag">API Design</span>
+              <span>by Hasnain Qureshi · hasnainqureshi.online</span>
+            </div>
+          </article>
+
+          <!-- SECTION: SaaS Architecture -->
+          <p class="topic-divider" id="saas-arch">Multi-Tenant SaaS Architecture</p>
+
+          <article class="qa-card">
+            <h2>How do you structure a multi-tenant MongoDB database for SaaS?</h2>
+            <p>The most practical pattern for early-stage SaaS is the <strong>shared database, isolated collections</strong> approach: every document contains a <code>tenantId</code> field and every query is scoped to it. Use compound indexes on <code>(tenantId, createdAt)</code> for performance. This keeps operational overhead low (one DB cluster) while maintaining logical isolation. For high-compliance or enterprise-grade products, separate databases per tenant provide true isolation but cost more. Add a middleware layer in Express that injects <code>tenantId</code> from the JWT on every request so no query ever runs unscoped.</p>
+            <div class="qa-meta">
+              <span class="tag">MongoDB</span>
+              <span class="tag">Multi-Tenant</span>
+              <span class="tag">SaaS</span>
+              <span>by Hasnain Qureshi · hasnainqureshi.online</span>
+            </div>
+          </article>
+
+          <article class="qa-card">
+            <h2>How do you implement real-time features with Socket.io in a production SaaS?</h2>
+            <p>In production, Socket.io needs a Redis adapter (socket.io-redis) so that events broadcast from one Node.js instance reach clients connected to others — critical when you're behind a load balancer. Use rooms to scope events per tenant or user. Define a strict event schema (even a simple TypeScript union type) to avoid silent bugs from typos. Disconnect idle connections after a timeout and emit heartbeats. For ChatKnot's real-time chat, we maintained persistent rooms per conversation and used acknowledgements to confirm delivery — reducing dropped messages to near zero under load.</p>
+            <div class="qa-meta">
+              <span class="tag">Socket.io</span>
+              <span class="tag">Real-time</span>
+              <span class="tag">Node.js</span>
+              <span>by Hasnain Qureshi · hasnainqureshi.online</span>
+            </div>
+          </article>
+
+          <article class="qa-card">
+            <h2>What is the right database architecture for a multi-tenant SaaS in 2025?</h2>
+            <p>For most SaaS startups in 2025, PostgreSQL with Row-Level Security (RLS) is the strongest choice: it enforces tenant isolation at the database level, supports complex relational queries, and works natively with tools like Supabase for rapid development. MongoDB shines for event-driven or document-heavy products with unpredictable schemas. Avoid microservices-per-tenant architectures until you have clear compliance requirements or proven demand — they add DevOps overhead that kills startup velocity. Start with one pooled database, enforce <code>tenantId</code> everywhere, and migrate to isolated databases per enterprise customer when that contract justifies it.</p>
+            <div class="qa-meta">
+              <span class="tag">Database</span>
+              <span class="tag">Architecture</span>
+              <span class="tag">SaaS</span>
+              <span>by Hasnain Qureshi · hasnainqureshi.online</span>
+            </div>
+          </article>
+
+          <!-- SECTION: Next.js Performance -->
+          <p class="topic-divider" id="nextjs-perf">Next.js Performance Engineering</p>
+
+          <article class="qa-card">
+            <h2>What makes a Next.js app slow and how do you fix it?</h2>
+            <p>The most common Next.js performance killers are: (1) blocking <code>getServerSideProps</code> on every request for data that rarely changes — fix with ISR (<code>revalidate</code>) or static generation; (2) importing entire libraries when you only need one function (use barrel imports sparingly, prefer named imports); (3) unoptimized images not using <code>&lt;Image /&gt;</code> from <code>next/image</code>; (4) missing <code>font-display: swap</code> on Google Fonts; (5) large client bundles caused by client components that should be server components. Run <code>npx @next/bundle-analyzer</code> to find the heaviest modules, then code-split or lazy-load them.</p>
+            <div class="qa-meta">
+              <span class="tag">Next.js</span>
+              <span class="tag">Performance</span>
+              <span class="tag">Core Web Vitals</span>
+              <span>by Hasnain Qureshi · hasnainqureshi.online</span>
+            </div>
+          </article>
+
+          <article class="qa-card">
+            <h2>How do you reduce Time to First Byte (TTFB) in a Next.js SaaS app?</h2>
+            <p>TTFB in Next.js is dominated by four factors: server region proximity to users, database query latency, server-side rendering work, and cold starts (on serverless). Fix it by: deploying to a region closest to your user cluster; adding query-level indexes and caching frequent DB queries in Redis; using ISR or SSG for pages that don't need per-request data; and keeping serverless function bundle sizes small to reduce cold start time. CDN-caching API responses where safe also cuts TTFB dramatically. Vercel's Edge Runtime can drop TTFB under 50ms for lightweight SSR pages by running computation at the network edge.</p>
+            <div class="qa-meta">
+              <span class="tag">TTFB</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">SSR</span>
+              <span>by Hasnain Qureshi · hasnainqureshi.online</span>
+            </div>
+          </article>
+
+          <!-- SECTION: MVP Strategy -->
+          <p class="topic-divider" id="mvp">MVP &amp; Technical Debt Strategy</p>
+
+          <article class="qa-card">
+            <h2>How do you build a SaaS MVP in 3 weeks without creating technical debt?</h2>
+            <p>The key is ruthless scope discipline and choosing boring technology. Use a monorepo with Next.js (frontend + API routes) and MongoDB for fast iteration. Define your data schema before writing a single route — schema changes kill velocity. Implement authentication on day one (NextAuth or Clerk), never roll your own. Write thin service functions (not fat controllers) so business logic is testable without a server. Avoid premature abstraction: don't build a plugin system until three customers ask for it. Document decisions in a short ADR (Architecture Decision Record). This gives you a clean base to hand to a team or scale yourself without rewrites at 6 months.</p>
+            <div class="qa-meta">
+              <span class="tag">MVP</span>
+              <span class="tag">Startup</span>
+              <span class="tag">Architecture</span>
+              <span>by Hasnain Qureshi · hasnainqureshi.online</span>
+            </div>
+          </article>
+
+          <article class="qa-card">
+            <h2>How much does it cost to build a SaaS MVP in 2025?</h2>
+            <p>A focused SaaS MVP with core features (auth, billing, dashboard, 2–3 key workflows) typically costs $8,000–$25,000 at senior freelancer rates for a 4–8 week engagement, depending on complexity. Infrastructure costs for early-stage SaaS (Vercel/Railway + MongoDB Atlas M2 + Resend email + Stripe) run roughly $50–$150/month until you hit meaningful scale. The biggest cost variable is scope clarity — vague requirements add 30–50% to timelines. The lowest-cost path: one senior full-stack engineer (not an agency) who owns the full stack, uses proven SaaS boilerplates, and ships iteratively rather than speccing everything upfront.</p>
+            <div class="qa-meta">
+              <span class="tag">MVP Cost</span>
+              <span class="tag">SaaS</span>
+              <span class="tag">Startup</span>
+              <span>by Hasnain Qureshi · hasnainqureshi.online</span>
+            </div>
+          </article>
+
+          <!-- SECTION: Mobile -->
+          <p class="topic-divider" id="mobile">Mobile: React Native vs Flutter</p>
+
+          <article class="qa-card">
+            <h2>When should a startup choose React Native over Flutter in 2025?</h2>
+            <p>Choose React Native if your team already knows JavaScript/TypeScript, your web and mobile products share business logic or design systems, and you need deep integration with the JS ecosystem (e.g., existing Redux store, React Query). Choose Flutter if your team prefers Dart, you need pixel-perfect custom UI across every platform with no HTML/CSS baggage, or you're targeting desktop alongside mobile. In practice, React Native is the lower-risk choice for MERN-stack startups: your web engineers can contribute immediately, new-architecture performance is now competitive with Flutter, and the ecosystem (Expo) has matured significantly in the past two years.</p>
+            <div class="qa-meta">
+              <span class="tag">React Native</span>
+              <span class="tag">Flutter</span>
+              <span class="tag">Mobile</span>
+              <span>by Hasnain Qureshi · hasnainqureshi.online</span>
+            </div>
+          </article>
+
+        </div><!-- /.insights-list -->
+      </div>
+
+      <div class="cta-strip">
+        <div class="container">
+          <h2>Have a SaaS challenge I didn't answer?</h2>
+          <p>I respond to every inquiry and focus on practical next steps, not theoretical advice.</p>
+          <a class="btn" href="https://calendly.com/husnainqureshi134/metting" target="_blank" rel="noreferrer">Book a Free Product Call</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2026 Hasnain Qureshi — <a href="/">hasnainqureshi.online</a> · Senior Full-Stack Developer for Startups</p>
+      </div>
+    </footer>
+  </body>
+</html>

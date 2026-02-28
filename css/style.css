@@ -274,6 +274,196 @@ body.is-loaded .intro-panel.p3 {
   animation-delay: 0s;
 }
 
+html {
+  scrollbar-color: color-mix(in srgb, var(--skin-color) 40%, transparent) transparent;
+  scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--skin-color) 40%, transparent);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+a,
+button,
+input,
+.message-area,
+select {
+  /* cursor: none; */
+}
+
+.cursor-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.35) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  -webkit-mask-image: radial-gradient(circle 180px at var(--cursor-x, 50%) var(--cursor-y, 50%), rgba(0, 0, 0, 0.9), transparent 70%);
+  mask-image: radial-gradient(circle 180px at var(--cursor-x, 50%) var(--cursor-y, 50%), rgba(0, 0, 0, 0.9), transparent 70%);
+}
+
+body.dark .cursor-glow {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+}
+
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 999999999999999;
+  border-radius: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--skin-color);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--skin-color) 60%, transparent);
+}
+
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid color-mix(in srgb, var(--skin-color) 70%, transparent);
+  background: color-mix(in srgb, var(--skin-color) 8%, transparent);
+  transition: transform 0.15s ease-out;
+}
+
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+
+  .cursor-dot,
+  .cursor-ring,
+  .cursor-glow {
+    display: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.site {
+  overflow: hidden;
+  /* perspective: var(--site-perspective, 1400px); */
+  /* transform-style: preserve-3d; */
+}
+
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: #07090d;
+  display: grid;
+  place-items: center;
+  z-index: 9998;
+  opacity: 1;
+  transition: opacity 1.2s ease 2.2s, visibility 0s linear 3.6s;
+  visibility: visible;
+  background: radial-gradient(circle at top, rgba(255, 133, 54, 0.18), transparent 45%),
+    linear-gradient(180deg, rgba(7, 9, 13, 0.98), rgba(7, 9, 13, 0.7) 40%, rgba(7, 9, 13, 0));
+}
+
+.intro-glow {
+  position: absolute;
+  top: -10%;
+  width: min(900px, 90vw);
+  height: 45vh;
+  background: radial-gradient(circle at top, rgba(255, 133, 54, 0.18), transparent 70%);
+  opacity: 0.8;
+}
+
+.intro-badge {
+  position: absolute;
+  top: 12%;
+  left: 8%;
+  display: grid;
+  gap: 6px;
+  color: #f8fafc;
+  font-family: "DM Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  opacity: 0;
+}
+
+.intro-badge span:last-child {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.intro-panels {
+  width: min(860px, 78vw);
+  height: 56vh;
+  position: relative;
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+.intro-panel {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transform: translateZ(-320px) rotateX(14deg) rotateY(-18deg) scale(0.96);
+  filter: blur(6px);
+}
+
+.intro-panel.p2 {
+  transform: translateZ(-380px) rotateX(18deg) rotateY(14deg) scale(0.94);
+}
+
+.intro-panel.p3 {
+  transform: translateZ(-440px) rotateX(10deg) rotateY(-8deg) scale(0.92);
+}
+
+body.is-loaded .intro-panel {
+  animation: none;
+}
+
+body.is-loaded .intro-panel.p2 {
+  animation-delay: 0s;
+}
+
+body.is-loaded .intro-panel.p3 {
+  animation-delay: 0s;
+}
+
 body.is-loaded .intro-overlay {
   opacity: 1;
   visibility: visible;
@@ -282,7 +472,7 @@ body.is-loaded .intro-overlay {
 body.is-loading .site {
   opacity: 0;
   transform: translateZ(-120px) scale(0.98);
-  filter: blur(6px);
+  /* filter: blur(6px); — removed: non-composited */
 }
 
 body.is-loaded .site {
@@ -641,7 +831,7 @@ body.is-loaded .hero_text {
 .is-loaded .metrics {
   opacity: 0;
   transform: translateY(32px) rotateX(6deg);
-  filter: blur(8px);
+  /* filter removed: non-composited, triggers paint on 26+ elements */
   animation: panelIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
@@ -958,12 +1148,12 @@ body.is-loaded {
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
   transform-style: preserve-3d;
-  will-change: transform;
+  /* will-change applied only when needed (on hover via .is-tilting) */
 }
 
 .scroll-3d {
   transform-style: preserve-3d;
-  will-change: transform, opacity;
+  /* will-change only on active tilt, not statically */
 }
 
 .project_media {
@@ -1821,7 +2011,7 @@ input,
   to {
     opacity: 1;
     transform: translateY(0) rotateX(0);
-    filter: blur(0);
+    /* filter removed: only animate composited properties */
   }
 }
 
@@ -1829,12 +2019,10 @@ input,
   0% {
     opacity: 0;
     transform: translateZ(-320px) rotateX(14deg) rotateY(-18deg) scale(0.96);
-    filter: blur(8px);
   }
   100% {
     opacity: 0.95;
     transform: translateZ(0) rotateX(0) rotateY(0) scale(1);
-    filter: blur(0);
   }
 }
 
@@ -1842,14 +2030,12 @@ input,
   to {
     opacity: 1;
     transform: translateZ(0) scale(1);
-    filter: blur(0);
   }
 }
 
 @keyframes heroDepth {
   to {
     opacity: 1;
-    transform: translateZ(0);
   }
 }
 
@@ -2025,28 +2211,6 @@ input,
 body.dark{
   --shadow: 0 20px 60px rgba(0,0,0,0.55);
 }
-
-/* Make cards feel 3D (works with your .scroll-3d usage) */
-.scroll-3d,
-.project_card,
-.stack_card,
-.service_card,
-.process_card,
-.resume_card,
-.experience_card{
-  position: relative;
-  transform-style: preserve-3d;
-  will-change: transform;
-  transition: transform 350ms ease, box-shadow 350ms ease, border-color 350ms ease;
-  background: linear-gradient(180deg, var(--glass), var(--glass-2));
-  border: 1px solid var(--stroke);
-  box-shadow: 0 14px 48px rgba(0,0,0,0.45);
-  overflow: hidden;
-}
-
-/* Glass highlight */
-.scroll-3d::before,
-.project_card::before,
 .stack_card::before,
 .service_card::before,
 .process_card::before,
