@@ -251,8 +251,7 @@ ul {
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
   opacity: 0;
   transform: translateZ(-320px) rotateX(14deg) rotateY(-18deg) scale(0.96);
-  filter: blur(6px);
-}
+  /* filter: blur(6px) removed — static filter on animated element forces non-composited paint */
 
 .intro-panel.p2 {
   transform: translateZ(-380px) rotateX(18deg) rotateY(14deg) scale(0.94);
@@ -441,8 +440,7 @@ ul {
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
   opacity: 0;
   transform: translateZ(-320px) rotateX(14deg) rotateY(-18deg) scale(0.96);
-  filter: blur(6px);
-}
+  /* filter: blur(6px) removed — static filter on animated element forces paint on composited layers */
 
 .intro-panel.p2 {
   transform: translateZ(-380px) rotateX(18deg) rotateY(14deg) scale(0.94);
@@ -1010,12 +1008,13 @@ body.is-loaded {
 
 .hero_glow {
   position: absolute;
-  width: 260px;
-  height: 260px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--skin-color) 60%, transparent), transparent 70%);
-  filter: blur(10px);
-  opacity: 0.7;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--skin-color) 55%, transparent) 0%, color-mix(in srgb, var(--skin-color) 20%, transparent) 40%, transparent 70%);
+  /* filter:blur removed — replaced with radial gradient to avoid non-composited paint layer */
+  opacity: 0.65;
   z-index: 0;
+  border-radius: 50%;
 }
 
 .about_grid {
