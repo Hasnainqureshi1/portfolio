@@ -404,7 +404,7 @@ const runGsapIntro = () => {
   // gsap.set(site, { opacity: 0, z: -180, scale: 0.97, filter: "blur(10px)" });
   gsap.set([header, heroCopy, heroMedia], { opacity: 0, y: 46, z: -120 });
   gsap.set(heroLines, { yPercent: 120 });
-  gsap.set(panels, { opacity: 0, filter: "blur(10px)" });
+  gsap.set(panels, { opacity: 0, scale: 0.94 });
   gsap.set(badge, { opacity: 0, y: -10 });
 
   const tl = gsap.timeline({
@@ -419,10 +419,11 @@ const runGsapIntro = () => {
     .to(panels, {
       opacity: 1,
       duration: 1.6,
+      scale: 1,
       z: 0,
       rotateX: 0,
       rotateY: 0,
-      filter: "blur(0px)",
+      /* filter:blur removed — non-composited, forced paint on 15 elements */
       stagger: 0.22
     }, "-=0.3")
     .to(overlay, { opacity: 0, duration: 1.2 }, "-=0.6")
