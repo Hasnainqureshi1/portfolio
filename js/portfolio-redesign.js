@@ -43,6 +43,7 @@
   const topbar = document.querySelector(".topbar");
   const menuToggle = document.querySelector("[data-menu-toggle]");
   const topnav = document.querySelector("[data-nav]");
+  const mobileDock = document.querySelector(".mobile-dock");
 
   const closeMenu = () => {
     topnav?.classList.remove("is-open");
@@ -60,6 +61,7 @@
   });
 
   topnav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+  mobileDock?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
   window.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeMenu();
   });
@@ -139,7 +141,7 @@
   }
 
   const sections = [...document.querySelectorAll("[data-section][id]")];
-  const navLinks = [...document.querySelectorAll('.topnav a[href^="#"]')];
+  const navLinks = [...document.querySelectorAll('.topnav a[href^="#"], .mobile-dock a[href^="#"]')];
   if ("IntersectionObserver" in window) {
     const sectionObserver = new IntersectionObserver(
       (entries) => {
