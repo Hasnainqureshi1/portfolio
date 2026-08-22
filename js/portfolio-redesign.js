@@ -3,6 +3,7 @@
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const mobileAppLayout = window.matchMedia("(max-width: 760px)").matches;
   const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
 
   const intro = document.querySelector("[data-intro]");
@@ -61,7 +62,11 @@
   });
 
   topnav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-  mobileDock?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+  mobileDock?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMenu();
+    });
+  });
   window.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeMenu();
   });
@@ -111,7 +116,9 @@
     ".contact-form > *",
     ".footer > *"
   ];
-  const textRevealItems = [...new Set(document.querySelectorAll(textRevealSelectors.join(",")))];
+  const textRevealItems = [...new Set(document.querySelectorAll(textRevealSelectors.join(",")))].filter(
+    (item) => !(mobileAppLayout && item.closest(".case__copy"))
+  );
 
   textRevealItems.forEach((item, index) => {
     item.classList.add("scroll-text");
@@ -153,7 +160,7 @@
           link.classList.toggle("is-active", link.hash === `#${visible.target.id}`);
         });
       },
-      { threshold: [0.12, 0.3, 0.55], rootMargin: "-16% 0px -56% 0px" }
+      { threshold: 0, rootMargin: "-24% 0px -68% 0px" }
     );
     sections.forEach((section) => sectionObserver.observe(section));
   }

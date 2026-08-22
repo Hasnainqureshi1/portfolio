@@ -4021,7 +4021,7 @@ img {
   }
 
   .work .case:nth-child(even) {
-    flex-direction: initial;
+    flex-direction: column;
   }
 
   .work .case__media,
@@ -4249,7 +4249,6 @@ img {
     white-space: nowrap;
   }
 
-  .mobile-dock a:hover,
   .mobile-dock a.is-active {
     color: var(--acid);
     background: rgba(199, 255, 50, 0.09);
@@ -4258,6 +4257,25 @@ img {
 
   .work .case {
     border-radius: 20px;
+  }
+
+  .work .scroll-text,
+  .work .scroll-text--heading,
+  .work .scroll-text--meta {
+    opacity: 1 !important;
+    filter: none !important;
+    clip-path: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .work .case__copy,
+  .work .case__copy > :not(.case__result) {
+    visibility: visible !important;
+    opacity: 1 !important;
+    filter: none !important;
+    clip-path: none !important;
+    transform: none !important;
   }
 
   .work .case__media,
