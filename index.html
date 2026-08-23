@@ -21,6 +21,13 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2232%22 fill=%22%23c7ff27%22/><text x=%2232%22 y=%2240%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2224%22 font-weight=%22700%22 fill=%22%23080b10%22>HQ</text></svg>" />
     <link rel="preload" as="image" href="./asset/husnain-cutout-cropped.png" />
     <link rel="stylesheet" href="./css/portfolio-redesign.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W0624M03ZJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-W0624M03ZJ");
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -45,10 +52,15 @@
           "Node.js",
           "Next.js",
           "React Native",
+          "TypeScript",
+          "SQL",
+          "PostgreSQL",
           "WebSockets",
           "Redis",
           "GraphQL",
-          "Headless WordPress"
+          "Headless WordPress",
+          "Docker",
+          "CI/CD"
         ]
       }
     </script>
@@ -90,14 +102,6 @@
         <a href="#process"><span aria-hidden="true">↻</span><small>Process</small></a>
         <a href="#contact"><span aria-hidden="true">✦</span><small>Contact</small></a>
       </nav>
-
-      <a
-        class="whatsapp-fab"
-        href="https://wa.me/923033091956?text=Hi%20Hasnain%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity."
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Message Hasnain on WhatsApp"
-      ><span aria-hidden="true">WA</span><strong>WhatsApp</strong></a>
 
       <main id="main">
         <section class="hero" id="top" data-section>
@@ -166,34 +170,6 @@
           <span><i>03</i> Available for teams and founders</span>
         </aside>
 
-        <section class="word-bridge" aria-labelledby="delivery-bridge-title">
-          <div class="word-bridge__intro">
-            <p class="eyebrow eyebrow--coral">From brief to production</p>
-            <h2 id="delivery-bridge-title">One MERN partner for the <em>whole product journey.</em></h2>
-            <p>
-              I connect product decisions, interface craft, backend systems, and release work so
-              your build moves forward without hand-off gaps.
-            </p>
-          </div>
-          <ol class="word-bridge__path" aria-label="Product delivery stages">
-            <li>
-              <span>01 / SHAPE</span>
-              <strong>Clarify the product</strong>
-              <p>Priorities, user flows, technical scope, and a practical path to launch.</p>
-            </li>
-            <li>
-              <span>02 / BUILD</span>
-              <strong>Engineer the system</strong>
-              <p>Responsive React interfaces, dependable Node APIs, data, and integrations.</p>
-            </li>
-            <li>
-              <span>03 / SHIP</span>
-              <strong>Release with confidence</strong>
-              <p>Real-device QA, performance work, deployment, and maintainable handover.</p>
-            </li>
-          </ol>
-        </section>
-
         <section class="manifesto section section--paper" id="about" data-section>
           <div class="manifesto__label reveal"><span>02 / THE USEFUL VERSION</span></div>
           <div class="manifesto__copy reveal">
@@ -210,6 +186,31 @@
             <span><strong>4+ years</strong><small>Building production products</small></span>
             <span><strong>Web + mobile</strong><small>One connected delivery path</small></span>
             <span><strong>UK · USA · UAE · PK</strong><small>Remote and on-site teams</small></span>
+          </div>
+        </section>
+
+        <section class="expertise section section--paper" aria-labelledby="expertise-title">
+          <div class="expertise__head reveal">
+            <div>
+              <p class="eyebrow eyebrow--coral">Technical expertise / web + mobile</p>
+              <h2 id="expertise-title">The tools behind <em>the finished product.</em></h2>
+            </div>
+            <p>Frontend, backend, data, realtime systems, mobile apps, and production delivery—connected as one practical engineering stack.</p>
+          </div>
+
+          <div class="expertise__grid">
+            <article class="expertise-card reveal"><span>RE</span><small>Frontend</small><h3>React.js</h3><p>Responsive interfaces, dashboards, state, and reusable systems.</p></article>
+            <article class="expertise-card reveal"><span>NX</span><small>Full-stack web</small><h3>Next.js</h3><p>Fast applications, server rendering, routing, and production SEO.</p></article>
+            <article class="expertise-card reveal"><span>NO</span><small>Backend</small><h3>Node.js</h3><p>Reliable services, integrations, background jobs, and business logic.</p></article>
+            <article class="expertise-card reveal"><span>EX</span><small>API engineering</small><h3>Express.js</h3><p>REST APIs, authentication, validation, permissions, and error paths.</p></article>
+            <article class="expertise-card reveal"><span>TS</span><small>Engineering</small><h3>TypeScript</h3><p>Safer application contracts and maintainable frontend and backend code.</p></article>
+            <article class="expertise-card reveal"><span>RN</span><small>Mobile</small><h3>React Native</h3><p>Cross-platform mobile products, native workflows, and API integration.</p></article>
+            <article class="expertise-card reveal"><span>SQ</span><small>Relational data</small><h3>SQL + PostgreSQL</h3><p>Structured schemas, queries, relations, and dependable product data.</p></article>
+            <article class="expertise-card reveal"><span>MO</span><small>Document data</small><h3>MongoDB</h3><p>Flexible data models, aggregation, indexing, and application storage.</p></article>
+            <article class="expertise-card reveal"><span>GQ</span><small>Data APIs</small><h3>GraphQL</h3><p>Typed queries, CMS integrations, and efficient frontend data flows.</p></article>
+            <article class="expertise-card reveal"><span>RT</span><small>Realtime</small><h3>Socket.io + Redis</h3><p>Chat, presence, notifications, pub/sub, and live operational events.</p></article>
+            <article class="expertise-card reveal"><span>WP</span><small>Content platforms</small><h3>Headless WordPress</h3><p>Editor-managed content delivered through modern frontend experiences.</p></article>
+            <article class="expertise-card reveal"><span>DO</span><small>Production</small><h3>Docker + Cloud</h3><p>Containerized builds, CI/CD, Vercel, Netlify, and reliable releases.</p></article>
           </div>
         </section>
 
