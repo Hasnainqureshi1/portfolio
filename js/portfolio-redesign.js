@@ -361,14 +361,42 @@
       "error",
       () => {
         image.closest(".case__media")?.classList.add("has-image-error");
-        image.hidden = true;
       },
       { once: true }
     );
   });
 
+  const contactBubble = document.querySelector("[data-contact-bubble]");
+  const contactBubbleToggle = contactBubble?.querySelector(".contact-bubble__toggle");
+  const contactBubbleLinks = contactBubble?.querySelectorAll(".contact-bubble__actions a") || [];
+
+  const setContactBubble = (open, returnFocus = false) => {
+    if (!contactBubble || !contactBubbleToggle) return;
+    contactBubble.classList.toggle("is-open", open);
+    contactBubbleToggle.setAttribute("aria-expanded", String(open));
+    contactBubbleToggle.setAttribute("aria-label", open ? "Close quick contact links" : "Open quick contact links");
+    if (returnFocus) contactBubbleToggle.focus();
+  };
+
+  contactBubbleToggle?.addEventListener("click", () => setContactBubble(!contactBubble.classList.contains("is-open")));
+  contactBubbleLinks.forEach((link) => link.addEventListener("click", () => setContactBubble(false)));
+  document.addEventListener("click", (event) => {
+    if (contactBubble?.classList.contains("is-open") && !contactBubble.contains(event.target)) setContactBubble(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && contactBubble?.classList.contains("is-open")) setContactBubble(false, true);
+  });
+
   const contactForm = document.querySelector("#contactForm");
   const contactStatus = document.querySelector("#contactStatus");
+  const trackContact = (method) => {
+    if (typeof window.gtag !== "function") return;
+    window.gtag("event", "generate_lead", { method, page_location: window.location.href });
+  };
+
+  document.querySelectorAll("[data-contact-action]").forEach((link) => {
+    link.addEventListener("click", () => trackContact(link.dataset.contactAction));
+  });
 
   contactForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -384,6 +412,7 @@
       });
       if (!response.ok) throw new Error("Form submission failed");
       contactForm.reset();
+      trackContact("project-form");
       if (contactStatus) {
         contactStatus.textContent =
           "Thanks — your message is on its way. I will reply personally.";

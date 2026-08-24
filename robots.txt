@@ -1,7 +1,7 @@
 # ============================================================
 # robots.txt — hasnainqureshi.online
-# Updated: 2026-02-28
-# Strategy: AI-first crawl policy (GEO / AEO optimized)
+# Updated: 2026-08-24
+# Public portfolio crawl policy
 # ============================================================
 
 # ----- Default: Allow all -----
@@ -10,6 +10,7 @@ Allow: /
 Disallow: /node_modules/
 Disallow: /.git/
 Disallow: /api/
+Disallow: /project-layout-options.html
 
 # Prioritize key GEO pages
 Allow: /insights/
@@ -63,4 +64,4 @@ Allow: /insights/
 Sitemap: https://hasnainqureshi.online/sitemap.xml
 
 # ----- AI Discovery -----
-# LLM agent map: https://hasnainqureshi.online/llms.txt
+# LLM agent map: https://hasnainqureshi.online/llms.txt

@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SaaS Engineering Insights — Hasnain Qureshi, Senior Full-Stack Developer</title>
+    <title>Full-Stack Development Insights | Hasnain Qureshi</title>
     <meta
       name="description"
-      content="Direct, expert answers on MERN, Next.js, SaaS architecture, and startup engineering from Hasnain Qureshi — Senior Full-Stack Developer."
+      content="Practical answers on React, Next.js, Node.js, SQL, SaaS architecture, performance, real-time systems and mobile development from Hasnain Qureshi."
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://hasnainqureshi.online/insights/" />
-    <meta property="og:title" content="SaaS Engineering Insights — Hasnain Qureshi" />
-    <meta property="og:description" content="Expert answers on MERN, Next.js, multi-tenant SaaS, and startup engineering." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta property="og:title" content="Full-Stack Development Insights — Hasnain Qureshi" />
+    <meta property="og:description" content="Practical answers on React, Next.js, Node.js, SQL, SaaS architecture and real-time systems." />
     <meta property="og:url" content="https://hasnainqureshi.online/insights/" />
     <meta property="og:type" content="article" />
 
@@ -26,16 +27,16 @@
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "SaaS Engineering Insights by Hasnain Qureshi",
-      "description": "Expert answers on MERN stack, Next.js performance, multi-tenant SaaS architecture, and startup engineering.",
+      "description": "Practical answers on React, Next.js, Node.js, SQL, SaaS architecture, performance and real-time systems.",
       "url": "https://hasnainqureshi.online/insights/",
       "author": {
         "@type": "Person",
         "name": "Hasnain Qureshi",
         "url": "https://hasnainqureshi.online/",
-        "jobTitle": "Senior Full-Stack Engineer",
+        "jobTitle": "Full-Stack Developer",
         "sameAs": [
-          "https://www.linkedin.com/in/hasnainqureshi1",
-          "https://github.com/hasnainqureshi1"
+          "https://www.linkedin.com/in/husnain-alam-7a24ba1b4",
+          "https://github.com/Hasnainqureshi1"
         ]
       },
       "publisher": {
@@ -245,13 +246,13 @@
     <main>
       <section class="page-hero">
         <div class="container">
-          <p class="eyebrow">SaaS Engineering Insights</p>
+          <p class="eyebrow">Full-Stack Engineering Insights</p>
           <h1>Answers Founders and Engineers Actually Need</h1>
           <p class="hero-sub">
-            Direct, no-fluff answers on MERN, Next.js, multi-tenant SaaS, and startup product engineering — from 4+ years of building and shipping production systems.
+            Direct answers on React, Next.js, Node.js, SQL, multi-tenant SaaS, real-time systems and product engineering—from 4+ years of building and shipping production software.
           </p>
           <nav class="toc" aria-label="Topics">
-            <a href="#mern-scale">MERN &amp; Scale</a>
+            <a href="#full-stack-scale">Full-stack &amp; Scale</a>
             <a href="#nextjs-perf">Next.js Performance</a>
             <a href="#saas-arch">SaaS Architecture</a>
             <a href="#mvp">MVP Strategy</a>
@@ -263,14 +264,14 @@
       <div class="container">
         <div class="insights-list">
 
-          <!-- SECTION: MERN & Scale -->
-          <p class="topic-divider" id="mern-scale">MERN Stack &amp; Scalability</p>
+          <!-- SECTION: Full-stack & Scale -->
+          <p class="topic-divider" id="full-stack-scale">Full-Stack Applications &amp; Scalability</p>
 
           <article class="qa-card">
-            <h2>How do you scale a MERN app past 1,000 concurrent users?</h2>
-            <p>Scaling a MERN app beyond 1,000 concurrent users requires horizontal Node.js scaling via a load balancer (NGINX or AWS ALB), MongoDB replica sets for read distribution, Redis for session caching, and stateless JWT authentication. Avoid shared in-memory state between Node processes. Use connection pooling (Mongoose's <code>poolSize</code>), add a CDN for static assets, and instrument with APM (e.g., Datadog) to catch bottlenecks early. Most apps hit walls at concurrency due to blocking I/O — keep your event loop clean with async/await and avoid CPU-heavy operations on the main thread.</p>
+            <h2>How do you scale a React and Node.js app past 1,000 concurrent users?</h2>
+            <p>Start with measurement rather than assuming one universal architecture. Common improvements include horizontally scaling stateless Node.js services behind a load balancer, adding appropriate SQL or MongoDB indexes, using connection pools, caching repeated reads with Redis, serving static assets through a CDN, and moving CPU-heavy work to queues or workers. Instrument slow requests and database queries first so each change addresses a real bottleneck.</p>
             <div class="qa-meta">
-              <span class="tag">MERN</span>
+              <span class="tag">Full-stack</span>
               <span class="tag">Scaling</span>
               <span>by Hasnain Qureshi · hasnainqureshi.online</span>
             </div>
@@ -313,8 +314,8 @@
           </article>
 
           <article class="qa-card">
-            <h2>What is the right database architecture for a multi-tenant SaaS in 2025?</h2>
-            <p>For most SaaS startups in 2025, PostgreSQL with Row-Level Security (RLS) is the strongest choice: it enforces tenant isolation at the database level, supports complex relational queries, and works natively with tools like Supabase for rapid development. MongoDB shines for event-driven or document-heavy products with unpredictable schemas. Avoid microservices-per-tenant architectures until you have clear compliance requirements or proven demand — they add DevOps overhead that kills startup velocity. Start with one pooled database, enforce <code>tenantId</code> everywhere, and migrate to isolated databases per enterprise customer when that contract justifies it.</p>
+            <h2>What is the right database architecture for a multi-tenant SaaS?</h2>
+            <p>For many SaaS products in 2026, PostgreSQL with Row-Level Security (RLS) is a strong option because it can enforce tenant isolation at the database level and supports relational queries. MongoDB can suit document-heavy products with flexible schemas. The right choice depends on access patterns, reporting needs and operational constraints. Avoid adding per-tenant services before compliance or scale requirements justify the extra operational cost.</p>
             <div class="qa-meta">
               <span class="tag">Database</span>
               <span class="tag">Architecture</span>
@@ -363,7 +364,7 @@
           </article>
 
           <article class="qa-card">
-            <h2>How much does it cost to build a SaaS MVP in 2025?</h2>
+            <h2>How should a founder budget for a SaaS MVP?</h2>
             <p>A focused SaaS MVP with core features (auth, billing, dashboard, 2–3 key workflows) typically costs $8,000–$25,000 at senior freelancer rates for a 4–8 week engagement, depending on complexity. Infrastructure costs for early-stage SaaS (Vercel/Railway + MongoDB Atlas M2 + Resend email + Stripe) run roughly $50–$150/month until you hit meaningful scale. The biggest cost variable is scope clarity — vague requirements add 30–50% to timelines. The lowest-cost path: one senior full-stack engineer (not an agency) who owns the full stack, uses proven SaaS boilerplates, and ships iteratively rather than speccing everything upfront.</p>
             <div class="qa-meta">
               <span class="tag">MVP Cost</span>
@@ -377,8 +378,8 @@
           <p class="topic-divider" id="mobile">Mobile: React Native vs Flutter</p>
 
           <article class="qa-card">
-            <h2>When should a startup choose React Native over Flutter in 2025?</h2>
-            <p>Choose React Native if your team already knows JavaScript/TypeScript, your web and mobile products share business logic or design systems, and you need deep integration with the JS ecosystem (e.g., existing Redux store, React Query). Choose Flutter if your team prefers Dart, you need pixel-perfect custom UI across every platform with no HTML/CSS baggage, or you're targeting desktop alongside mobile. In practice, React Native is the lower-risk choice for MERN-stack startups: your web engineers can contribute immediately, new-architecture performance is now competitive with Flutter, and the ecosystem (Expo) has matured significantly in the past two years.</p>
+            <h2>When should a product team choose React Native over Flutter?</h2>
+            <p>Choose React Native when the team already works in JavaScript or TypeScript, web and mobile products share business rules or design systems, and the React ecosystem reduces delivery risk. Flutter can be a good fit for teams invested in Dart or products requiring highly controlled custom rendering across platforms. Evaluate native-module needs, accessibility, hiring, release workflows and long-term ownership—not only prototype speed.</p>
             <div class="qa-meta">
               <span class="tag">React Native</span>
               <span class="tag">Flutter</span>
@@ -392,16 +393,16 @@
 
       <div class="cta-strip">
         <div class="container">
-          <h2>Have a SaaS challenge I didn't answer?</h2>
-          <p>I respond to every inquiry and focus on practical next steps, not theoretical advice.</p>
-          <a class="btn" href="https://calendly.com/husnainqureshi134/metting" target="_blank" rel="noreferrer">Book a Free Product Call</a>
+          <h2>Have a product challenge I didn't answer?</h2>
+          <p>See how these decisions appear in <a href="/project-case-study-1.html">ChatKnot</a>, <a href="/project-case-study-2.html">Cambridge Research Park</a>, and <a href="/project-case-study-3.html">1540 Broadway</a>, or share what you need to build.</p>
+          <a class="btn" href="/#contact">Contact a Full-Stack Developer</a>
         </div>
       </div>
     </main>
 
     <footer class="footer">
       <div class="container">
-        <p>© 2026 Hasnain Qureshi — <a href="/">hasnainqureshi.online</a> · Senior Full-Stack Developer for Startups</p>
+        <p>© 2026 Hasnain Qureshi — <a href="/">hasnainqureshi.online</a> · Full-Stack Developer</p>
       </div>
     </footer>
   </body>

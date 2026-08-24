@@ -3,46 +3,32 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Case Study — Real-time Systems & Scaling | Hire Senior Full-Stack Engineer</title>
-    <meta name="description" content="Case study: Building and scaling a real-time conversational platform. Hire Senior Full-Stack Engineer to design scalable systems and real-time APIs." />
+    <title>Cambridge Research Park Case Study | Next.js Developer</title>
+    <meta name="description" content="Cambridge Research Park website case study: responsive Next.js, GraphQL and headless WordPress development for a UK science and technology campus." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://hasnainqureshi.online/project-case-study-2.html" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Cambridge Research Park Website Case Study" />
+    <meta property="og:description" content="An image-led Next.js and headless WordPress campus experience." />
+    <meta property="og:url" content="https://hasnainqureshi.online/project-case-study-2.html" />
+    <meta property="og:image" content="https://hasnainqureshi.online/asset/cambridge-showcase-hero.jpg" />
+    <link rel="stylesheet" href="/css/case-study.css" />
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@graph":[{"@type":"CreativeWork","name":"Cambridge Research Park website case study","url":"https://hasnainqureshi.online/project-case-study-2.html","image":"https://hasnainqureshi.online/asset/cambridge-showcase-hero.jpg","author":{"@type":"Person","name":"Hasnain Qureshi","url":"https://hasnainqureshi.online/"},"about":["Next.js development","GraphQL","Headless WordPress","responsive web development"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Portfolio","item":"https://hasnainqureshi.online/"},{"@type":"ListItem","position":2,"name":"Cambridge Research Park case study","item":"https://hasnainqureshi.online/project-case-study-2.html"}]}]}
+    </script>
   </head>
   <body>
-    <main class="container">
-      <article>
-        <h1>Designing a scalable real-time conversational platform</h1>
-        <p class="eyebrow">Case Study · Real-time · WebSocket · Scaling</p>
-        <p>
-          I led engineering on a real-time messaging product that required low-latency updates, multi-tenant isolation, and predictable scaling. The project combined event-driven architecture with pragmatic operational controls to deliver a reliable product under load.
-        </p>
-
-        <h2>Problem</h2>
-        <p>
-          The existing system used polling and suffered from high database load and inconsistent message delivery at scale. Customers experienced delays and out-of-order events during busy periods.
-        </p>
-
-        <h2>Solution</h2>
-        <p>
-          We introduced WebSockets backed by a lightweight broker and a message queue for durability. Each tenant received scoped channels and rate limits. We separated read-heavy workflows into eventual-consistency reads with cache priming and used worker queues for heavy processing tasks.
-        </p>
-
-        <h2>Work done</h2>
-        <p>
-          The work included schema changes to support sharding, adding Redis channels for pub/sub, deploying horizontally-scaled websocket nodes, and creating graceful reconnect logic to handle transient failures. Monitoring and synthetic tests were added to detect message lag and backpressure.
-        </p>
-
-        <h2>Impact</h2>
-        <ul>
-          <li>Message delivery success rate improved to 99.9%.</li>
-          <li>Operational costs were predictable and scaled linearly with clients.</li>
-          <li>Customer satisfaction improved due to reliable real-time updates.</li>
-        </ul>
-
-        <p>
-          <a href="/index.html">Back to portfolio</a>
-        </p>
+    <a class="skip-link" href="#content">Skip to case study</a>
+    <nav class="case-nav" aria-label="Case study navigation"><a href="/">HasnainQ</a><div class="case-nav__links"><a href="/#work">Work</a><a href="/#services">Services</a><a href="/#contact">Contact</a></div></nav>
+    <main id="content">
+      <header class="case-hero"><p class="eyebrow">Corporate platform · Next.js · Headless CMS</p><h1>Cambridge Research Park</h1><p class="case-hero__intro">An image-led digital destination for a UK science and technology campus, connecting commercial availability with nature, community, events and everyday campus life.</p><div class="case-facts"><span><small>Contribution</small><strong>Frontend and CMS implementation</strong></span><span><small>Experience</small><strong>Corporate campus website</strong></span><span><small>Core stack</small><strong>Next.js · GraphQL · WordPress</strong></span></div></header>
+      <figure class="case-visual"><img src="/asset/cambridge-showcase-hero.jpg" width="1600" height="861" alt="Cambridge Research Park website aerial campus overview" fetchpriority="high" /></figure>
+      <article class="case-body">
+        <section class="case-section"><h2>The brief</h2><div class="case-section__copy"><p>The site needed to represent more than property availability. It had to show the research park as a connected place to work: buildings and laboratories alongside landscape, tenant community, wellbeing, events and campus services.</p></div></section>
+        <section class="case-section"><h2>Implementation</h2><div class="case-section__copy"><p>The frontend combines responsive editorial layouts with content delivered from WordPress through GraphQL. This gives non-technical editors control of the story while the Next.js experience keeps page structure and navigation consistent across devices.</p><ul><li>Responsive Next.js interface development</li><li>GraphQL content integration</li><li>Headless WordPress and editor-managed page content</li><li>Image-led campus and availability journeys</li><li>Mobile layouts for long-form property content</li></ul></div></section>
+        <section class="case-section"><h2>Experience outcome</h2><div class="case-section__copy"><p>Commercial information and campus storytelling sit inside one discovery journey. Prospective tenants can understand available space while also seeing the environment, community and amenities that define the wider location.</p></div></section>
       </article>
     </main>
+    <footer class="case-cta"><h2>Planning a content-rich Next.js website?</h2><div class="case-cta__links"><a href="/#contact">Discuss your project ↗</a><a href="https://cambridgeresearchpark.co.uk" target="_blank" rel="noreferrer">Visit live website ↗</a><a href="/">Back to portfolio</a></div></footer>
   </body>
 </html>
