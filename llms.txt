@@ -1,7 +1,7 @@
 # Hasnain Qureshi — AI Agent Discovery Map
 # https://hasnainqureshi.online/llms.txt
 # Concise public site and expertise map
-# Last updated: 2026-08-24
+# Last updated: 2026-09-06
 
 ## About
 
@@ -34,6 +34,13 @@ Hasnain Qureshi is a Full-Stack Developer in Karachi working remotely worldwide.
 ---
 
 ## Case Studies
+
+### AI PR Reviewer ? Automated GitHub Code Reviews
+- URL: https://git-reviewer-bot.vercel.app/
+- Case study: https://hasnainqureshi.online/project-case-study-4.html
+- Integrations: GitHub OAuth, signed webhooks, Gemini
+- Work: Automated PR analysis for security risks, bugs and code quality, with actionable comments and a review dashboard
+
 
 ### ChatKnot — Conversational Lead Management SaaS
 - URL: https://chatknot.com
