@@ -388,6 +388,66 @@
   });
 
   const contactForm = document.querySelector("#contactForm");
+  const exitFeedback = document.querySelector(".exit-feedback");
+  const feedbackReason = document.querySelector("#exit-feedback-reason");
+  const feedbackNote = document.querySelector("#exit-feedback-note");
+  const feedbackWhatsApp = document.querySelector("[data-exit-whatsapp]");
+  const feedbackStartedAt = Date.now();
+  let feedbackSeen = false;
+  let contactStarted = false;
+  let feedbackPreviousFocus = null;
+  try {
+    feedbackSeen = sessionStorage.getItem("hq-exit-feedback-seen") === "1";
+    contactStarted = sessionStorage.getItem("hq-contact-started") === "1";
+  } catch { /* Keep the prompt usable when browser storage is unavailable. */ }
+
+  const markContactStarted = () => {
+    contactStarted = true;
+    try { sessionStorage.setItem("hq-contact-started", "1"); } catch { /* Session-only fallback. */ }
+  };
+  const openExitFeedback = () => {
+    if (!exitFeedback || exitFeedback.open || typeof exitFeedback.showModal !== "function") return;
+    feedbackPreviousFocus = document.activeElement;
+    exitFeedback.showModal();
+    document.body.classList.add("feedback-open");
+    feedbackSeen = true;
+    try { sessionStorage.setItem("hq-exit-feedback-seen", "1"); } catch { /* In-memory fallback. */ }
+  };
+  document.querySelectorAll("[data-open-exit-feedback]").forEach((button) => {
+    button.addEventListener("click", openExitFeedback);
+  });
+  document.querySelectorAll("[data-close-exit-feedback]").forEach((button) => {
+    button.addEventListener("click", () => exitFeedback?.close());
+  });
+  exitFeedback?.addEventListener("close", () => {
+    document.body.classList.remove("feedback-open");
+    feedbackPreviousFocus?.focus({ preventScroll: true });
+  });
+  exitFeedback?.addEventListener("click", (event) => {
+    const bounds = exitFeedback.getBoundingClientRect();
+    if (event.target === exitFeedback && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) exitFeedback.close();
+  });
+  document.documentElement.addEventListener("mouseleave", (event) => {
+    if (!finePointer || event.clientY > 0 || feedbackSeen || contactStarted || Date.now() - feedbackStartedAt < 15000) return;
+    if (document.visibilityState !== "visible" || document.body.classList.contains("menu-open") || document.querySelector("dialog[open]") || document.activeElement?.matches("input, textarea, select")) return;
+    openExitFeedback();
+  });
+  const updateFeedbackDraft = () => {
+    if (!feedbackWhatsApp) return;
+    const parts = ["Hi Hasnain, I visited your portfolio."];
+    if (feedbackReason?.value) parts.push(`Reason: ${feedbackReason.value}`);
+    if (feedbackNote?.value.trim()) parts.push(`Feedback: ${feedbackNote.value.trim()}`);
+    const hasFeedback = parts.length > 1;
+    if (!hasFeedback) parts.push("I'd like to chat about working together.");
+    feedbackWhatsApp.href = `https://wa.me/923033091956?text=${encodeURIComponent(parts.join("\n\n"))}`;
+    feedbackWhatsApp.textContent = hasFeedback ? "Share feedback on WhatsApp ↗" : "Message me on WhatsApp ↗";
+  };
+  feedbackReason?.addEventListener("change", updateFeedbackDraft);
+  feedbackNote?.addEventListener("input", updateFeedbackDraft);
+  document.querySelectorAll('a[href^="https://wa.me/"], a[href^="mailto:"], a[href^="tel:"]').forEach((link) => {
+    link.addEventListener("click", markContactStarted);
+  });
+  contactForm?.addEventListener("input", markContactStarted);
   const contactStatus = document.querySelector("#contactStatus");
   const trackContact = (method) => {
     if (typeof window.gtag !== "function") return;

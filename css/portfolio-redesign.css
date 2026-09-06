@@ -4657,3 +4657,25 @@ img {
 @media (prefers-reduced-motion: reduce) {
   .contact-bubble__toggle, .contact-bubble__toggle svg, .contact-bubble__actions a { transition: none; }
 }
+/* Optional exit feedback */
+body.feedback-open { overflow: hidden; }
+.exit-feedback-trigger { display: block; margin: 0 auto; padding: 20px 24px 32px; border: 0; color: var(--paper); background: transparent; font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 5px; }
+.exit-feedback { width: min(540px, calc(100% - 32px)); max-height: calc(100dvh - 40px); margin: auto; padding: clamp(24px, 5vw, 42px); border: 1px solid #46515c; border-radius: 22px; color: var(--paper); background: #101922; box-shadow: 0 30px 100px #0008; overflow-y: auto; }
+.exit-feedback::backdrop { background: #050a12b8; backdrop-filter: blur(6px); }
+.exit-feedback__close { position: absolute; right: 12px; top: 10px; width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; color: var(--paper); font-size: 28px; cursor: pointer; }
+.exit-feedback .eyebrow { margin: 0 32px 22px 0; color: var(--acid); }
+.exit-feedback h2 { margin: 0 0 20px; font-size: clamp(2.1rem, 6vw, 3.2rem); line-height: 1.05; letter-spacing: -.05em; }
+.exit-feedback h2 em { color: var(--acid); font-family: var(--serif); font-weight: 400; }
+.exit-feedback > p:not(.eyebrow) { color: #b9c4cf; line-height: 1.6; }
+.exit-feedback label { display: block; margin: 20px 0 8px; font-size: .85rem; font-weight: 600; }
+.exit-feedback label span { color: #a5b3c2; font-weight: 400; }
+.exit-feedback select, .exit-feedback textarea { width: 100%; min-width: 0; padding: 12px; border: 1px solid #536170; border-radius: 9px; color: #f4f6f8; background: #0a111a; font: inherit; font-size: 16px; }
+.exit-feedback textarea { resize: vertical; }
+.exit-feedback__whatsapp { display: block; margin-top: 20px; padding: 16px; border-radius: 10px; background: var(--acid); color: #101922; text-align: center; font-weight: 750; }
+.exit-feedback .exit-feedback__note { margin: 10px 0 16px; font-size: .76rem; }
+.exit-feedback__phone { display: block; padding: 8px; color: var(--paper); text-align: center; }
+.exit-feedback__dismiss { display: block; min-height: 44px; margin: 8px auto 0; border: 0; background: transparent; color: #b9c4cf; font: inherit; font-size: .85rem; text-decoration: underline; cursor: pointer; }
+.exit-feedback :focus-visible, .exit-feedback-trigger:focus-visible { outline: 2px solid var(--acid); outline-offset: 4px; }
+@media (max-width: 760px) {
+  .exit-feedback-trigger { margin-bottom: calc(100px + env(safe-area-inset-bottom)); }
+}

@@ -646,6 +646,28 @@
       </footer>
     </div>
 
+    <button class="exit-feedback-trigger" type="button" data-open-exit-feedback>Have a suggestion? Share feedback ↗</button>
+    <dialog class="exit-feedback" aria-labelledby="exit-feedback-title" aria-describedby="exit-feedback-description">
+      <button class="exit-feedback__close" type="button" data-close-exit-feedback aria-label="Close feedback prompt" autofocus>×</button>
+      <p class="eyebrow">Thanks for stopping by</p>
+      <h2 id="exit-feedback-title">Before you go,<br />a quick <em>thought?</em></h2>
+      <p id="exit-feedback-description">Not ready to get in touch? That's completely fine. I'd love to know what would make this portfolio more helpful for you.</p>
+      <label for="exit-feedback-reason">What brought you here today? <span>(optional)</span></label>
+      <select id="exit-feedback-reason">
+        <option value="">Choose a reason</option>
+        <option>Just exploring your work</option>
+        <option>Looking for different experience or skills</option>
+        <option>I'd like more project details</option>
+        <option>Not ready to start a project yet</option>
+        <option>Something else</option>
+      </select>
+      <label for="exit-feedback-note">Anything I could improve? <span>(optional)</span></label>
+      <textarea id="exit-feedback-note" rows="3" maxlength="1000" placeholder="A quick thought goes a long way..."></textarea>
+      <a class="exit-feedback__whatsapp" data-exit-whatsapp data-contact-action="whatsapp-exit" href="https://wa.me/923033091956?text=Hi%20Hasnain%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20chat." target="_blank" rel="noreferrer">Message me on WhatsApp ↗</a>
+      <p class="exit-feedback__note">Your feedback is added to a WhatsApp draft. You choose whether to send it.</p>
+      <a class="exit-feedback__phone" href="tel:+923033091956">Or call +92 303 3091956</a>
+      <button class="exit-feedback__dismiss" type="button" data-close-exit-feedback>No thanks, keep browsing</button>
+    </dialog>
     <script src="./js/portfolio-redesign.js" defer></script>
   </body>
 </html>
