@@ -23,12 +23,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Manrope:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 
-    <!-- JSON-LD: Article structured data for AI citation -->
+    <!-- Structured data describing the visible article -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "SaaS Engineering Insights by Hasnain Qureshi",
+      "headline": "React, Next.js and SaaS Engineering Questions",
       "description": "Practical answers on React, Next.js, Node.js, SQL, SaaS architecture, performance and real-time systems.",
       "url": "https://hasnainqureshi.online/insights/",
       "author": {
@@ -47,7 +47,7 @@
         "url": "https://hasnainqureshi.online/"
       },
       "datePublished": "2026-02-28",
-      "dateModified": "2026-09-07"
+      "dateModified": "2026-09-22"
     }
     </script>
 
@@ -151,7 +151,7 @@
       .toc a:hover { border-color: var(--accent); color: var(--text); text-decoration: none; }
 
       /* Q&A entries */
-      .insights-list { display: grid; gap: 48px; padding-bottom: 80px; }
+      .insights-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; padding-bottom: 80px; }
 
       .qa-card {
         border-left: 3px solid var(--accent);
@@ -174,6 +174,7 @@
       }
       .qa-meta {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         gap: 12px;
         margin-top: 14px;
@@ -236,6 +237,13 @@
         .qa-card h2 { font-size: 1.1rem; }
       }
     </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W0624M03ZJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-W0624M03ZJ");
+    </script>
   </head>
   <body>
     <header class="header">
@@ -249,10 +257,11 @@
       <section class="page-hero">
         <div class="container">
           <p class="eyebrow">Full-Stack Engineering Insights</p>
-          <h1>Answers Founders and Engineers Actually Need</h1>
+          <h1>React, Next.js and SaaS Engineering Questions</h1>
           <p class="hero-sub">
             Direct answers on React, Next.js, Node.js, SQL, multi-tenant SaaS, real-time systems and product engineering—from 4+ years of building and shipping production software.
           </p>
+          <p class="hero-sub">By <a href="/">Hasnain Qureshi</a> &middot; Updated <time datetime="2026-09-22">22 September 2026</time></p>
           <nav class="toc" aria-label="Topics">
             <a href="#full-stack-scale">Full-stack &amp; Scale</a>
             <a href="#nextjs-perf">Next.js Performance</a>
@@ -286,7 +295,7 @@
 
           <article class="qa-card">
             <h2>When should a SaaS product switch from REST to GraphQL?</h2>
-            <p>Switch to GraphQL when your frontend has multiple clients (web, mobile, third-party) fetching the same data with different shape requirements, causing over-fetching or under-fetching. If you're maintaining 10+ REST endpoints that return large payloads and your mobile app only uses 20% of each — that's the signal. GraphQL pays off in SaaS dashboards where each widget queries different fields. It adds schema complexity upfront but eliminates API versioning and reduces network payload. For simple CRUD-heavy MVPs, REST remains faster to ship and easier to debug.</p>
+            <p>Consider GraphQL when multiple clients need different views of related data and maintaining those views through REST has become difficult. The tradeoff is additional schema, resolver, caching and authorization work. A simple CRUD product can remain on REST; endpoint count alone is not a reason to migrate. GraphQL also requires an API evolution strategy as clients and fields change.</p>
             <div class="qa-meta">
               <span class="tag">GraphQL</span>
               <span class="tag">REST</span>
@@ -300,7 +309,7 @@
 
           <article class="qa-card">
             <h2>How do you structure a multi-tenant MongoDB database for SaaS?</h2>
-            <p>The most practical pattern for early-stage SaaS is the <strong>shared database, isolated collections</strong> approach: every document contains a <code>tenantId</code> field and every query is scoped to it. Use compound indexes on <code>(tenantId, createdAt)</code> for performance. This keeps operational overhead low (one DB cluster) while maintaining logical isolation. For high-compliance or enterprise-grade products, separate databases per tenant provide true isolation but cost more. Add a middleware layer in Express that injects <code>tenantId</code> from the JWT on every request so no query ever runs unscoped.</p>
+            <p>One option is a shared database with shared collections: documents carry a tenant identifier, and application reads and writes must enforce the authorized tenant scope. Indexes should reflect the actual tenant-scoped queries. A tenant identifier in a token is not sufficient by itself; the server must validate identity, membership and permissions. Separate databases are another option when operational or isolation requirements justify them.</p>
             <div class="qa-meta">
               <span class="tag">MongoDB</span>
               <span class="tag">Multi-Tenant</span>
@@ -311,7 +320,7 @@
 
           <article class="qa-card">
             <h2>How do you implement real-time features with Socket.io in a production SaaS?</h2>
-            <p>In production, Socket.io needs a Redis adapter (socket.io-redis) so that events broadcast from one Node.js instance reach clients connected to others — critical when you're behind a load balancer. Use rooms to scope events per tenant or user. Define a strict event schema (even a simple TypeScript union type) to avoid silent bugs from typos. Disconnect idle connections after a timeout and emit heartbeats. For ChatKnot's real-time chat, we maintained persistent rooms per conversation and used acknowledgements to confirm delivery — reducing dropped messages to near zero under load.</p>
+            <p>When Socket.IO runs across multiple servers, a compatible adapter can distribute events between instances. The <a href="https://socket.io/docs/v4/redis-adapter/">Redis adapter</a> uses Pub/Sub for that coordination; it is not a durable message store. Authorize room membership and validate event payloads. Design persistence, retries and duplicate handling around your product requirements, because <a href="https://socket.io/docs/v4/delivery-guarantees/">Socket.IO defaults to at-most-once delivery</a>. My <a href="/project-case-study-1.html#engineering">ChatKnot case study</a> shows where live events and persistent application data fit in the product.</p>
             <div class="qa-meta">
               <span class="tag">Socket.io</span>
               <span class="tag">Real-time</span>
@@ -336,7 +345,7 @@
 
           <article class="qa-card">
             <h2>What makes a Next.js app slow and how do you fix it?</h2>
-            <p>The most common Next.js performance killers are: (1) blocking <code>getServerSideProps</code> on every request for data that rarely changes — fix with ISR (<code>revalidate</code>) or static generation; (2) importing entire libraries when you only need one function (use barrel imports sparingly, prefer named imports); (3) unoptimized images not using <code>&lt;Image /&gt;</code> from <code>next/image</code>; (4) missing <code>font-display: swap</code> on Google Fonts; (5) large client bundles caused by client components that should be server components. Run <code>npx @next/bundle-analyzer</code> to find the heaviest modules, then code-split or lazy-load them.</p>
+            <p>Measure the slow route before choosing a fix. Check server response time, large images, client-side JavaScript and third-party scripts separately. Rendering and caching choices depend on whether data is public, personalized or frequently updated. For JavaScript weight, use the tools in the <a href="https://nextjs.org/docs/app/guides/package-bundling">Next.js package bundling guide</a> to identify expensive dependencies before changing imports or splitting components. Repeat the measurement after each change.</p>
             <div class="qa-meta">
               <span class="tag">Next.js</span>
               <span class="tag">Performance</span>
@@ -347,7 +356,7 @@
 
           <article class="qa-card">
             <h2>How do you reduce Time to First Byte (TTFB) in a Next.js SaaS app?</h2>
-            <p>TTFB in Next.js is dominated by four factors: server region proximity to users, database query latency, server-side rendering work, and cold starts (on serverless). Fix it by: deploying to a region closest to your user cluster; adding query-level indexes and caching frequent DB queries in Redis; using ISR or SSG for pages that don't need per-request data; and keeping serverless function bundle sizes small to reduce cold start time. CDN-caching API responses where safe also cuts TTFB dramatically. Vercel's Edge Runtime can drop TTFB under 50ms for lightweight SSR pages by running computation at the network edge.</p>
+            <p>Investigate the time spent in network requests, database access and server rendering. Keep the application and database appropriately located, reduce avoidable queries and cache only when the data can safely be reused. Public pages and personalized dashboards have different requirements. Moving execution to an edge location does not guarantee a fast response if it still waits on a distant database.</p>
             <div class="qa-meta">
               <span class="tag">TTFB</span>
               <span class="tag">Next.js</span>
@@ -360,8 +369,8 @@
           <p class="topic-divider" id="mvp">MVP &amp; Technical Debt Strategy</p>
 
           <article class="qa-card">
-            <h2>How do you build a SaaS MVP in 3 weeks without creating technical debt?</h2>
-            <p>The key is ruthless scope discipline and choosing boring technology. Use a monorepo with Next.js (frontend + API routes) and MongoDB for fast iteration. Define your data schema before writing a single route — schema changes kill velocity. Implement authentication on day one (NextAuth or Clerk), never roll your own. Write thin service functions (not fat controllers) so business logic is testable without a server. Avoid premature abstraction: don't build a plugin system until three customers ask for it. Document decisions in a short ADR (Architecture Decision Record). This gives you a clean base to hand to a team or scale yourself without rewrites at 6 months.</p>
+            <h2>How do you scope a maintainable SaaS MVP?</h2>
+            <p>Start with one user outcome and map the complete workflow required to reach it. Agree on access rules, data ownership, acceptance criteria and handover expectations before expanding the feature list. Choose tools the team can maintain, document important tradeoffs and test the core workflow. A deadline needs a scope assessment; no fixed number of weeks guarantees a maintainable product. See my <a href="/services/saas-mvp-development/">SaaS MVP development scope</a> for what to include in an initial brief.</p>
             <div class="qa-meta">
               <span class="tag">MVP</span>
               <span class="tag">Startup</span>
@@ -372,7 +381,7 @@
 
           <article class="qa-card">
             <h2>How should a founder budget for a SaaS MVP?</h2>
-            <p>A focused SaaS MVP with core features (auth, billing, dashboard, 2–3 key workflows) typically costs $8,000–$25,000 at senior freelancer rates for a 4–8 week engagement, depending on complexity. Infrastructure costs for early-stage SaaS (Vercel/Railway + MongoDB Atlas M2 + Resend email + Stripe) run roughly $50–$150/month until you hit meaningful scale. The biggest cost variable is scope clarity — vague requirements add 30–50% to timelines. The lowest-cost path: one senior full-stack engineer (not an agency) who owns the full stack, uses proven SaaS boilerplates, and ships iteratively rather than speccing everything upfront.</p>
+            <p>Separate development effort from recurring hosting, database, email, payments and maintenance costs. Estimate the core workflow first, then account for integrations, migration, security requirements and release work. Ask for assumptions and exclusions alongside the quote. I provide a project-specific estimate after reviewing the brief; this page does not promise a universal price or delivery timeline.</p>
             <div class="qa-meta">
               <span class="tag">MVP Cost</span>
               <span class="tag">SaaS</span>
@@ -402,6 +411,7 @@
         <div class="container">
           <h2>Have a product challenge I didn't answer?</h2>
           <p>See how these decisions appear in <a href="/project-case-study-1.html">ChatKnot</a>, <a href="/project-case-study-2.html">Cambridge Research Park</a>, and <a href="/project-case-study-3.html">1540 Broadway</a>, or share what you need to build.</p>
+          <p>Explore <a href="/services/saas-mvp-development/">SaaS MVP development</a> or <a href="/services/nextjs-development/">Next.js and headless WordPress development</a>.</p>
           <a class="btn" href="/#contact">Contact a Full-Stack Developer</a>
         </div>
       </div>
