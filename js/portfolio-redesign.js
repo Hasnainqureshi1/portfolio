@@ -8,20 +8,22 @@
 
   const intro = document.querySelector("[data-intro]");
   const introOutput = intro?.querySelector("output");
-  const introSeen = sessionStorage.getItem("hq-intro-seen") === "1";
+  let introSeen = false;
+  try { introSeen = sessionStorage.getItem("hq-intro-seen") === "1"; } catch { /* Storage is optional. */ }
 
   const finishIntro = () => {
     if (!intro || intro.classList.contains("is-complete")) return;
     intro.style.setProperty("--load", "100%");
     if (introOutput) introOutput.textContent = "100%";
     intro.classList.add("is-complete");
-    sessionStorage.setItem("hq-intro-seen", "1");
+    try { sessionStorage.setItem("hq-intro-seen", "1"); } catch { /* In-memory animation only. */ }
   };
 
   if (intro) {
     if (reducedMotion || introSeen) {
       finishIntro();
     } else {
+      intro.classList.add("is-running");
       const startedAt = performance.now();
       const duration = 820;
       const animateIntro = (now) => {
@@ -373,6 +375,7 @@
   const setContactBubble = (open, returnFocus = false) => {
     if (!contactBubble || !contactBubbleToggle) return;
     contactBubble.classList.toggle("is-open", open);
+    contactBubble.querySelector(".contact-bubble__actions").inert = !open;
     contactBubbleToggle.setAttribute("aria-expanded", String(open));
     contactBubbleToggle.setAttribute("aria-label", open ? "Close quick contact links" : "Open quick contact links");
     if (returnFocus) contactBubbleToggle.focus();
@@ -428,7 +431,7 @@
     if (event.target === exitFeedback && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) exitFeedback.close();
   });
   document.documentElement.addEventListener("mouseleave", (event) => {
-    if (!finePointer || event.clientY > 0 || feedbackSeen || contactStarted || Date.now() - feedbackStartedAt < 15000) return;
+    if (!finePointer || window.scrollY < window.innerHeight || event.clientY > 0 || feedbackSeen || contactStarted || Date.now() - feedbackStartedAt < 60000) return;
     if (document.visibilityState !== "visible" || document.body.classList.contains("menu-open") || document.querySelector("dialog[open]") || document.activeElement?.matches("input, textarea, select")) return;
     openExitFeedback();
   });
@@ -444,25 +447,29 @@
   };
   feedbackReason?.addEventListener("change", updateFeedbackDraft);
   feedbackNote?.addEventListener("input", updateFeedbackDraft);
-  document.querySelectorAll('a[href^="https://wa.me/"], a[href^="mailto:"], a[href^="tel:"]').forEach((link) => {
+  document.querySelectorAll('a[href^="https://wa.me/"], a[href^="mailto:"], a[href^="tel:"], a[data-contact-action="resume"]').forEach((link) => {
     link.addEventListener("click", markContactStarted);
   });
   contactForm?.addEventListener("input", markContactStarted);
   const contactStatus = document.querySelector("#contactStatus");
-  const trackContact = (method) => {
+  const trackContact = (method, eventName = "contact_click") => {
     if (typeof window.gtag !== "function") return;
-    window.gtag("event", "generate_lead", { method, page_location: window.location.href });
+    window.gtag("event", eventName, { method, page_location: window.location.href });
   };
 
   document.querySelectorAll("[data-contact-action]").forEach((link) => {
-    link.addEventListener("click", () => trackContact(link.dataset.contactAction));
+    link.addEventListener("click", () => {
+      const method = link.dataset.contactAction;
+      const eventName = method === "resume" ? "resume_view" : /^(github|linkedin)/.test(method) ? "profile_click" : "contact_click";
+      trackContact(method, eventName);
+    });
   });
 
   contactForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
     const submitButton = contactForm.querySelector('button[type="submit"]');
     if (submitButton) submitButton.disabled = true;
-    if (contactStatus) contactStatus.textContent = "Sending your project brief...";
+    if (contactStatus) contactStatus.textContent = "Sending your message...";
 
     try {
       const response = await fetch(contactForm.action, {
@@ -472,7 +479,7 @@
       });
       if (!response.ok) throw new Error("Form submission failed");
       contactForm.reset();
-      trackContact("project-form");
+      trackContact("contact-form", "generate_lead");
       if (contactStatus) {
         contactStatus.textContent =
           "Thanks — your message is on its way. I will reply personally.";

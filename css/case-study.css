@@ -13,6 +13,9 @@ html { scroll-behavior: smooth; }
 body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); }
 a { color: inherit; }
 img { display: block; width: 100%; height: auto; }
+.architecture-flow { display: grid; gap: 10px; margin: 24px 0; padding: 0; list-style-position: inside; }
+.architecture-flow li { padding: 16px 20px; border: 1px solid var(--line); border-left: 4px solid var(--coral); border-radius: 6px; background: white; }
+.case-section { scroll-margin-top: 24px; }
 .skip-link { position: fixed; left: 16px; top: -80px; z-index: 10; padding: 12px 16px; background: var(--acid); }
 .skip-link:focus { top: 16px; }
 .case-nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px clamp(20px, 5vw, 80px); color: white; background: var(--ink); }

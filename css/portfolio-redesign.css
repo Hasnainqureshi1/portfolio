@@ -89,6 +89,8 @@ img {
 
 /* Encoded reveal: short, branded and non-blocking. */
 .intro {
+  visibility: hidden;
+  pointer-events: none;
   position: fixed;
   inset: 0;
   z-index: 999;
@@ -110,6 +112,15 @@ img {
   visibility: hidden;
   pointer-events: none;
   clip-path: inset(0 0 100% 0);
+}
+
+/* The intro only appears after JavaScript starts it, and always clears itself. */
+.intro.is-running:not(.is-complete) {
+  visibility: visible;
+  animation: intro-failsafe 1.8s steps(1, end) forwards;
+}
+@keyframes intro-failsafe {
+  to { visibility: hidden; clip-path: inset(0 0 100% 0); }
 }
 
 .intro__mark {
@@ -3169,8 +3180,8 @@ img {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(38px);
+  opacity: 1;
+  transform: none;
   transition:
     opacity 0.8s var(--ease-out),
     transform 1s var(--ease-out);
@@ -4678,4 +4689,41 @@ body.feedback-open { overflow: hidden; }
 .exit-feedback :focus-visible, .exit-feedback-trigger:focus-visible { outline: 2px solid var(--acid); outline-offset: 4px; }
 @media (max-width: 760px) {
   .exit-feedback-trigger { margin-bottom: calc(100px + env(safe-area-inset-bottom)); }
+}
+/* Hiring audit: readable proof, compact supporting sections and direct actions. */
+.hero { min-height: 0; }
+.hero h1 { font-size: clamp(3rem, 4.7vw, 5.2rem); }
+.hero h1 em { font-size: .66em; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero__actions .button { padding: 18px 22px; font-size: .78rem; }
+.work .case__copy p { font-size: 1rem; line-height: 1.65; }
+.work .case__meta { font-size: .7rem; line-height: 1.5; }
+.work .case__copy li { font-size: .75rem; }
+.work .case__result span { font-size: .7rem; }
+.work .case__result strong { font-size: .95rem; line-height: 1.5; }
+.work .case__link { font-size: .75rem; line-height: 1.5; }
+.work .case__copy .project-disclosure { margin: 0 0 16px; color: var(--acid); font-size: .8rem; }
+.expertise, .services, .process, .manifesto { padding-top: 64px; padding-bottom: 64px; }
+.expertise-card { min-height: 0; padding: 24px; }
+.expertise-card h3 { font-size: 1.2rem; }
+.expertise-card p { font-size: .95rem; }
+.expertise__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.manifesto__copy h2 { font-size: clamp(2rem, 3.5vw, 3.5rem); }
+.role time, .role small { font-size: .8rem; line-height: 1.6; }
+.contact-form label, .form-status, .form-note { font-size: .9rem; }
+.case__media:focus-visible, .button:focus-visible { outline: 3px solid var(--cyan); outline-offset: 5px; }
+@media (max-width: 760px) {
+  .hero h1 { font-size: clamp(2.7rem, 10vw, 3.6rem); }
+  .hero h1 em { font-size: .7em; }
+  .hero__actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero__actions .button { min-width: 0; padding: 16px 12px; font-size: .7rem; }
+  .hero__actions .button:first-child { grid-column: 1 / -1; }
+  .hero-stage { display: none; }
+  .expertise__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .expertise-card { padding: 18px; }
+  .expertise-card > span { display: none; }
+  .expertise-card h3 { margin-top: 12px; }
+}
+@media (max-width: 420px) {
+  .expertise__grid { grid-template-columns: 1fr; }
 }

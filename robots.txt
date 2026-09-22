@@ -1,67 +1,8 @@
-# ============================================================
-# robots.txt — hasnainqureshi.online
-# Updated: 2026-08-24
 # Public portfolio crawl policy
-# ============================================================
-
-# ----- Default: Allow all -----
 User-agent: *
 Allow: /
 Disallow: /node_modules/
 Disallow: /.git/
 Disallow: /api/
-Disallow: /project-layout-options.html
 
-# Prioritize key GEO pages
-Allow: /insights/
-Allow: /llms.txt
-
-# ----- OpenAI GPTBot (ChatGPT citations) -----
-User-agent: GPTBot
-Allow: /
-Allow: /insights/
-Allow: /llms.txt
-
-# ----- Perplexity AI -----
-User-agent: PerplexityBot
-Allow: /
-Allow: /insights/
-Allow: /llms.txt
-
-# ----- Google (Gemini / SGE) -----
-User-agent: Googlebot
-Allow: /
-Allow: /insights/
-Allow: /llms.txt
-
-User-agent: Google-Extended
-Allow: /
-Allow: /insights/
-
-# ----- Anthropic Claude -----
-User-agent: ClaudeBot
-Allow: /
-Allow: /insights/
-Allow: /llms.txt
-
-# ----- Meta AI -----
-User-agent: meta-externalagent
-Allow: /
-Allow: /insights/
-
-# ----- Common research / index bots -----
-User-agent: CCBot
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-Allow: /insights/
-
-# ----- Sitemaps -----
 Sitemap: https://hasnainqureshi.online/sitemap.xml
-
-# ----- AI Discovery -----
-# LLM agent map: https://hasnainqureshi.online/llms.txt
