@@ -1,0 +1,26 @@
+/* AI website checker. Loads after property-service.css, brief-builder.css and health-check.css. */
+.source-form { max-width: 980px; }
+.source-steps { margin: 0 0 24px; padding-left: 20px; max-width: 75ch; color: var(--muted); font-size: .9rem; }
+.source-steps li + li { margin-top: 6px; }
+kbd { padding: 1px 6px; border: 1px solid #b9beb2; border-bottom-width: 2px; background: #fbfaf6; font: .78rem ui-monospace, Consolas, monospace; color: var(--ink); }
+.source-form > label { display: block; margin-bottom: 8px; font-size: .8rem; }
+.source-form textarea { display: block; width: 100%; min-height: 220px; padding: 14px 16px; border: 1px solid var(--ink); border-radius: 0; background: #fbfaf6; color: var(--ink); font: .82rem/1.6 ui-monospace, Consolas, monospace; resize: vertical; }
+.source-form textarea:focus-visible { outline: 3px solid #e9c3a6; outline-offset: 3px; }
+.source-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; margin-top: 16px; }
+.source-upload { cursor: pointer; text-decoration: underline; }
+.source-upload input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.source-upload:focus-within { outline: 3px solid var(--accent); outline-offset: 5px; }
+
+.ai-meter { display: grid; gap: 8px; align-self: start; padding: 22px; border: 1px solid var(--ink); background: #fbfaf6; }
+.ai-meter-value { font: 3.6rem/1 var(--serif); color: var(--tone, var(--ink)); }
+.ai-meter-label { font-size: .8rem; color: var(--muted); }
+.ai-meter-bar { position: relative; height: 8px; margin-top: 6px; background: linear-gradient(90deg, var(--good), var(--average), var(--poor)); }
+.ai-meter-bar > span { position: absolute; top: -5px; width: 3px; height: 18px; margin-left: -1px; background: var(--ink); }
+.ai-meter-scale { display: flex; justify-content: space-between; font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+
+.ai-notice { max-width: 80ch; padding: 16px 20px; border-left: 3px solid var(--average); background: #f6eddc; font-size: .9rem; }
+.issue-examples { display: grid; gap: 4px; margin: 10px 0 0; padding: 0; list-style: none; }
+.issue-examples li { max-width: 80ch; padding: 6px 10px; background: #ecebe4; font: .76rem/1.5 ui-monospace, Consolas, monospace; overflow-wrap: anywhere; }
+.issue-fix { color: var(--ink) !important; }
+.issue-fix strong { font-weight: 600; }
+.built-list li::before { background: var(--muted); }

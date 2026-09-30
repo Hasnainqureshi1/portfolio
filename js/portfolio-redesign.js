@@ -91,44 +91,44 @@
   }
 
   const textRevealSelectors = [
-    ".hero__copy > *",
-    ".hero__edge > *",
+    ".hero_copy > *",
+    ".hero_edge > *",
     ".proof-strip > span",
-    ".word-bridge__intro > *",
-    ".word-bridge__path > li",
-    ".manifesto__label",
-    ".manifesto__copy h2",
-    ".manifesto__aside > *",
-    ".manifesto__ledger > span",
+    ".word-bridge_intro > *",
+    ".word-bridge_path > li",
+    ".manifesto_label",
+    ".manifesto_copy h2",
+    ".manifesto_aside > *",
+    ".manifesto_ledger > span",
     ".section-intro > *",
-    ".case__copy > *",
+    ".case_copy > *",
     ".more-work > *",
-    ".stack-story__head > *",
+    ".stack-story_head > *",
     ".stack-chapter > *",
     ".stack-proof > *",
     ".stack-cta",
-    ".process__intro > *",
-    ".process__steps > li",
-    ".process__cta > *",
-    ".experience__head > *",
+    ".process_intro > *",
+    ".process_steps > li",
+    ".process_cta > *",
+    ".experience_head > *",
     ".role > *",
-    ".contact__intro > *",
-    ".contact__promise > *",
-    ".contact__links > *",
+    ".contact_intro > *",
+    ".contact_promise > *",
+    ".contact_links > *",
     ".contact-form > *",
     ".footer > *"
   ];
   const textRevealItems = [...new Set(document.querySelectorAll(textRevealSelectors.join(",")))].filter(
-    (item) => !(mobileAppLayout && item.closest(".case__copy"))
+    (item) => !(mobileAppLayout && item.closest(".case_copy"))
   );
 
   textRevealItems.forEach((item, index) => {
     item.classList.add("scroll-text");
     item.style.setProperty("--text-delay", `${(index % 4) * 65}ms`);
 
-    if (item.matches("h1, h2, h3, .manifesto__copy, .case__title")) {
+    if (item.matches("h1, h2, h3, .manifesto_copy, .case_title")) {
       item.classList.add("scroll-text--heading");
-    } else if (item.matches(".eyebrow, small, .case__meta, .case__result, .manifesto__label")) {
+    } else if (item.matches(".eyebrow, small, .case_meta, .case_result, .manifesto_label")) {
       item.classList.add("scroll-text--meta");
     }
   });
@@ -247,7 +247,7 @@
     stackChapters.forEach((chapter, chapterIndex) => {
       chapter.classList.toggle("is-active", chapterIndex === safeIndex);
     });
-    stackStory?.querySelectorAll(".stack-console__rail span").forEach((item, itemIndex) => {
+    stackStory?.querySelectorAll(".stack-console_rail span").forEach((item, itemIndex) => {
       item.classList.toggle("is-current", itemIndex === safeIndex);
     });
     if (stackStatus) stackStatus.textContent = stackLabels[safeIndex] || stackLabels[0];
@@ -362,20 +362,20 @@
     image.addEventListener(
       "error",
       () => {
-        image.closest(".case__media")?.classList.add("has-image-error");
+        image.closest(".case_media")?.classList.add("has-image-error");
       },
       { once: true }
     );
   });
 
   const contactBubble = document.querySelector("[data-contact-bubble]");
-  const contactBubbleToggle = contactBubble?.querySelector(".contact-bubble__toggle");
-  const contactBubbleLinks = contactBubble?.querySelectorAll(".contact-bubble__actions a") || [];
+  const contactBubbleToggle = contactBubble?.querySelector(".contact-bubble_toggle");
+  const contactBubbleLinks = contactBubble?.querySelectorAll(".contact-bubble_actions a") || [];
 
   const setContactBubble = (open, returnFocus = false) => {
     if (!contactBubble || !contactBubbleToggle) return;
     contactBubble.classList.toggle("is-open", open);
-    contactBubble.querySelector(".contact-bubble__actions").inert = !open;
+    contactBubble.querySelector(".contact-bubble_actions").inert = !open;
     contactBubbleToggle.setAttribute("aria-expanded", String(open));
     contactBubbleToggle.setAttribute("aria-label", open ? "Close quick contact links" : "Open quick contact links");
     if (returnFocus) contactBubbleToggle.focus();
@@ -390,7 +390,7 @@
     if (event.key === "Escape" && contactBubble?.classList.contains("is-open")) setContactBubble(false, true);
   });
 
-  const contactForm = document.querySelector("#contactForm");
+  const contactForm = document.querySelector("#contact-form");
   const exitFeedback = document.querySelector(".exit-feedback");
   const feedbackReason = document.querySelector("#exit-feedback-reason");
   const feedbackNote = document.querySelector("#exit-feedback-note");
@@ -451,7 +451,7 @@
     link.addEventListener("click", markContactStarted);
   });
   contactForm?.addEventListener("input", markContactStarted);
-  const contactStatus = document.querySelector("#contactStatus");
+  const contactStatus = document.querySelector("#contact-status");
   const trackContact = (method, eventName = "contact_click") => {
     if (typeof window.gtag !== "function") return;
     window.gtag("event", eventName, { method, page_location: window.location.href });
@@ -482,7 +482,7 @@
       trackContact("contact-form", "generate_lead");
       if (contactStatus) {
         contactStatus.textContent =
-          "Thanks — your message is on its way. I will reply personally.";
+          "Thanks - your message is on its way. I will reply personally.";
       }
     } catch (error) {
       if (contactStatus) {

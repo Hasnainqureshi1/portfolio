@@ -1,0 +1,30 @@
+.guide-page { --paper: #f4f5f2; --ink: #133d52; --acid: #d3e98b; --coral: #bc6047; --line: rgba(19, 61, 82, .18); }
+.guide-page .case-nav { background: var(--ink); }
+.guide-page .case-hero { max-width: 1500px; margin: 0 auto; padding-block: clamp(60px, 8vw, 110px) clamp(45px, 6vw, 80px); }
+.guide-page h1 { max-width: 16ch; font-size: clamp(3rem, 7vw, 7.5rem); line-height: .98; }
+.guide-page .case-hero_intro { max-width: 850px; color: #344d57; }
+.guide-breadcrumb { margin-bottom: 40px; color: #48606b; font-size: .85rem; }
+.guide-breadcrumb a { text-underline-offset: 4px; }
+.guide-byline { max-width: 740px; margin: 26px 0 0; color: #48606b; line-height: 1.6; }
+.guide-toc { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
+.guide-toc a { padding: 11px 15px; border: 1px solid var(--line); text-decoration: none; font-size: .82rem; font-weight: 700; }
+.guide-toc a:hover { background: #e4ebe6; }
+.guide-body { padding-top: 0; }
+.guide-page .case-section h2 { max-width: 14ch; }
+.guide-page .case-section p { margin-top: 0; }
+.guide-page .case-section p + p { margin-top: 20px; }
+.guide-page .case-section a { text-underline-offset: 4px; }
+.guide-note { display: grid; gap: 7px; margin: 26px 0; padding: 22px 24px; border-left: 4px solid var(--coral); background: #fff; line-height: 1.6; }
+.guide-note strong { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; }
+.guide-note span { color: #344d57; }
+.guide-journeys { display: grid; gap: 10px; margin: 26px 0; }
+.guide-journeys > div { padding: 24px; border: 1px solid var(--line); background: #fff; }
+.guide-journeys span { color: var(--coral); font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.guide-journeys h3 { margin: 10px 0; font-size: 1.25rem; }
+.guide-journeys p { margin: 0; }
+.guide-checklist { margin: 24px 0 !important; padding: 0 !important; list-style: none; }
+.guide-checklist li { padding: 14px 0; border-top: 1px solid var(--line); }
+.guide-page .case-cta { background: var(--ink); }
+.guide-page a:focus-visible { outline: 3px solid #bc6047; outline-offset: 4px; }
+@media (max-width: 700px) { .guide-page .case-nav { flex-wrap: wrap; } .guide-page .case-section h2 { max-width: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

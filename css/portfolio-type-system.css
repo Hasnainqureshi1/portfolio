@@ -1,0 +1,293 @@
+@font-face {
+  font-family: Moderat;
+  src: url("/fonts/Moderat-Regular.woff2") format("woff2"),
+       url("/fonts/Moderat-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 300 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Moderat;
+  src: url("/fonts/Moderat-Medium.woff2") format("woff2"),
+       url("/fonts/Moderat-Medium.woff") format("woff");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Moderat;
+  src: url("/fonts/Moderat-Bold.woff2") format("woff2"),
+       url("/fonts/Moderat-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --font-family: Moderat, Arial, sans-serif;
+  --sans: var(--font-family);
+  --serif: var(--font-family);
+  --fs-title: 48px;
+  --lh-title: 54px;
+  --fs-small-title: 32px;
+  --lh-small-title: 38px;
+  --fs-scrolling: 26px;
+  --lh-scrolling: 32px;
+  --fs-body: 22px;
+  --lh-body: 28px;
+  --fs-small: 18px;
+  --lh-small: 22px;
+  --fs-cards: 16px;
+  --lh-cards: 20px;
+  --space-double: 128px;
+  --space-standard: 64px;
+  --space-half: 32px;
+  --page-x: var(--space-standard);
+  --section-y: var(--space-double);
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: 0.22px;
+  font-synthesis: none;
+}
+
+button, input, select, textarea { font-family: var(--font-family); }
+
+.hero h1,
+.section-intro h2,
+.experience_head h2,
+.manifesto_copy h2,
+.expertise_head h2,
+.services_head h2,
+.stack-story_head h2,
+.process_intro h2,
+.contact_intro h2,
+.exit-feedback h2 {
+  font-family: var(--font-family);
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.hero h1 em,
+.section-intro h2 em,
+.experience_head h2 em,
+.manifesto_copy h2 em,
+.expertise_head h2 em,
+.services_head h2 em,
+.stack-story_head h2 em,
+.process_intro h2 em,
+.contact_intro h2 em,
+.exit-feedback h2 em {
+  font-family: var(--font-family);
+  font-size: 1em;
+  line-height: inherit;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: inherit;
+}
+
+.case_copy h3,
+.work .case_copy h3 {
+  font-family: var(--font-family);
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.role h3,
+.process_steps h3,
+.stack-chapter h3,
+.service-card h3,
+.process_cta strong {
+  font-family: var(--font-family);
+  font-size: var(--fs-small-title);
+  line-height: var(--lh-small-title);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.expertise-card h3,
+.interface-window_body h4 {
+  font-family: var(--font-family);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  font-weight: 500;
+  letter-spacing: 0.18px;
+}
+
+.hero_lede,
+.manifesto_aside p,
+.section-intro > p:last-child,
+.expertise_head > p,
+.services_head > p,
+.stack-story_head > p:last-child,
+.process_intro > p:last-child,
+.contact_intro > p,
+.role p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: 0.22px;
+}
+
+.case_copy p,
+.work .case_copy p,
+.case_result strong,
+.work .case_result strong,
+.service-card p,
+.process_steps p,
+.stack-chapter p,
+.work .case_copy .project-disclosure {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  letter-spacing: 0.18px;
+}
+
+.expertise-card p {
+  font-size: var(--fs-cards);
+  line-height: var(--lh-cards);
+  letter-spacing: 0.16px;
+}
+
+.manifesto_ledger strong,
+.word-bridge_path strong {
+  font-size: var(--fs-scrolling);
+  line-height: var(--lh-scrolling);
+  letter-spacing: 0.26px;
+}
+
+.eyebrow,
+.brand-copy small,
+.hero_proof span,
+.proof-strip span,
+.case_meta,
+.work .case_meta,
+.case_result span,
+.work .case_result span,
+.case_copy li,
+.work .case_copy li,
+.expertise-card small,
+.expertise-card > span,
+.service-card > span,
+.role time,
+.role small,
+.process_steps small,
+.contact_promise span,
+.contact_promise b,
+.contact-form_head span {
+  font-size: var(--fs-cards);
+  line-height: var(--lh-cards);
+  letter-spacing: 0.16px;
+}
+
+.topnav a,
+.work .case_link,
+.service-card a,
+.contact_links a {
+  font-size: var(--fs-cards);
+  line-height: var(--lh-cards);
+  letter-spacing: 0.16px;
+}
+
+.top-cta,
+.button,
+.hero_actions .button,
+.contact-form button,
+.contact-form label,
+.contact_actions a {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  letter-spacing: 0.18px;
+}
+
+.brand-copy strong,
+.contact-form_head strong {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  letter-spacing: 0.18px;
+}
+
+.topnav.is-open a {
+  font-size: var(--fs-small-title);
+  line-height: var(--lh-small-title);
+  letter-spacing: 0;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  letter-spacing: 0.18px;
+}
+
+.expertise, .services, .process, .manifesto {
+  padding-top: var(--space-double);
+  padding-bottom: var(--space-double);
+}
+
+.hero { gap: var(--space-standard); }
+.section-intro, .expertise_head, .services_head, .stack-story_head,
+.process_intro, .contact, .manifesto { gap: var(--space-standard); }
+.section-intro, .expertise_head, .services_head { margin-bottom: var(--space-standard); }
+.case-list { gap: var(--space-double); }
+.role { gap: var(--space-standard); }
+.service-card, .expertise-card, .case_copy { padding: var(--space-half); }
+.service-card h3 { margin-top: var(--space-half); }
+.service-card p { margin-bottom: var(--space-half); }
+.process_steps li { gap: var(--space-half); }
+.contact_actions { gap: var(--space-half); }
+.hero_actions { gap: var(--space-half); }
+.topnav { gap: var(--space-half); }
+
+@media (max-width: 1279px) {
+  :root {
+    --fs-title: 36px;
+    --lh-title: 40px;
+    --fs-small-title: 26px;
+    --lh-small-title: 32px;
+    --fs-scrolling: 16px;
+    --lh-scrolling: 20px;
+    --fs-body: 16px;
+    --lh-body: 20px;
+    --fs-small: 14px;
+    --lh-small: 18px;
+    --fs-cards: 12px;
+    --lh-cards: 16px;
+    --space-double: 64px;
+    --space-standard: 32px;
+    --space-half: 16px;
+  }
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --fs-title: 24px;
+    --lh-title: 26px;
+    --fs-small-title: 20px;
+    --lh-small-title: 24px;
+    --fs-scrolling: 14px;
+    --lh-scrolling: 18px;
+    --fs-body: 14px;
+    --lh-body: 18px;
+    --fs-small: 14px;
+    --lh-small: 18px;
+    --fs-cards: 12px;
+    --lh-cards: 16px;
+    --space-double: 32px;
+    --space-standard: 16px;
+    --space-half: 8px;
+  }
+
+  .hero { gap: var(--space-standard); }
+  .service-card, .expertise-card, .case_copy { padding: var(--space-standard); }
+  .hero_actions { gap: var(--space-standard); }
+  .mobile-dock a small { font-size: var(--fs-cards); line-height: var(--lh-cards); letter-spacing: 0.16px; }
+}

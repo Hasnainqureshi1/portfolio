@@ -1,0 +1,69 @@
+/* Cost calculator. Uses the existing property service and brief builder styles. */
+.calculator-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  gap: clamp(30px, 5vw, 76px);
+  align-items: start;
+  padding-bottom: clamp(70px, 8vw, 116px);
+  border-top: 1px solid var(--line);
+}
+.calculator-form { min-width: 0; }
+.calculator-form .builder-step:first-of-type { padding-top: 36px; }
+.calculator-form .builder-step:last-of-type { border-bottom: 0; }
+.calculator-form .builder-step label > span { display: block; }
+.calculator-form .field-row label > span,
+.calculator-form label[for="cost-content"] > span { margin-top: 4px; font-size: .72rem; line-height: 1.5; }
+.calculator-form select { cursor: pointer; }
+.cost-type-options { grid-template-columns: 1fr 1fr; }
+.cost-type-options .type-option > span { min-height: 100%; }
+.cost-check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 20px; }
+.cost-check { display: flex !important; gap: 12px; align-items: flex-start; margin: 0 !important; padding: 14px; border: 1px solid #b9beb2; background: #fbfaf6; cursor: pointer; line-height: 1.45; }
+.cost-check:has(input:checked) { border-color: var(--ink); background: #e9ebe3; }
+.cost-check input { flex: 0 0 auto; margin: 3px 0 0; width: 18px; height: 18px; accent-color: var(--accent); }
+.cost-check span { margin: 0 !important; color: var(--muted); font-size: .78rem !important; }
+.cost-check strong { display: block; margin-bottom: 3px; color: var(--ink); font-size: .88rem; font-weight: 500; }
+.cost-check[hidden] { display: none !important; }
+.cost-submit { margin-top: 24px; }
+.cost-private { margin-top: 12px; }
+.cost-form-error { min-height: 0; margin-top: 10px; color: #8c342d; font-size: .83rem; }
+.cost-form-error:empty { display: none; }
+
+.cost-panel {
+  position: sticky;
+  top: 24px;
+  min-width: 0;
+  margin-top: 36px;
+  padding: clamp(28px, 3vw, 46px);
+  background: #e9ebe3;
+  border: 1px solid #cad0c4;
+}
+.cost-panel:focus { outline: none; }
+.cost-panel .eyebrow { margin-bottom: 12px; }
+.cost-panel h2 { max-width: 12ch; font-size: clamp(2rem, 3vw, 3rem); }
+.cost-range { margin-top: 24px; font: 400 clamp(2rem, 3.4vw, 3.6rem)/1.1 var(--serif); letter-spacing: -.035em; overflow-wrap: anywhere; }
+.cost-caption { max-width: 50ch; margin-top: 10px; color: var(--muted); font-size: .84rem; }
+.cost-breakdown, .cost-ongoing { margin-top: 30px; padding-top: 26px; border-top: 1px solid #c5cec2; }
+.cost-breakdown h3, .cost-ongoing h3 { font-size: 1.12rem; }
+.cost-breakdown dl { margin: 16px 0 0; }
+.cost-breakdown dl > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; padding: 9px 0; border-bottom: 1px solid #d0d7cc; font-size: .8rem; line-height: 1.45; }
+.cost-breakdown dt { color: var(--muted); }
+.cost-breakdown dd { margin: 0; font-weight: 600; white-space: nowrap; }
+.cost-hours, .cost-ongoing p { margin-top: 15px; color: var(--muted); font-size: .78rem; }
+.cost-disclaimer { margin-top: 28px; padding-top: 20px; border-top: 1px solid #c5cec2; color: var(--muted); font-size: .76rem; }
+.cost-actions { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 18px; }
+.cost-panel > .text-link { margin-top: 14px; }
+.cost-panel .brief-action-status { margin-top: 8px; }
+.cost-panel [hidden] { display: none !important; }
+.cost-panel .text-link, .cost-actions .text-link { color: var(--ink); }
+.cost-panel .text-link:hover { color: var(--accent); }
+.cost-panel .brief-action-status:empty { display: none; }
+
+@media (max-width: 900px) {
+  .calculator-layout { grid-template-columns: 1fr; gap: 30px; }
+  .cost-panel { position: static; margin-top: 0; }
+}
+@media (max-width: 600px) {
+  .cost-type-options, .cost-check-grid, .calculator-form .field-row { grid-template-columns: 1fr; }
+  .cost-panel { padding: 26px 20px; }
+  .cost-range { font-size: clamp(1.9rem, 9vw, 3rem); }
+}

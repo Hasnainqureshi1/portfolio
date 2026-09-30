@@ -1,15 +1,15 @@
 .service-page h1 { max-width: 18ch; font-size: clamp(2.8rem, 6.5vw, 6.8rem); line-height: 1.03; }
 .service-page .case-hero { padding-bottom: 60px; }
 .service-page .case-body { padding-top: 0; }
-.service-page .case-hero__intro { color: #404850; }
+.service-page .case-hero_intro { color: #404850; }
 .service-page .eyebrow { color: #a83021; }
 .service-breadcrumb { margin-bottom: 28px; color: #404850; font-size: .85rem; line-height: 1.6; }
 .service-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
 .service-actions a { display: inline-flex; align-items: center; min-height: 48px; padding: 12px 20px; border: 1px solid var(--ink); font-weight: 700; text-decoration: none; }
 .service-actions a:first-child { color: var(--ink); background: var(--acid); }
 .service-page h3 { margin: 24px 0 8px; font-size: 1.2rem; line-height: 1.4; }
-.service-page .case-section__copy > :first-child { margin-top: 0; }
+.service-page .case-section_copy > :first-child { margin-top: 0; }
 .service-page a:focus-visible { outline: 3px solid #ad3c26; outline-offset: 5px; }
 .service-page .case-nav { flex-wrap: wrap; }
-.service-page .case-nav__links { gap: 16px; }
+.service-page .case-nav_links { gap: 16px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

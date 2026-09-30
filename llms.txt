@@ -14,8 +14,17 @@ Hasnain builds React and Next.js interfaces, Node.js APIs, SQL-backed SaaS produ
 
 ## Development services
 
+- [Commercial property website development](https://hasnainqureshi.online/services/commercial-property-websites/): Websites for buildings, campuses and property teams, with project contributions, scope and commissioning questions.
+- [Service marketplace app development](https://hasnainqureshi.online/services/service-marketplace-app-development/): Customer request, provider and operator workflows for service marketplaces, with attributed Vurks React Native work.
 - [SaaS MVP development](https://hasnainqureshi.online/services/saas-mvp-development/): React and Node.js product workflows, scope, project evidence and hiring questions.
 - [Next.js and headless WordPress development](https://hasnainqureshi.online/services/nextjs-development/): Responsive frontend implementation with editor-managed content.
+
+## Tools
+
+- [Free website tools](https://hasnainqureshi.online/tools/): Overview of the free browser-based tools below.
+- [Website cost calculator](https://hasnainqureshi.online/tools/website-cost-calculator/): Free planning range for business and commercial property websites, with visible work-hour and rate assumptions. It is not a quote.
+- [Website brief builder](https://hasnainqureshi.online/tools/website-brief-builder/): Free browser-based tool that turns answers about goals, visitors, pages, content, timing and budget into a website project brief.
+- [Website health check](https://hasnainqureshi.online/tools/website-health-check/): Runs Google Lighthouse through PageSpeed Insights on a public page and explains speed, search basics and accessibility results in plain English.
 
 ## Project evidence
 
@@ -27,4 +36,5 @@ Hasnain builds React and Next.js interfaces, Node.js APIs, SQL-backed SaaS produ
 ## Engineering notes
 
 - [React, Next.js and SaaS questions](https://hasnainqureshi.online/insights/): Guidance on architecture, performance, real-time systems and MVP scope, with links to project work and technical references.
+- [Service marketplace MVP checklist](https://hasnainqureshi.online/insights/service-marketplace-mvp-checklist/): A founder planning guide covering customer requests, provider responses, operator handoffs and first-release scope, with attributed Vurks experience.
 - [Sitemap](https://hasnainqureshi.online/sitemap.xml): Public page URLs.

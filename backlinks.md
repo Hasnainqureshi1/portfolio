@@ -12,11 +12,11 @@
 
 ## Outreach template (connection / message)
 
-Subject: Quick note — link to Hasnain Qureshi’s portfolio
+Subject: Quick note - link to Hasnain Qureshi's portfolio
 
 Hi [Name],
 
-I enjoyed your article/post on [topic]. I recently published a portfolio and case study about scaling SaaS performance (https://hasnainqureshi.online/) — thought it might be a useful resource for your readers. If you find it relevant, would you consider linking to it from [page]? Happy to provide a short blurb or guest post.
+I enjoyed your article/post on [topic]. I recently published a portfolio and a case study about a live chat SaaS product (https://hasnainqureshi.online/project-case-study-1.html) - thought it might be a useful resource for your readers. If you find it relevant, would you consider linking to it from [page]? Happy to provide a short blurb.
 
 Thanks,
 Hasnain Qureshi
@@ -25,11 +25,11 @@ Hasnain Qureshi
 
 ## Quick actions you can take
 
-- Publish a case study (500–1,000 words) on Dev.to/Medium linking to the portfolio.
+- Publish a case study (500-1,000 words) on Dev.to/Medium linking to the portfolio.
 - Submit the site to Product Hunt when you launch a new project.
 - Add the portfolio link to your GitHub README and LinkedIn Featured section.
 - Reach out to past clients or collaborators and ask for a mention/link on their sites.
 
 ## Notes
 
-- Backlinks must be earned—this file contains outreach templates and recommended targets. I cannot create external backlinks from this repo; you’ll need to publish content or ask site owners to link.
+- Backlinks must be earned - this file contains outreach templates and recommended targets. External links require publishing content or asking site owners to link.

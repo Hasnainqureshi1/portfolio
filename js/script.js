@@ -423,7 +423,7 @@ const runGsapIntro = () => {
       z: 0,
       rotateX: 0,
       rotateY: 0,
-      /* filter:blur removed — non-composited, forced paint on 15 elements */
+      /* filter:blur removed - non-composited, forced paint on 15 elements */
       stagger: 0.22
     }, "-=0.3")
     .to(overlay, { opacity: 0, duration: 1.2 }, "-=0.6")
