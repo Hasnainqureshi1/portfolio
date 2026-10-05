@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f2eb" />
+    <title>Free Image Compressor &amp; WebP Converter | Hasnain Qureshi</title>
+    <meta name="description" content="Compress and resize JPG, PNG and WebP images in your browser. Convert images to WebP, compare file sizes and download a batch. Free, no uploads or sign-up." />
+    <meta name="author" content="Hasnain Qureshi" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://hasnainqureshi.online/tools/image-optimizer/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Free Image Compressor &amp; WebP Converter" />
+    <meta property="og:description" content="Resize, compress and convert website images locally in your browser. No uploads, accounts or external services." />
+    <meta property="og:url" content="https://hasnainqureshi.online/tools/image-optimizer/" />
+    <meta property="og:image" content="https://hasnainqureshi.online/asset/portfolio-social.jpg" />
+    <meta property="og:image:alt" content="Hasnain Qureshi - free website tools" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href="/fonts/Moderat-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/css/property-service.css" />
+    <link rel="stylesheet" href="/css/portfolio-type-system.css" />
+    <link rel="stylesheet" href="/css/image-optimizer.css" />
+    <script src="/js/image-optimizer.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          { "@type": "WebPage", "@id": "https://hasnainqureshi.online/tools/image-optimizer/#page", "url": "https://hasnainqureshi.online/tools/image-optimizer/", "name": "Free Image Compressor & WebP Converter", "description": "Compress, resize and convert images locally in your browser.", "inLanguage": "en", "dateModified": "2026-10-05", "mainEntity": { "@id": "https://hasnainqureshi.online/tools/image-optimizer/#tool" }, "breadcrumb": { "@id": "https://hasnainqureshi.online/tools/image-optimizer/#breadcrumb" } },
+          { "@type": "WebApplication", "@id": "https://hasnainqureshi.online/tools/image-optimizer/#tool", "name": "Website Image Optimizer", "url": "https://hasnainqureshi.online/tools/image-optimizer/", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any", "browserRequirements": "JavaScript and Canvas image encoding support", "isAccessibleForFree": true, "description": "Batch image compression, proportional resizing and JPG, PNG or WebP conversion with local processing and ZIP downloads.", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }, "creator": { "@type": "Person", "name": "Hasnain Qureshi", "url": "https://hasnainqureshi.online/" } },
+          { "@type": "BreadcrumbList", "@id": "https://hasnainqureshi.online/tools/image-optimizer/#breadcrumb", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Portfolio", "item": "https://hasnainqureshi.online/" }, { "@type": "ListItem", "position": 2, "name": "Free website tools", "item": "https://hasnainqureshi.online/tools/" }, { "@type": "ListItem", "position": 3, "name": "Image optimizer", "item": "https://hasnainqureshi.online/tools/image-optimizer/" } ] }
+        ]
+      }
+    </script>
+  </head>
+  <body class="optimizer-page">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header wrap">
+      <a class="brand" href="/" aria-label="Hasnain Qureshi portfolio"><span class="brand-mark">HQ</span><span>Hasnain Qureshi<small>Independent developer</small></span></a>
+      <nav aria-label="Main navigation"><a href="/tools/">All tools</a><a class="header-contact" href="/#contact">Contact <span aria-hidden="true">&#8599;</span></a></nav>
+    </header>
+    <main id="content">
+      <section class="optimizer-hero wrap" aria-labelledby="page-title">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Portfolio</a><span aria-hidden="true">/</span><a href="/tools/">Free tools</a><span aria-hidden="true">/</span><span aria-current="page">Image optimizer</span></nav>
+        <p class="eyebrow">Free image compressor + WebP converter</p>
+        <h1 id="page-title">Smaller website images.<br /><em>Same attention to detail.</em></h1>
+        <p class="hero-intro">Resize and compress product photos, website banners and other images. Compare the originals with your results, then download individual files or the whole batch.</p>
+        <p class="optimizer-privacy">Your images stay on this device. No uploads, accounts or external processing.</p>
+      </section>
+      <noscript><p class="wrap">Enable JavaScript to process images in your browser. Your files are never uploaded.</p></noscript>
+      <section class="optimizer-layout wrap" aria-label="Image optimizer">
+        <form class="optimizer-settings" id="optimizer-form">
+          <h2>Output settings</h2>
+          <label for="image-format">File format<select id="image-format"><option value="image/webp">WebP - website images</option><option value="image/jpeg">JPG - photos</option><option value="image/png">PNG - lossless output</option></select></label>
+          <label for="image-quality">Quality <output id="quality-value" for="image-quality">80%</output><input id="image-quality" type="range" min="10" max="100" value="80" /></label>
+          <small id="quality-hint">Lower quality usually creates smaller files. Check the preview before using them.</small>
+          <label for="image-width">Maximum width (px)<input id="image-width" type="number" min="1" max="4096" step="1" value="1920" required /></label>
+          <label for="image-height">Maximum height (px)<input id="image-height" type="number" min="1" max="4096" step="1" value="1920" required /></label>
+          <small>Images keep their proportions, fit within both limits and are never enlarged.</small>
+          <div id="jpeg-background" hidden><label for="image-background">JPG background colour<input id="image-background" type="color" value="#ffffff" /></label><small>JPG cannot keep transparency. Transparent areas use this colour.</small></div>
+          <button class="button" id="image-process" type="submit" disabled>Optimize images <span aria-hidden="true">&#8594;</span></button>
+          <button class="optimizer-reset" id="image-reset" type="button" disabled>Clear images and results</button>
+        </form>
+        <div class="optimizer-workspace">
+          <div class="optimizer-drop" id="image-drop">
+            <h2>Choose your images</h2>
+            <p>Drop a batch here or select files from your device.</p>
+            <input class="optimizer-file" id="image-files" type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" multiple />
+            <label class="button" for="image-files">Choose images <span aria-hidden="true">+</span></label>
+            <small>JPG, PNG and WebP. Up to 20 images, 20 MB each and 100 MB per batch. Images above 16 megapixels are skipped. Animated images become a still image.</small>
+          </div>
+          <p class="optimizer-status" id="image-status" role="status" aria-live="polite" aria-atomic="true">Choose images to get started.</p>
+          <ul class="optimizer-errors" id="image-errors" aria-label="Files that could not be processed" hidden></ul>
+          <div class="optimizer-summary" id="image-summary" hidden><p id="image-totals"></p><button class="button" id="image-download-all" type="button">Download all (.zip)</button></div>
+          <div class="optimizer-results" id="image-results" aria-label="Image previews and downloads"></div>
+        </div>
+      </section>
+      <section class="optimizer-help section-space" aria-labelledby="guide-title">
+        <div class="wrap">
+          <div class="section-heading"><div><p class="eyebrow">Choose a useful output</p><h2 id="guide-title">Prepare images<br /><em>for their place on the page.</em></h2></div><p>Start with the size your website actually displays. A huge original is rarely needed for a small product card.</p></div>
+          <div class="scope-grid"><article><span class="item-number">01 / Format</span><h3>WebP for website photos</h3><p>Try WebP for photos and banners, then compare detail and size. Use PNG when you need lossless output; its quality slider is disabled because it does not apply.</p></article><article><span class="item-number">02 / Dimensions</span><h3>Keep the shape</h3><p>The width and height settings are limits, not a crop. A 2400 × 1200 image with 1200 × 1200 limits becomes 1200 × 600. Smaller originals keep their dimensions.</p></article><article><span class="item-number">03 / Quality</span><h3>Inspect the important details</h3><p>Check product labels, faces and fine textures. Encoding can sometimes produce a larger file, especially for an already compressed original. The report shows that honestly.</p></article><article><span class="item-number">04 / Website delivery</span><h3>Use the right version</h3><p>Optimized files are one part of a faster site. Responsive image sizes, caching and loading behaviour still matter. Use the <a href="/tools/website-health-check/">website health check</a> to review a live page.</p></article></div>
+        </div>
+      </section>
+      <section class="questions-section wrap section-space" aria-labelledby="questions-title">
+        <div class="section-heading"><div><p class="eyebrow">About this tool</p><h2 id="questions-title">Common questions.</h2></div></div>
+        <div class="questions">
+          <details open><summary>Are my images uploaded or stored?</summary><div><p>No. This page processes files in your browser and keeps them in memory while you use it. Clearing the batch or closing the page removes that working copy. Your original files are unchanged.</p></div></details>
+          <details><summary>Can I compress several images at once?</summary><div><p>Yes. Choose up to 20 images and optimize the batch with one set of settings. Download each result or a ZIP containing all successfully processed images. ZIP packaging does not further compress the image files.</p></div></details>
+          <details><summary>Does it support animated images, SVG, HEIC or AVIF?</summary><div><p>The accepted inputs are JPG, PNG and WebP. Animation is not preserved: animated PNG or WebP inputs become a still image. SVG, HEIC, GIF and AVIF inputs are not supported. Browser encoding support determines which output formats are available.</p></div></details>
+          <details><summary>Does PNG use the quality setting?</summary><div><p>No. PNG output uses lossless encoding of the resized image. Resizing still changes pixel detail. For adjustable lossy compression, choose JPG or WebP.</p></div></details>
+          <details><summary>Are camera details and colour profiles preserved?</summary><div><p>Do not rely on this tool to preserve original metadata, camera details or colour profiles. The browser decodes and re-encodes the image, so colours and metadata may differ. Keep your originals for print or archival work.</p></div></details>
+        </div>
+      </section>
+      <section class="optimizer-cta wrap section-space" aria-labelledby="contact-title"><p class="eyebrow">Need help with the website?</p><h2 id="contact-title">Make the rest of<br /><em>your site work better too.</em></h2><p>I'm Hasnain Qureshi, a full-stack developer in Karachi working remotely with UK and US teams. If your pages still feel slow after optimizing images, share your website and the problem you want to solve.</p><a class="button" href="/#contact">Discuss website improvements <span aria-hidden="true">&#8599;</span></a></section>
+    </main>
+    <footer class="site-footer wrap"><a class="footer-name" href="/">Hasnain Qureshi<span>Development for web &amp; mobile</span></a><nav aria-label="Related tools and services"><a href="/tools/">All free tools</a><a href="/tools/website-mockup-generator/">Website &amp; app mockups</a><a href="/tools/website-health-check/">Website health check</a><a href="/services/nextjs-development/">Next.js development</a></nav><p>&copy; 2026 Hasnain Qureshi<br />Karachi / Working worldwide</p></footer>
+  </body>
+</html>
