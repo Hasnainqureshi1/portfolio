@@ -26,6 +26,9 @@ Hasnain builds React and Next.js interfaces, Node.js APIs, SQL-backed SaaS produ
 - [Website brief builder](https://hasnainqureshi.online/tools/website-brief-builder/): Free browser-based tool that turns answers about goals, visitors, pages, content, timing and budget into a website project brief.
 - [Website health check](https://hasnainqureshi.online/tools/website-health-check/): Runs Google Lighthouse through PageSpeed Insights on a public page and explains speed, search basics and accessibility results in plain English.
 
+- [Website feedback and redesign planner](https://hasnainqureshi.online/tools/website-feedback-tool/): Free screenshot annotation with numbered pins, arrows, highlights, priorities, PNG export and a matching developer brief. Local processing; no URL capture or online sharing.
+- [CSV cleaner and import checker](https://hasnainqureshi.online/tools/csv-cleaner/): Free local CSV structural checks, exact duplicate and blank-row detection, inconsistent-column handling, reviewed cleanup, UTF-8 CSV downloads and a change report. No XLSX support or destination-specific schema validation.
+
 ## Project evidence
 
 - [ChatKnot](https://hasnainqureshi.online/project-case-study-1.html): Full-stack live-chat SaaS work across React, Node.js, SQL, Socket.io and Redis.
