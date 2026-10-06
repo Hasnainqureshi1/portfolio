@@ -1,0 +1,7 @@
+﻿Customer ID,Name,Email,Company
+001, Alice ,alice@example.com,North Studio
+002,Bob,bob@example.com,"Field, Ltd"
+001,Alice,alice@example.com,North Studio
+,,,
+003,Cara,cara@example.com
+004,Dan,dan@example.com,West Studio,Extra cell

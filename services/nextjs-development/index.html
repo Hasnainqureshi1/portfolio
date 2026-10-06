@@ -15,7 +15,7 @@
     <meta name="twitter:title" content="Next.js &amp; Headless WordPress Developer | Hasnain Qureshi" />
     <meta name="twitter:description" content="Next.js and headless WordPress development for UK and US teams, delivered remotely from Karachi. Explore Cambridge Research Park and 1540 Broadway." />
     <meta name="twitter:image" content="https://hasnainqureshi.online/asset/portfolio-social.jpg" />
-    <meta name="theme-color" content="#080b10" />
+    <meta name="theme-color" content="#080c12" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -67,17 +67,22 @@
       ]
     }
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W0624M03ZJ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", "G-W0624M03ZJ");
-    </script>
-  </head>
-  <body class="service-page">
+
+
+  <script src="/js/site-analytics.js" defer></script>
+<link rel="stylesheet" href="/css/portfolio-type-system.css" />
+<link rel="stylesheet" href="/css/site-layout.css" />
+<script src="/js/site-layout.js" defer></script>
+<noscript><style>.shared-navigation{display:flex;flex-wrap:wrap}.shared-menu-toggle{display:none}.shared-header.topbar{position:static;grid-template-columns:1fr}.shared-contact{justify-self:start}</style></noscript>
+</head>
+  <body class="service-page content-page">
     <a class="skip-link" href="#content">Skip to content</a>
-    <nav class="case-nav" aria-label="Main navigation"><a href="/">HasnainQ</a><div class="case-nav_links"><a href="/#work">Work</a><a href="/#services">Services</a><a href="/insights/">Insights</a><a href="/#contact">Contact</a></div></nav>
+    <header class="topbar shared-header">
+<a class="shared-brand" href="/" aria-label="HasnainQ home"><span class="brand-mark">HQ</span><span class="brand-copy"><strong>HasnainQ</strong><small>Full-stack developer</small></span></a>
+<nav class="shared-navigation" id="site-navigation" aria-label="Primary navigation" data-nav><a href="/#work">Work</a><a href="/#stack">Stack</a><a href="/#skills">Skills</a><a href="/#experience">Experience</a><a href="/#contact">Contact</a></nav>
+<a class="shared-contact" href="/#contact">Contact me <span aria-hidden="true">&#8599;</span></a>
+<button class="shared-menu-toggle" type="button" data-menu-toggle aria-controls="site-navigation" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
+</header>
     <main id="content">
       <header class="case-hero">
         <nav class="service-breadcrumb" aria-label="Breadcrumb"><a href="/">Portfolio</a> / <span aria-current="page">Next.js development</span></nav>
@@ -92,24 +97,15 @@
           <p>This service fits teams that want a custom React-based website while keeping a familiar publishing workflow in WordPress. It is relevant when your site needs reusable content sections, strong visual presentation and room for future application features.</p>
           <p>Separating the frontend from the CMS adds responsibilities: content models, previews, publishing updates and deployment need to work together. If a conventional WordPress theme already meets your needs, a separate Next.js frontend may add unnecessary maintenance. We should establish the reason for using a headless approach before building it.</p>
         </div></section>
-        <section class="case-section"><h2>Project evidence</h2><div class="case-section_copy">
-          <h3>Cambridge Research Park</h3><p>My frontend work connects a Next.js site to WordPress content through GraphQL and ACF components. Editors manage campus content while reusable frontend sections present the community, facilities and available space.</p><p><a href="/project-case-study-2.html#engineering">Read the Cambridge Research Park implementation details</a>.</p>
-          <h3>The New 1540 Broadway</h3><p>I implemented the responsive Next.js frontend with WordPress-managed content. The website brings together property photography, amenities, location and availability. My contribution is the website experience, including layouts and motion across screen sizes.</p><p><a href="/project-case-study-3.html#engineering">Read the 1540 Broadway frontend case study</a>.</p>
-        </div></section>
+        <section class="case-section"><h2>Project evidence</h2><div class="case-section_copy"><div class="evidence-grid"><article class="evidence-card"><h3>Cambridge Research Park</h3><p>My frontend work connects a Next.js site to WordPress content through GraphQL and ACF components. Editors manage campus content while reusable frontend sections present the community, facilities and available space.</p><p><a href="/project-case-study-2.html#engineering">Read the Cambridge Research Park implementation details</a>.</p></article><article class="evidence-card"><h3>The New 1540 Broadway</h3><p>I implemented the responsive Next.js frontend with WordPress-managed content. The website brings together property photography, amenities, location and availability. My contribution is the website experience, including layouts and motion across screen sizes.</p><p><a href="/project-case-study-3.html#engineering">Read the 1540 Broadway frontend case study</a>.</p></article></div></div></section>
         <section class="case-section"><h2>What to include in the scope</h2><div class="case-section_copy">
           <ul><li><strong>Page and component inventory:</strong> the content types, page templates and reusable sections your site needs.</li><li><strong>Content integration:</strong> how CMS fields map to frontend components and how editors publish changes.</li><li><strong>Responsive implementation:</strong> navigation, typography, images and interactions across mobile and desktop.</li><li><strong>Search foundations:</strong> crawlable page content, descriptive metadata, canonical URLs and sitemap coverage.</li><li><strong>Release checks:</strong> content completeness, broken links, form journeys, accessibility and performance observations.</li></ul>
           <p>A redesign also needs an inventory of existing URLs before launch. Changing page addresses without mapping their replacements can break visitor journeys and existing links.</p>
         </div></section>
-        <section class="case-section"><h2>Questions before hiring</h2><div class="case-section_copy">
-          <h3>Can a London or US team hire you remotely?</h3><p>Yes. I offer remote development from Karachi, Pakistan for London, wider UK and US teams. My portfolio includes frontend work for Cambridge Research Park in the UK and 1540 Broadway in New York. Share your team's time zone, review process and required working-hour overlap so we can establish a suitable schedule for your project or role.</p>
-          <h3>Can you work with our existing WordPress content?</h3><p>Yes. Start by sharing the current site, content types, plugins that affect the frontend and the pages you want to keep. We can then identify which content can be reused and which fields need a different structure.</p>
-          <h3>Can you build from an existing design?</h3><p>Yes. Share the design, mobile layouts and interaction requirements. I can connect the page implementation to reusable components and CMS content rather than treating each screen as an isolated page.</p>
-          <h3>Does using Next.js guarantee higher Google rankings?</h3><p>No. A framework does not guarantee traffic. The site still needs useful content, accessible page URLs and a working visitor experience. Technical implementation supports discovery; search demand and relevance also matter.</p>
-          <h3>Do you also build applications and APIs?</h3><p>Yes. For authenticated dashboards and product workflows, see my <a href="/services/saas-mvp-development/">SaaS MVP development service</a>. Recruiters can review my <a href="/Hasnain-Qureshi-Resume.pdf">resume</a> and <a href="/#experience">full-stack experience</a> for full-time remote roles.</p>
-        </div></section>
+        <section class="case-section"><h2>Questions before hiring</h2><div class="case-section_copy"><div class="questions"><details><summary>Can a London or US team hire you remotely?</summary><div><p>Yes. I offer remote development from Karachi, Pakistan for London, wider UK and US teams. My portfolio includes frontend work for Cambridge Research Park in the UK and 1540 Broadway in New York. Share your team's time zone, review process and required working-hour overlap so we can establish a suitable schedule for your project or role.</p></div></details><details><summary>Can you work with our existing WordPress content?</summary><div><p>Yes. Start by sharing the current site, content types, plugins that affect the frontend and the pages you want to keep. We can then identify which content can be reused and which fields need a different structure.</p></div></details><details><summary>Can you build from an existing design?</summary><div><p>Yes. Share the design, mobile layouts and interaction requirements. I can connect the page implementation to reusable components and CMS content rather than treating each screen as an isolated page.</p></div></details><details><summary>Does using Next.js guarantee higher Google rankings?</summary><div><p>No. A framework does not guarantee traffic. The site still needs useful content, accessible page URLs and a working visitor experience. Technical implementation supports discovery; search demand and relevance also matter.</p></div></details><details><summary>Do you also build applications and APIs?</summary><div><p>Yes. For authenticated dashboards and product workflows, see my <a href="/services/saas-mvp-development/">SaaS MVP development service</a>. Recruiters can review my <a href="/Hasnain-Qureshi-Resume.pdf">resume</a> and <a href="/#experience">full-stack experience</a> for full-time remote roles.</p></div></details></div></div></section>
       </div>
-    </main>
-    <footer class="case-cta"><h2>Tell me what your website needs to do.</h2><p>Share the current site or design, your content workflow, required pages and target launch date.</p><div class="case-cta_links"><a href="/#contact">Contact Hasnain</a><a href="/tools/website-cost-calculator/">Estimate a website budget</a><a href="/tools/website-brief-builder/">Build your project brief</a><a href="/tools/website-health-check/">Check your website speed</a><a href="/insights/">Engineering insights</a><a href="/">Back to portfolio</a></div></footer>
+    <section class="related-resources"><div class="shared-container"><div><p class="eyebrow">Useful next steps</p><h2>Guides for your project</h2></div><ul class="resource-cards"><li><a href="/insights/website-feedback-developer-handoff/">How to give website feedback a developer can implement</a></li></ul></div></section></main>
+    <section class="site-callout" aria-label="Discuss your project"><div class="shared-container"><div><h2>Tell me what your website needs to do.</h2><p>Share the current site or design, your content workflow, required pages and target launch date.</p></div><div class="callout-actions"><a href="/#contact">Discuss your project <span aria-hidden="true">&#8599;</span></a><a href="/#work">View my work</a></div></div></section><footer class="shared-footer"><div class="shared-container"><div class="footer-columns"><div class="footer-intro"><a class="footer-brand" href="/">HasnainQ</a><p>Full-stack development for web and mobile.</p><p>Based in Karachi.<br />Working remotely with UK and US teams.</p></div><section><h2>Services</h2><nav aria-label="Services"><a href="/services/commercial-property-websites/">Commercial property websites</a><a href="/services/service-marketplace-app-development/">Service marketplace apps</a><a href="/services/nextjs-development/">Next.js development</a><a href="/services/saas-mvp-development/">SaaS MVP development</a><a href="/services/data-import-integration/">Data import &amp; integration</a></nav></section><section><h2>Free tools</h2><nav aria-label="Free tools"><a href="/tools/website-cost-calculator/">Website cost calculator</a><a href="/tools/website-brief-builder/">Website brief builder</a><a href="/tools/website-health-check/">Website health check</a><a href="/tools/image-optimizer/">Image optimizer</a><a href="/tools/website-mockup-generator/">Website &amp; app mockups</a><a href="/tools/website-feedback-tool/">Website feedback planner</a><a href="/tools/csv-cleaner/">CSV cleaner &amp; import checker</a></nav></section><section><h2>Explore</h2><nav aria-label="Explore"><a href="/#work">Selected work</a><a href="/insights/">Practical guides &amp; insights</a><a href="/insights/service-marketplace-mvp-checklist/">Marketplace MVP checklist</a><a href="/insights/jev-ai-vs-chatgpt-claude/">AI engineering insights</a><a href="/tools/">All browser tools</a><a href="/resources/business-workflow-sample-pack.zip" download>Download sample pack</a></nav></section></div><div class="footer-bottom"><p>&copy; 2026 Hasnain Qureshi</p><nav aria-label="Footer information"><a href="/privacy/">Privacy</a><a href="/#contact">Get in touch</a></nav></div></div></footer>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
       var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();

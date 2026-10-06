@@ -1,0 +1,15 @@
+COMMERCIAL PROPERTY WEBSITE LAUNCH REVIEW
+Property / owner / review date:
+For each item record owner, evidence, status and next action.
+CONTENT: Approved address, areas and units; verified availability; review date;
+floor plans with textual room/suite details; accessible brochure; image permission.
+ENQUIRY: Correct agent and recipient; keyboard usable form; validation; tested
+success and failure; notification delivery; consent wording approved by owner.
+CMS: Named editor; availability update flow; image size guidance; preview;
+document replacement process; training and backup owner.
+TECHNICAL: Old URL inventory and redirects; canonical URLs; indexability;
+sitemap; mobile layout; image dimensions; real-device loading review.
+MEASUREMENT: Analytics owner; successful enquiry event separate from CTA clicks;
+baseline period; post-launch review date; UK/US query and country segmentation.
+SIGNOFF: Content owner, developer and agent review evidence before publication.
+This checklist supports a human review; it is not a certification.

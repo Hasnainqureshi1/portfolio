@@ -161,6 +161,7 @@
     const link = node("a", `Download ${result.name}`, "text-link");
     link.href = result.outputUrl;
     link.download = result.name;
+    link.addEventListener("click", event => {event.stopPropagation();window.trackBusinessEvent?.("tool_download", {format:result.blob.type.split("/")[1],item_count:1});});
     card.append(link);
     resultsBox.append(card);
   }
@@ -215,6 +216,7 @@
       $("image-totals").textContent = `${results.length} image${results.length === 1 ? "" : "s"}: ${size(originalBytes)} → ${size(outputBytes)}. ${difference >= 0 ? `${size(difference)} saved` : `${size(-difference)} larger overall`}.`;
       summary.hidden = !results.length;
       status.textContent = `${results.length} of ${files.length} images optimized. ${results.length < files.length ? "See skipped files below. " : ""}Results use the settings from this run. Change settings and optimize again to create a new batch.`;
+      if(results.length) window.trackBusinessEvent?.("tool_complete",{item_count:results.length});
     } finally { setBusy(false); }
   });
 
@@ -292,11 +294,13 @@
       const link = node("a");
       link.href = url;
       link.download = "optimized-website-images.zip";
+      link.addEventListener("click",event=>event.stopPropagation());
       document.body.append(link);
       link.click();
       link.remove();
       setTimeout(() => URL.revokeObjectURL(url), 60000);
       status.textContent = "ZIP download requested. Your individual downloads are also available below.";
+      window.trackBusinessEvent?.("tool_download",{format:"zip",item_count:results.length});
     } catch {
       status.textContent = "Could not create the ZIP. Download the images individually below.";
     } finally { setBusy(false); }

@@ -1,0 +1,28 @@
+WEBSITE FEEDBACK & REDESIGN BRIEF
+
+Project: North Studio redesign
+Page reference: Not supplied
+Screenshot: Demo website screenshot
+Goal: Help teams request a viewing
+
+CHANGE REQUESTS (numbers match annotated PNG)
+
+PAGE 1: Demo website screenshot
+
+1.1. [HIGH] pin / content / planned
+Show verified availability with a last-reviewed date.
+Owner: Property marketing lead
+Acceptance criteria: Editor can update the availability and review date without changing code.
+Position: 50% from left, 50% from top.
+
+PAGE 2: Demo website screenshot
+
+2.1. [MEDIUM] pin / content / planned
+Preserve values when the enquiry request fails.
+Owner: Unassigned
+Acceptance criteria: A failed request preserves entered values; confirmation only follows success.
+Position: 50% from left, 50% from top.
+
+NEXT STEPS
+Agree scope, dependencies and acceptance criteria with your developer before implementation.
+This brief records your feedback; it is not an automated site audit or a quote.

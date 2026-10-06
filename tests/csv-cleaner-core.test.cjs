@@ -55,3 +55,37 @@ test('row and column limits fail explicitly', () => {
   assert.throws(()=>csv.parse(Array(101).fill('x').join(',')),/100 columns/);
   assert.throws(()=>csv.parse(Array(20002).fill('x').join('\n')),/20,000/);
 });
+
+test('mapping reorders columns, retains string IDs and checks required unmapped fields', () => {
+  const base=csv.analyse(csv.parse('id,name,email\n001,A,a@example.com\n002,B,'),defaults);
+  const snapshot=JSON.stringify(base);
+  const targets=[{name:'Email',source:2,required:true},{name:'Customer ID',source:0,required:true},{name:'Note',source:-1,required:false}];
+  const mapped=csv.mapAndReview(base,{targets,key:-1});
+  assert.deepEqual(mapped.header,['Email','Customer ID','Note']);
+  assert.deepEqual(mapped.output[0].cells,['a@example.com','001','']);
+  assert.equal(mapped.review.length,1);assert.equal(mapped.blockers,1);
+  assert.equal(JSON.stringify(base),snapshot);
+});
+
+test('all conflicting keys remain available and quarantine keeps only uncontested records', () => {
+  const base=csv.analyse(csv.parse('id,name\n001,A\n001,B\n002,C\n,D'),defaults);
+  const blocked=csv.mapAndReview(base,{key:0});
+  assert.equal(blocked.output.length,4);assert.equal(blocked.review.length,3);assert.equal(blocked.blockers,3);
+  const reviewed=csv.mapAndReview(base,{key:0,quarantine:true});
+  assert.deepEqual(reviewed.output.map(r=>r.cells),[['002','C']]);
+  assert.deepEqual(reviewed.review.map(r=>r.number),[2,3,5]);assert.equal(reviewed.blockers,0);
+  assert.match(reviewed.review[0].reason,/Conflicting/);
+});
+
+test('case-insensitive key rules are explicit and removed source rows are retained', () => {
+  const base=csv.analyse(csv.parse('email,name\nA@example.com,A\na@example.com,B\na@example.com,B\n,'),{...defaults,duplicates:true,blank:true});
+  assert.equal(base.excluded.length,2);assert.deepEqual(base.excluded[0].cells,['a@example.com','B']);
+  assert.equal(csv.mapAndReview(base,{key:0}).review.length,0);
+  assert.equal(csv.mapAndReview(base,{key:0,ignoreCase:true}).review.length,2);
+});
+
+test('mapping rejects invalid headers, source indices and key indices', () => {
+  const base=csv.analyse(csv.parse('id,name\n001,A'),defaults);
+  for(const targets of [[{name:'',source:0}],[{name:'x',source:4}],[{name:'x',source:0},{name:' X ',source:1}]])assert.throws(()=>csv.mapAndReview(base,{targets}));
+  assert.throws(()=>csv.mapAndReview(base,{targets:[{name:'x',source:0}],key:1}));
+});

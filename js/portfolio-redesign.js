@@ -453,8 +453,9 @@
   contactForm?.addEventListener("input", markContactStarted);
   const contactStatus = document.querySelector("#contact-status");
   const trackContact = (method, eventName = "contact_click") => {
+    if (["contact_click", "generate_lead"].includes(eventName) && window.trackBusinessEvent) { window.trackBusinessEvent(eventName, {method}); return; }
     if (typeof window.gtag !== "function") return;
-    window.gtag("event", eventName, { method, page_location: window.location.href });
+    window.gtag("event", eventName, { method, page_location: window.location.origin + window.location.pathname });
   };
 
   document.querySelectorAll("[data-contact-action]").forEach((link) => {

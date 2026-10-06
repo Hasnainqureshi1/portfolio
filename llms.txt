@@ -31,6 +31,10 @@ Hasnain builds React and Next.js interfaces, Node.js APIs, SQL-backed SaaS produ
 
 ## Project evidence
 
+- [Past client feedback](https://hasnainqureshi.online/#client-reviews): Selected historical Fiverr review excerpts from clients in the United States, United Kingdom and Canada, with original screenshot links. Feedback covers React troubleshooting, a bug fix and design implementation.
+
+- [Earlier freelance work](https://hasnainqureshi.online/#earlier-work): Historical React file management, PHP/MySQL payslip management, Next.js music publishing and notifications, Chartmetric API integration, MERN notes and WordPress coupon projects. These are contribution summaries with no current public demos or screenshots. Odyzon is no longer live. Hasnain previously achieved Fiverr Level One seller status; this does not describe a current seller level.
+
 - [ChatKnot](https://hasnainqureshi.online/project-case-study-1.html): Full-stack live-chat SaaS work across React, Node.js, SQL, Socket.io and Redis.
 - [Cambridge Research Park](https://hasnainqureshi.online/project-case-study-2.html): Next.js frontend connected to WordPress, GraphQL and ACF content.
 - [The New 1540 Broadway](https://hasnainqureshi.online/project-case-study-3.html): Responsive Next.js frontend with WordPress-managed property content.
@@ -44,3 +48,20 @@ Hasnain builds React and Next.js interfaces, Node.js APIs, SQL-backed SaaS produ
 - [Website image optimizer](https://hasnainqureshi.online/tools/image-optimizer/): Free browser-only JPG, PNG and WebP resizing, compression and conversion. Local previews, individual downloads and batch ZIP downloads. Images are not uploaded.
 - [Website and app mockup generator](https://hasnainqureshi.online/tools/website-mockup-generator/): Free browser-local tool that frames up to three screenshots as browser, phone or tablet mockups, with drag positioning, resizing, rotation, style presets, headings, captions, cropping, custom colours and PNG/WebP exports with adjustable WebP quality. No URL capture or uploads.
 - [Sitemap](https://hasnainqureshi.online/sitemap.xml): Public page URLs.
+
+## Original worked guides
+
+- [Fix CSV import errors: a worked contacts example](https://hasnainqureshi.online/insights/fix-csv-import-errors/): Find inconsistent CSV columns, quoted commas, blank rows and duplicate contacts. Follow a reproducible example with source and reviewed downloads.
+- [Map CSV columns to a destination template](https://hasnainqureshi.online/insights/csv-column-mapping/): Map source CSV fields to destination headers, mark required fields and export unresolved records with a reusable local recipe.
+- [Website redesign brief example: scope, feedback and acceptance](https://hasnainqureshi.online/insights/website-redesign-brief-example/): Use an original website redesign brief with annotated examples, priorities, owners and acceptance criteria. Download the brief and edit your own.
+- [Commercial property website launch checklist](https://hasnainqureshi.online/insights/commercial-property-website-checklist/): Review availability, floor plans, CMS ownership, enquiry delivery and launch redirects for UK commercial property and US commercial real estate websites.
+- [Duplicate customer IDs in CSV: keep conflicting records](https://hasnainqureshi.online/insights/duplicate-customer-ids-csv/): Identify repeated customer IDs without merging conflicting contact records. Download an original conflict sample and review the surviving and unresolved records.
+- [Prepare a HubSpot contacts CSV: checks before import](https://hasnainqureshi.online/insights/hubspot-contacts-csv-preparation/): Prepare a contact CSV for HubSpot with explicit property mapping and identifier review. Includes synthetic samples, limited local checks and official references.
+- [How to give website feedback a developer can implement](https://hasnainqureshi.online/insights/website-feedback-developer-handoff/): Turn vague website feedback into reproducible change requests with a screenshot, owner, priority and observable acceptance criteria. Download the template.
+- [Service marketplace operator dashboard: first-release scope](https://hasnainqureshi.online/insights/service-marketplace-operator-dashboard/): Define marketplace request queues, provider review, exceptions, role permissions and audit evidence before building an operator dashboard.
+
+- [Data import and integration development](https://hasnainqureshi.online/services/data-import-integration/): Remote UK and US service; scope mapping, validation and API work.
+
+## Website information
+
+- [Privacy and usage analytics](https://hasnainqureshi.online/privacy/): Local file processing, contact services and browser analytics preferences.

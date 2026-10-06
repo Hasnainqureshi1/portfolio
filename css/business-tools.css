@@ -48,6 +48,24 @@
 .tool-guide { background: #e9ebe3; }
 .tool-guide .scope-grid { gap: var(--space-standard); }
 .tool-cta p { max-width: 65ch; margin-block: 24px; font-size: var(--fs-small); line-height: var(--lh-small); }
+.tool-mapping { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
+.tool-mapping-row { padding: 16px; margin-top: 12px; border: 1px solid var(--line); background: #e9ebe3; }
+.tool-mapping-row label { margin-top: 8px; }
+.tool-article { max-width: 960px; margin-inline: auto; }
+.tool-article section { margin-block: var(--space-standard); }
+.tool-article h2 { margin-bottom: 20px; }
+.tool-article h3 { margin-block: 24px 12px; }
+.tool-article p, .tool-article li { font-size: var(--fs-small); line-height: var(--lh-small); }
+.tool-article li + li { margin-top: 12px; }
+.tool-article ol, .tool-article ul { padding-left: 24px; }
+.tool-article .breadcrumb { margin-bottom: var(--space-half); }
+.tool-article { overflow-wrap: anywhere; }
+[data-analytics-toggle] { font: inherit; color: inherit; background: transparent; border: 1px solid currentColor; padding: 8px 12px; cursor: pointer; margin-top: 12px; }
+.tool-article pre { padding: 20px; background: #e9ebe3; overflow: auto; font-size: var(--fs-cards); line-height: var(--lh-cards); }
+.tool-article img, .tool-article video { width: 100%; height: auto; margin-block: 20px; border: 1px solid var(--line); }
+.tool-print-view { display: none; }
+@media print { body.feedback-print-ready {background:white;} body.feedback-print-ready main > :not(#feedback-print-view) {display:none !important;} body.feedback-print-ready .tool-print-view {font-family:Moderat,Arial,sans-serif;} }
+@media print { .site-header,.site-footer,.tool-hero,#feedback-editor,.tool-guide,.questions-section,.tool-cta,.skip-link { display:none !important; } .tool-print-view { display:block; color:#000; background:white; font:14px/1.5 Arial,sans-serif; } .tool-print-view h1 { font:700 24px/1.2 Arial,sans-serif; } .tool-print-view img { max-width:100%; max-height:650px; object-fit:contain; page-break-inside:avoid; } .tool-print-view section { break-inside:avoid; margin:20px 0; } }
 .business-tool [hidden] { display: none !important; }
 @media (max-width: 950px) { .tool-grid { grid-template-columns: 1fr; } }
 @media (max-width: 540px) { .tool-panel { padding: 20px; } .tool-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

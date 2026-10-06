@@ -1,0 +1,27 @@
+WEBSITE REDESIGN BRIEF - SYNTHETIC EXAMPLE
+Project: North Studio workspace website
+Audience: Teams looking for a workspace, not developers learning to code
+Goal: Help a prospective tenant find suitable space and request a viewing
+Scope: Homepage and enquiry flow. Pricing, rebrand and CRM replacement excluded.
+Page: Homepage desktop screenshot, 1200 x 800
+
+1. HIGH / Usability / Planned
+Change: Rename the main CTA to Book a viewing and link to the viewing form.
+Owner: Frontend developer
+Acceptance: CTA is keyboard accessible, its accessible name is Book a viewing,
+and activation reaches the agreed form on desktop and a narrow mobile viewport.
+
+2. HIGH / Content / Planned
+Change: Show current workspace availability and a last-reviewed date near the CTA.
+Owner: Property marketing lead
+Acceptance: CMS editor can update availability and date without changing code;
+an unavailable space has a clear alternative contact route.
+
+3. MEDIUM / Functionality / Planned
+Change: Preserve entered form values when validation fails; show a useful message.
+Owner: Frontend developer and form service owner
+Acceptance: Invalid email prevents submission and receives an associated message;
+failed requests preserve input; confirmation appears only after success.
+
+Before implementation: agree content, form destination, ownership, estimate and tests.
+This is an original example, not a client outcome or an automated audit.

@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f5f2eb" />
+  <meta name="theme-color" content="#080c12" />
   <title>Free CSV Cleaner &amp; Import Checker | Hasnain Qureshi</title>
-  <meta name="description" content="Check CSV files for duplicate rows, blank rows and inconsistent columns. Review fixes and download clean CSV with a change report. Free, local processing." />
+  <meta name="description" content="Clean CSV files, map destination columns and review required fields or conflicting IDs. Download reviewed and unresolved records. Free, local processing." />
   <meta name="author" content="Hasnain Qureshi" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://hasnainqureshi.online/tools/csv-cleaner/" />
@@ -13,157 +13,40 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Hasnain Qureshi" />
   <meta property="og:title" content="Free CSV Cleaner &amp; Import Checker" />
-  <meta property="og:description" content="Check CSV files for duplicate rows, blank rows and inconsistent columns. Review fixes and download clean CSV with a change report. Free, local processing." />
+  <meta property="og:description" content="Clean CSV files, map destination columns and review required fields or conflicting IDs. Download reviewed and unresolved records. Free, local processing." />
   <meta property="og:url" content="https://hasnainqureshi.online/tools/csv-cleaner/" />
   <meta property="og:image" content="https://hasnainqureshi.online/asset/portfolio-social.jpg" />
   <meta property="og:image:alt" content="Hasnain Qureshi - free tools for business owners" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Free CSV Cleaner &amp; Import Checker" />
-  <meta name="twitter:description" content="Check CSV files for duplicate rows, blank rows and inconsistent columns. Review fixes and download clean CSV with a change report. Free, local processing." />
+  <meta name="twitter:description" content="Clean CSV files, map destination columns and review required fields or conflicting IDs. Download reviewed and unresolved records. Free, local processing." />
   <meta name="twitter:image" content="https://hasnainqureshi.online/asset/portfolio-social.jpg" />
   <link rel="preload" href="/fonts/Moderat-Regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/css/property-service.css" />
   <link rel="stylesheet" href="/css/portfolio-type-system.css" />
   <link rel="stylesheet" href="/css/business-tools.css" />
   <script src="/js/csv-cleaner-core.js" defer></script><script src="/js/csv-cleaner.js" defer></script>
-  <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://hasnainqureshi.online/tools/csv-cleaner/#page",
-      "url": "https://hasnainqureshi.online/tools/csv-cleaner/",
-      "name": "Free CSV Cleaner & Import Checker",
-      "description": "Check CSV files for duplicate rows, blank rows and inconsistent columns. Review fixes and download clean CSV with a change report. Free, local processing.",
-      "inLanguage": "en",
-      "dateModified": "2026-10-05",
-      "mainEntity": {
-        "@id": "https://hasnainqureshi.online/tools/csv-cleaner/#tool"
-      },
-      "breadcrumb": {
-        "@id": "https://hasnainqureshi.online/tools/csv-cleaner/#breadcrumb"
-      }
-    },
-    {
-      "@type": "WebApplication",
-      "@id": "https://hasnainqureshi.online/tools/csv-cleaner/#tool",
-      "url": "https://hasnainqureshi.online/tools/csv-cleaner/",
-      "name": "CSV Cleaner & Import Checker",
-      "description": "Check CSV files for duplicate rows, blank rows and inconsistent columns. Review fixes and download clean CSV with a change report. Free, local processing.",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Any",
-      "browserRequirements": "JavaScript and a current browser",
-      "isAccessibleForFree": true,
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "creator": {
-        "@type": "Person",
-        "name": "Hasnain Qureshi",
-        "url": "https://hasnainqureshi.online/"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://hasnainqureshi.online/tools/csv-cleaner/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Portfolio",
-          "item": "https://hasnainqureshi.online/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Free tools",
-          "item": "https://hasnainqureshi.online/tools/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "CSV Cleaner & Import Checker",
-          "item": "https://hasnainqureshi.online/tools/csv-cleaner/"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://hasnainqureshi.online/tools/csv-cleaner/#questions",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How do I remove duplicate rows from a CSV?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Add a CSV, select Remove exact duplicate rows, then check the file. The cleaner compares every cell after your selected fixes and keeps the first occurrence. Review the output and change log, confirm the result and download the CSV."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What does the CSV import checker validate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "It checks CSV quoting, expected column counts, empty or repeated headers, blank rows and exact duplicate rows. It also flags cells starting with common spreadsheet formula characters. It does not validate a CRM, database or commerce platform schema, field types or required business values."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Will this fix inconsistent columns automatically?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Only if you choose a rule. By default inconsistent rows block the CSV download. You can pad short rows with empty cells or explicitly exclude inconsistent rows. Rows with extra cells are never silently truncated. Malformed quotes must be corrected in the source."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does it support Excel and Google Sheets files?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Export your sheet as CSV first. This tool accepts CSV, TSV and text files up to 5 MB, 20,000 data records and 100 columns. It does not read XLSX workbooks. CSV downloads are UTF-8 text with a BOM; no cell values are converted to numbers or dates."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are my customer records uploaded?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. File decoding, validation, previews and cleanup happen locally in your browser. Data is held in memory while the page is open. There is no account, server upload or online sharing. Download your work before leaving or reloading."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I import the cleaned file straight into my CRM?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A structurally clean CSV is a starting point. Check your CRM requirements for column names, required fields, allowed values, identifiers and date formats, then test a small import. This tool does not connect to your CRM or guarantee that a destination will accept the file."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why are negative numbers flagged as formula-like?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Spreadsheet applications may interpret cells beginning with equals, plus, minus or at-sign characters as formulas. Negative numbers also match this conservative check. Review the values and choose apostrophe prefixing only if it suits the destination, because it changes the text."
-          }
-        }
-      ]
-    }
-  ]
-}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://hasnainqureshi.online/tools/csv-cleaner/#page", "url": "https://hasnainqureshi.online/tools/csv-cleaner/", "name": "Free CSV Cleaner & Import Checker", "description": "Clean CSV files, map destination columns and review required fields or conflicting IDs. Download reviewed and unresolved records. Free, local processing.", "inLanguage": "en", "dateModified": "2026-10-05", "mainEntity": {"@id": "https://hasnainqureshi.online/tools/csv-cleaner/#tool"}, "breadcrumb": {"@id": "https://hasnainqureshi.online/tools/csv-cleaner/#breadcrumb"}}, {"@type": "WebApplication", "@id": "https://hasnainqureshi.online/tools/csv-cleaner/#tool", "url": "https://hasnainqureshi.online/tools/csv-cleaner/", "name": "CSV Cleaner & Import Checker", "description": "Clean CSV files, map destination columns and review required fields or conflicting IDs. Download reviewed and unresolved records. Free, local processing.", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "browserRequirements": "JavaScript and a current browser", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "creator": {"@type": "Person", "name": "Hasnain Qureshi", "url": "https://hasnainqureshi.online/"}}, {"@type": "BreadcrumbList", "@id": "https://hasnainqureshi.online/tools/csv-cleaner/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Portfolio", "item": "https://hasnainqureshi.online/"}, {"@type": "ListItem", "position": 2, "name": "Free tools", "item": "https://hasnainqureshi.online/tools/"}, {"@type": "ListItem", "position": 3, "name": "CSV Cleaner & Import Checker", "item": "https://hasnainqureshi.online/tools/csv-cleaner/"}]}, {"@type": "FAQPage", "@id": "https://hasnainqureshi.online/tools/csv-cleaner/#questions", "mainEntity": [{"@type": "Question", "name": "Can I map columns to an import template?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Load destination headers, choose each source column and mark any required nonblank fields. Preview the output and download a local recipe. The tool does not infer destination data types or connect to your CRM."}}, {"@type": "Question", "name": "What happens to conflicting IDs?", "acceptedAnswer": {"@type": "Answer", "text": "Choose a key column to flag every repeated-key record. Conflicting records are not automatically merged. They block the clean download unless you explicitly move them to the separate unresolved-rows file for review."}}, {"@type": "Question", "name": "How do I remove duplicate rows from a CSV?", "acceptedAnswer": {"@type": "Answer", "text": "Add a CSV, select Remove exact duplicate rows, then check the file. The cleaner compares every cell after your selected fixes and keeps the first occurrence. Review the output and change log, confirm the result and download the CSV."}}, {"@type": "Question", "name": "What does the CSV import checker validate?", "acceptedAnswer": {"@type": "Answer", "text": "It checks CSV quoting, expected column counts, empty or repeated headers, blank rows and exact duplicate rows. It also flags cells starting with common spreadsheet formula characters. You can also map destination headers, mark required nonblank fields and review repeated keys. It does not validate every CRM or commerce platform rule, data type or existing destination record."}}, {"@type": "Question", "name": "Will this fix inconsistent columns automatically?", "acceptedAnswer": {"@type": "Answer", "text": "Only if you choose a rule. By default inconsistent rows block the CSV download. You can pad short rows with empty cells or explicitly exclude inconsistent rows. Rows with extra cells are never silently truncated. Malformed quotes must be corrected in the source."}}, {"@type": "Question", "name": "Does it support Excel and Google Sheets files?", "acceptedAnswer": {"@type": "Answer", "text": "Export your sheet as CSV first. This tool accepts CSV, TSV and text files up to 5 MB, 20,000 data records and 100 columns. It does not read XLSX workbooks. CSV downloads are UTF-8 text with a BOM; no cell values are converted to numbers or dates."}}, {"@type": "Question", "name": "Are my customer records uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "No. File decoding, validation, previews and cleanup happen locally in your browser. Data is held in memory while the page is open. There is no account, server upload or online sharing. Download your work before leaving or reloading."}}, {"@type": "Question", "name": "Can I import the cleaned file straight into my CRM?", "acceptedAnswer": {"@type": "Answer", "text": "A structurally clean CSV is a starting point. Check your CRM requirements for column names, required fields, allowed values, identifiers and date formats, then test a small import. This tool does not connect to your CRM or guarantee that a destination will accept the file."}}, {"@type": "Question", "name": "Why are negative numbers flagged as formula-like?", "acceptedAnswer": {"@type": "Answer", "text": "Spreadsheet applications may interpret cells beginning with equals, plus, minus or at-sign characters as formulas. Negative numbers also match this conservative check. Review the values and choose apostrophe prefixing only if it suits the destination, because it changes the text."}}]}]}</script>
+<script src="/js/site-analytics.js" defer></script>
+<link rel="stylesheet" href="/css/site-layout.css" />
+<script src="/js/site-layout.js" defer></script>
+<noscript><style>.shared-navigation{display:flex;flex-wrap:wrap}.shared-menu-toggle{display:none}.shared-header.topbar{position:static;grid-template-columns:1fr}.shared-contact{justify-self:start}</style></noscript>
 </head>
-<body class="business-tool">
+<body class="business-tool content-page">
   <a class="skip-link" href="#content">Skip to content</a>
-  <header class="site-header wrap"><a class="brand" href="/" aria-label="Hasnain Qureshi portfolio"><span class="brand-mark">HQ</span><span>Hasnain Qureshi<small>Independent developer</small></span></a><nav aria-label="Main navigation"><a href="/tools/">All tools</a><a class="header-contact" href="/#contact">Contact <span aria-hidden="true">&#8599;</span></a></nav></header>
+  <header class="topbar shared-header">
+<a class="shared-brand" href="/" aria-label="HasnainQ home"><span class="brand-mark">HQ</span><span class="brand-copy"><strong>HasnainQ</strong><small>Full-stack developer</small></span></a>
+<nav class="shared-navigation" id="site-navigation" aria-label="Primary navigation" data-nav><a href="/#work">Work</a><a href="/#stack">Stack</a><a href="/#skills">Skills</a><a href="/#experience">Experience</a><a href="/#contact">Contact</a></nav>
+<a class="shared-contact" href="/#contact">Contact me <span aria-hidden="true">&#8599;</span></a>
+<button class="shared-menu-toggle" type="button" data-menu-toggle aria-controls="site-navigation" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
+</header>
   <main id="content">
     <section class="tool-hero wrap" aria-labelledby="page-title">
       <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Portfolio</a><span aria-hidden="true">/</span><a href="/tools/">Free tools</a><span aria-hidden="true">/</span><span aria-current="page">CSV Cleaner &amp; Import Checker</span></nav>
       <p class="eyebrow">Free business tool / No account needed</p>
       <h1 id="page-title">CSV cleaner<br /><em>&amp; import checker.</em></h1>
       <p class="hero-intro">Check spreadsheet exports before a CRM migration, dashboard import or integration. Find duplicates, blank rows and inconsistent columns, review the fixes and download a clean CSV without uploading business data.</p>
-      <p class="tool-privacy">Your files stay on this device. Processing is local, with no file uploads, tracking scripts or third-party libraries on this tool page. Working data is cleared when you leave or reload.</p>
+      <p class="tool-privacy">Your files stay on this device. File processing is local with no uploads or processing libraries. Google Analytics measures page visits and task events, not file contents. Manage usage analytics on the <a href="/privacy/">Privacy page</a>. Save or download your work before leaving or reloading.</p>
     </section>
     <noscript><p class="wrap">Enable JavaScript to use this browser tool. The instructions and frequently asked questions remain available below.</p></noscript>
     <section class="wrap section-space tool-stack" aria-label="CSV cleaner and import checker">
@@ -188,6 +71,22 @@
       <small>Excluding rows removes their data from the output. Review each finding and the change log before confirming. Extra cells are never silently truncated.</small>
       <label><input id="csv-protect" type="checkbox" /> Prefix formula-like cells with an apostrophe</label>
       <small>Optional for spreadsheet viewing. This changes cell text and can affect imports, including negative numbers. It is not a guarantee of safe handling in every spreadsheet application.</small>
+      <section class="tool-mapping" aria-labelledby="csv-mapping-title">
+        <h3 id="csv-mapping-title">Match a destination template</h3>
+        <label for="csv-template-file">Optional destination CSV template<input id="csv-template-file" type="file" accept=".csv,.tsv,.txt" /></label>
+        <small>Read the first row as the required column layout. Only headers are used; sample data is ignored. Maximum 1 MB. Choose the same text encoding as your source, or UTF-8 for pasted headers.</small>
+        <label for="csv-target-headers">Or enter destination headers<textarea id="csv-target-headers" rows="2" placeholder="Customer ID,First name,Email,Company"></textarea></label>
+        <button class="button tool-secondary" id="csv-prepare-mapping" type="button">Prepare column mapping</button>
+        <small>Source files must have headers for mapping. Empty destination headers keep the source layout. Removing a destination column drops that field from the exported file; review the full mapping.</small>
+        <div id="csv-mapping"></div>
+        <label for="csv-key">Check repeated keys in output<select id="csv-key"><option value="-1">No key check</option></select></label>
+        <label><input id="csv-key-ignore-case" type="checkbox" /> Ignore case when matching selected keys</label>
+        <label><input id="csv-quarantine" type="checkbox" /> Move missing required fields and repeated-key records into a separate unresolved file</label>
+        <small>All conflicting records stay available for review. Without this option, unresolved records block clean CSV download. Repeated product IDs can be legitimate: apply a key rule only when your destination requires unique values.</small>
+        <label for="csv-recipe-file">Load a saved mapping recipe<input id="csv-recipe-file" type="file" accept=".json,application/json" /></label>
+        <button class="tool-small-button" id="csv-save-recipe" type="button">Download mapping recipe</button>
+        <small>Recipes contain column names and chosen rules, not customer records. Keep them local if your field names are sensitive.</small>
+      </section>
       <button class="button" type="submit" id="csv-check">Check CSV &amp; preview fixes</button>
     </div>
   </form>
@@ -201,14 +100,14 @@
     <h3>Change log</h3><p id="csv-log-limit"></p><ol class="tool-issues" id="csv-log"></ol>
     <label for="csv-output-delimiter">Download delimiter<select id="csv-output-delimiter"><option value=",">Comma</option><option value=";">Semicolon</option><option value="tab">Tab</option><option value="|">Pipe</option></select></label>
     <label><input id="csv-review" type="checkbox" /> I reviewed the output, removals and changes. Download this version.</label>
-    <div class="tool-actions"><button class="button" id="csv-download" type="button" disabled>Download clean CSV</button><button class="button tool-secondary" id="csv-report" type="button" disabled>Download check report</button></div>
+    <div class="tool-actions"><button class="button" id="csv-download" type="button" disabled>Download clean CSV</button><button class="button tool-secondary" id="csv-unresolved" type="button" disabled>Download unresolved rows</button><button class="button tool-secondary" id="csv-excluded" type="button" disabled>Download removed rows</button><button class="button tool-secondary" id="csv-report" type="button" disabled>Download check report</button></div>
     <small>CSV download uses UTF-8 with a BOM and CRLF record separators. The JSON report records row numbers, findings and selected changes. It does not include complete cell values.</small>
   </section>
 </section>
-    <section class="tool-guide section-space" aria-labelledby="guide-title"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">A practical workflow</p><h2 id="guide-title">How to use this tool.</h2></div></div><div class="scope-grid"><article><span class="item-number">01 / Load</span><h3>Export a text CSV from your system</h3><p>Download a CSV from your spreadsheet, CRM or business application. Choose the correct text encoding and delimiter. Keep an original copy so you can reconcile the imported records.</p></article><article><span class="item-number">02 / Check</span><h3>Find structural import problems</h3><p>Check quoted fields, duplicate rows, blank rows, repeated headers and inconsistent column counts. A quoted comma is part of a field, not an extra column. Record numbers and physical line numbers can differ when fields span lines.</p></article><article><span class="item-number">03 / Review</span><h3>Apply only the fixes you need</h3><p>Choose whitespace trimming, blank-row removal and exact duplicate removal explicitly. Pad short rows only if missing fields are acceptable, or exclude inconsistent rows after review. Missing or repeated headers require editing the source.</p></article><article><span class="item-number">04 / Import</span><h3>Test the destination with a small sample</h3><p>Download the reviewed CSV and change report. The file still needs to match your destination schema and business rules. For a custom dashboard or import workflow, see <a href="/services/saas-mvp-development/">SaaS development services</a>.</p></article></div></div></section>
-    <section class="questions-section wrap section-space" aria-labelledby="questions-title"><div class="section-heading"><div><p class="eyebrow">What it can help with</p><h2 id="questions-title">Common questions.</h2></div></div><div class="questions"><details><summary>How do I remove duplicate rows from a CSV?</summary><div><p>Add a CSV, select Remove exact duplicate rows, then check the file. The cleaner compares every cell after your selected fixes and keeps the first occurrence. Review the output and change log, confirm the result and download the CSV.</p></div></details><details><summary>What does the CSV import checker validate?</summary><div><p>It checks CSV quoting, expected column counts, empty or repeated headers, blank rows and exact duplicate rows. It also flags cells starting with common spreadsheet formula characters. It does not validate a CRM, database or commerce platform schema, field types or required business values.</p></div></details><details><summary>Will this fix inconsistent columns automatically?</summary><div><p>Only if you choose a rule. By default inconsistent rows block the CSV download. You can pad short rows with empty cells or explicitly exclude inconsistent rows. Rows with extra cells are never silently truncated. Malformed quotes must be corrected in the source.</p></div></details><details><summary>Does it support Excel and Google Sheets files?</summary><div><p>Export your sheet as CSV first. This tool accepts CSV, TSV and text files up to 5 MB, 20,000 data records and 100 columns. It does not read XLSX workbooks. CSV downloads are UTF-8 text with a BOM; no cell values are converted to numbers or dates.</p></div></details><details><summary>Are my customer records uploaded?</summary><div><p>No. File decoding, validation, previews and cleanup happen locally in your browser. Data is held in memory while the page is open. There is no account, server upload or online sharing. Download your work before leaving or reloading.</p></div></details><details><summary>Can I import the cleaned file straight into my CRM?</summary><div><p>A structurally clean CSV is a starting point. Check your CRM requirements for column names, required fields, allowed values, identifiers and date formats, then test a small import. This tool does not connect to your CRM or guarantee that a destination will accept the file.</p></div></details><details><summary>Why are negative numbers flagged as formula-like?</summary><div><p>Spreadsheet applications may interpret cells beginning with equals, plus, minus or at-sign characters as formulas. Negative numbers also match this conservative check. Review the values and choose apostrophe prefixing only if it suits the destination, because it changes the text.</p></div></details></div></section>
-    <section class="tool-cta wrap section-space" aria-labelledby="contact-title"><p class="eyebrow">Need the changes implemented?</p><h2 id="contact-title">Need a reliable<br /><em>import workflow?</em></h2><p>I'm Hasnain Qureshi, a developer in Karachi working remotely with UK and US teams, including businesses in London. If recurring spreadsheet cleanup is blocking a migration, dashboard or integration, discuss a custom import workflow with validation and review built into your product. Explore my <a href="/services/saas-mvp-development/">SaaS MVP development services</a>.</p><a class="button" href="/#contact">Discuss your import or dashboard <span aria-hidden="true">&#8599;</span></a></section>
-  </main>
-  <footer class="site-footer wrap"><a class="footer-name" href="/">Hasnain Qureshi<span>Development for web &amp; mobile</span></a><nav aria-label="Related tools and services"><a href="/tools/">All free tools</a><a href="/tools/website-feedback-tool/">Website feedback tool</a><a href="/tools/csv-cleaner/">CSV cleaner</a><a href="/services/nextjs-development/">Next.js development</a><a href="/services/saas-mvp-development/">SaaS MVP development</a></nav><p>&copy; 2026 Hasnain Qureshi<br />Karachi / Working worldwide</p></footer>
+    <section class="tool-guide section-space" aria-labelledby="guide-title"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">A practical workflow</p><h2 id="guide-title">How to use this tool.</h2></div></div><div class="scope-grid"><article><span class="item-number">01 / Load</span><h3>Export a text CSV from your system</h3><p>Download a CSV from your spreadsheet, CRM or business application. Choose the correct text encoding and delimiter. Keep an original copy so you can reconcile the imported records.</p></article><article><span class="item-number">02 / Check</span><h3>Find structural import problems</h3><p>Check quoted fields, duplicate rows, blank rows, repeated headers and inconsistent column counts. A quoted comma is part of a field, not an extra column. Record numbers and physical line numbers can differ when fields span lines.</p></article><article><span class="item-number">03 / Review</span><h3>Apply only the fixes you need</h3><p>Choose whitespace trimming, blank-row removal and exact duplicate removal explicitly. Pad short rows only if missing fields are acceptable, or exclude inconsistent rows after review. Missing or repeated headers require editing the source.</p></article><article><span class="item-number">04 / Import</span><h3>Test the destination with a small sample</h3><p>Download the reviewed CSV and change report. The file still needs to match your destination schema and business rules. For a custom dashboard or import workflow, see <a href="/services/data-import-integration/">custom import development</a>.</p></article></div></div></section>
+    <section class="questions-section wrap section-space" aria-labelledby="questions-title"><div class="section-heading"><div><p class="eyebrow">What it can help with</p><h2 id="questions-title">Common questions.</h2></div></div><div class="questions"><details><summary>Can I map columns to an import template?</summary><div><p>Yes. Load destination headers, choose each source column and mark any required nonblank fields. Preview the output and download a local recipe. The tool does not infer destination data types or connect to your CRM.</p></div></details><details><summary>What happens to conflicting IDs?</summary><div><p>Choose a key column to flag every repeated-key record. Conflicting records are not automatically merged. They block the clean download unless you explicitly move them to the separate unresolved-rows file for review.</p></div></details><details><summary>How do I remove duplicate rows from a CSV?</summary><div><p>Add a CSV, select Remove exact duplicate rows, then check the file. The cleaner compares every cell after your selected fixes and keeps the first occurrence. Review the output and change log, confirm the result and download the CSV.</p></div></details><details><summary>What does the CSV import checker validate?</summary><div><p>It checks CSV quoting, expected column counts, empty or repeated headers, blank rows and exact duplicate rows. It also flags cells starting with common spreadsheet formula characters. You can also map destination headers, mark required nonblank fields and review repeated keys. It does not validate every CRM or commerce platform rule, data type or existing destination record.</p></div></details><details><summary>Will this fix inconsistent columns automatically?</summary><div><p>Only if you choose a rule. By default inconsistent rows block the CSV download. You can pad short rows with empty cells or explicitly exclude inconsistent rows. Rows with extra cells are never silently truncated. Malformed quotes must be corrected in the source.</p></div></details><details><summary>Does it support Excel and Google Sheets files?</summary><div><p>Export your sheet as CSV first. This tool accepts CSV, TSV and text files up to 5 MB, 20,000 data records and 100 columns. It does not read XLSX workbooks. CSV downloads are UTF-8 text with a BOM; no cell values are converted to numbers or dates.</p></div></details><details><summary>Are my customer records uploaded?</summary><div><p>No. File decoding, validation, previews and cleanup happen locally in your browser. Data is held in memory while the page is open. There is no account, server upload or online sharing. Download your work before leaving or reloading.</p></div></details><details><summary>Can I import the cleaned file straight into my CRM?</summary><div><p>A structurally clean CSV is a starting point. Check your CRM requirements for column names, required fields, allowed values, identifiers and date formats, then test a small import. This tool does not connect to your CRM or guarantee that a destination will accept the file.</p></div></details><details><summary>Why are negative numbers flagged as formula-like?</summary><div><p>Spreadsheet applications may interpret cells beginning with equals, plus, minus or at-sign characters as formulas. Negative numbers also match this conservative check. Review the values and choose apostrophe prefixing only if it suits the destination, because it changes the text.</p></div></details></div></section>
+    <section class="site-callout" aria-label="Discuss your project"><div class="shared-container"><div><h2>Need a reliable  import workflow?</h2><p>I&#x27;m Hasnain Qureshi, a developer in Karachi working remotely with UK and US teams, including businesses in London. If recurring spreadsheet cleanup is blocking a migration, dashboard or integration, discuss a custom import workflow with validation and review built into your product. Explore my  data import and integration services .</p></div><div class="callout-actions"><a href="/#contact">Discuss your project <span aria-hidden="true">&#8599;</span></a><a href="/#work">View my work</a></div></div></section>
+  <section class="related-resources"><div class="shared-container"><div><p class="eyebrow">Useful next steps</p><h2>Guides for your project</h2></div><ul class="resource-cards"><li><a href="/insights/fix-csv-import-errors/">Fix CSV import errors: a worked contacts example</a></li><li><a href="/insights/csv-column-mapping/">Map CSV columns to a destination template</a></li><li><a href="/insights/duplicate-customer-ids-csv/">Duplicate customer IDs in CSV: keep conflicting records</a></li><li><a href="/insights/hubspot-contacts-csv-preparation/">Prepare a HubSpot contacts CSV: checks before import</a></li></ul></div></section></main>
+  <footer class="shared-footer"><div class="shared-container"><div class="footer-columns"><div class="footer-intro"><a class="footer-brand" href="/">HasnainQ</a><p>Full-stack development for web and mobile.</p><p>Based in Karachi.<br />Working remotely with UK and US teams.</p></div><section><h2>Services</h2><nav aria-label="Services"><a href="/services/commercial-property-websites/">Commercial property websites</a><a href="/services/service-marketplace-app-development/">Service marketplace apps</a><a href="/services/nextjs-development/">Next.js development</a><a href="/services/saas-mvp-development/">SaaS MVP development</a><a href="/services/data-import-integration/">Data import &amp; integration</a></nav></section><section><h2>Free tools</h2><nav aria-label="Free tools"><a href="/tools/website-cost-calculator/">Website cost calculator</a><a href="/tools/website-brief-builder/">Website brief builder</a><a href="/tools/website-health-check/">Website health check</a><a href="/tools/image-optimizer/">Image optimizer</a><a href="/tools/website-mockup-generator/">Website &amp; app mockups</a><a href="/tools/website-feedback-tool/">Website feedback planner</a><a href="/tools/csv-cleaner/">CSV cleaner &amp; import checker</a></nav></section><section><h2>Explore</h2><nav aria-label="Explore"><a href="/#work">Selected work</a><a href="/insights/">Practical guides &amp; insights</a><a href="/insights/service-marketplace-mvp-checklist/">Marketplace MVP checklist</a><a href="/insights/jev-ai-vs-chatgpt-claude/">AI engineering insights</a><a href="/tools/">All browser tools</a><a href="/resources/business-workflow-sample-pack.zip" download>Download sample pack</a></nav></section></div><div class="footer-bottom"><p>&copy; 2026 Hasnain Qureshi</p><nav aria-label="Footer information"><a href="/privacy/">Privacy</a><a href="/#contact">Get in touch</a></nav></div></div></footer>
 </body>
 </html>

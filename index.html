@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#080b10" />
+    <meta name="theme-color" content="#080c12" />
     <title>Hasnain Qureshi | Remote Full-Stack React &amp; Next.js Developer</title>
     <meta
       name="description"
@@ -38,13 +38,8 @@
     <link rel="stylesheet" href="./css/portfolio-redesign.css" />
     <link rel="stylesheet" href="./css/portfolio-type-system.css" />
     <noscript><style>.exit-feedback-trigger,.contact-bubble,.menu-toggle{display:none!important}.topnav{display:flex!important;position:static!important;visibility:visible!important;opacity:1!important;transform:none!important;flex-wrap:wrap}.topbar{flex-wrap:wrap}</style></noscript>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W0624M03ZJ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", "G-W0624M03ZJ");
-    </script>
+
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -95,7 +90,11 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-  </head>
+  <script src="/js/site-analytics.js" defer></script>
+<link rel="stylesheet" href="/css/site-layout.css" />
+<script src="/js/site-layout.js" defer></script>
+<noscript><style>.shared-navigation{display:flex;flex-wrap:wrap}.shared-menu-toggle{display:none}.shared-header.topbar{position:static;grid-template-columns:1fr}.shared-contact{justify-self:start}</style></noscript>
+</head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
@@ -108,23 +107,12 @@ s0.parentNode.insertBefore(s1,s0);
     </div>
 
     <div class="site-shell">
-      <header class="topbar">
-        <a class="brand" href="#top" aria-label="HasnainQ home">
-          <span class="brand-mark">HQ</span>
-          <span class="brand-copy"><strong>HasnainQ</strong><small>Full-stack developer</small></span>
-        </a>
-        <nav class="topnav" aria-label="Primary navigation" data-nav>
-          <a href="#work">Work</a>
-          <a href="#stack">Stack</a>
-          <a href="./Hasnain-Qureshi-Resume.pdf" data-contact-action="resume" target="_blank" rel="noreferrer">Resume</a>
-          <a href="#experience">Experience</a>
-         <a href="#contact">Contact</a>
-        </nav>
-        <a class="top-cta magnetic" href="#contact">Contact me <span>↗</span></a>
-        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Open menu">
-          <span></span><span></span>
-        </button>
-      </header>
+      <header class="topbar shared-header">
+<a class="shared-brand" href="#top" aria-label="HasnainQ home"><span class="brand-mark">HQ</span><span class="brand-copy"><strong>HasnainQ</strong><small>Full-stack developer</small></span></a>
+<nav class="shared-navigation" id="site-navigation" aria-label="Primary navigation" data-nav><a href="#work">Work</a><a href="#stack">Stack</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+<a class="shared-contact" href="#contact">Contact me <span aria-hidden="true">&#8599;</span></a>
+<button class="shared-menu-toggle" type="button" data-menu-toggle aria-controls="site-navigation" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
+</header>
 
       <nav class="mobile-dock" aria-label="Mobile navigation">
         <a href="#top"><span aria-hidden="true">⌂</span><small>Home</small></a>
@@ -405,9 +393,51 @@ s0.parentNode.insertBefore(s1,s0);
             </article>
             <article class="role reveal">
               <time>Apr 2021 - July 2024</time>
-              <div><h3>Freelance Full Stack Developer</h3><p>Responsive products and websites for UK, USA, and Pakistan clients, including headless CMS, GraphQL, payments, maps, and social APIs.</p></div>
-              <strong>Independent<br /><small>Remote</small></strong>
+              <div><h3>Freelance Full Stack Developer</h3><p>React, MERN, PHP and WordPress projects for UK, USA and Pakistan clients through Fiverr and direct engagements. Previously achieved Level One seller status on Fiverr.</p></div>
+              <strong>Independent<br /><small>Fiverr + direct clients / Remote</small></strong>
             </article>
+          </div>
+          <div class="earlier-work" id="earlier-work" aria-labelledby="earlier-work-title">
+            <div class="earlier-work_head reveal">
+              <div><p class="eyebrow eyebrow--cyan">Earlier freelance work</p><h3 id="earlier-work-title">Business workflows I have built.</h3></div>
+              <p>Selected projects from my earlier freelance work. These summaries describe my contributions; live demos and screenshots are not currently available.</p>
+            </div>
+            <div class="earlier-work_grid">
+              <article class="earlier-work_card reveal"><small>React / File operations</small><h4>Startup file management system</h4><p>Built folder creation and drag-and-drop file uploads, including dropping files into a folder or outside it to upload. A workspace for organising a startup's files.</p></article>
+              <article class="earlier-work_card reveal"><small>PHP + MySQL / HR operations</small><h4>Payslip management application</h4><p>Built a web app for a US client where HR or administrators could create and send payslips. Employees could view payment records and request corrections, with employee suggestions by department and position.</p></article>
+              <article class="earlier-work_card reveal"><small>Next.js / Content + notifications</small><h4>Odyzon music and events website</h4><p>Built a website with a custom administration panel to publish music and events, plus automatic updates when new songs or events were added.</p><span class="earlier-work_status">Historical project / website no longer live</span></article>
+              <article class="earlier-work_card reveal"><small>React / API integration</small><h4>Music-data integration</h4><p>Integrated the Chartmetric API into a React website, including refresh-token handling and filtering specific records from large API responses.</p></article>
+              <article class="earlier-work_card reveal"><small>MERN / Authenticated application</small><h4>INote notes application</h4><p>Designed and developed a notes web app with account authentication and personal cloud notes. Users could create, edit and delete their notes.</p></article>
+              <article class="earlier-work_card reveal"><small>WordPress / Customer-facing website</small><h4>Custom coupon website</h4><p>Built a custom landing page and coupon discount page. Visitors could copy coupon codes and follow links to the relevant offers.</p></article>
+            </div>
+            <div class="earlier-work_foot reveal"><p><strong>Education</strong> BSc Computer Science, Mehran University of Engineering &amp; Technology, 2019 - 2023.</p><a href="#contact">Discuss a similar workflow <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </section>
+
+        <section class="client-reviews section section--paper" id="client-reviews" data-section aria-labelledby="client-reviews-title">
+          <div class="client-reviews_head reveal">
+            <div><p class="eyebrow">Past Fiverr client feedback</p><h2 id="client-reviews-title">What clients said <em>about the work.</em></h2></div>
+            <p>Selected excerpts from past client reviews, with the original screenshots available below.</p>
+          </div>
+          <div class="client-reviews_grid">
+            <figure class="client-review reveal">
+              <div class="client-review_rating"><span aria-hidden="true">★★★★★</span><span>5.0 / 5</span></div>
+              <blockquote><p>“However, when I reached out for help, he was able to fix it quickly and efficiently. I was impressed by his speedy service and his ability to solve the issue which had been causing me so much frustration.”</p></blockquote>
+              <figcaption><strong>joeleldon</strong><span>United States / React troubleshooting</span></figcaption>
+              <a href="/asset/4.png" target="_blank" rel="noreferrer">View original review <span aria-hidden="true">↗</span></a>
+            </figure>
+            <figure class="client-review reveal">
+              <div class="client-review_rating"><span aria-hidden="true">★★★★★</span><span>5.0 / 5</span></div>
+              <blockquote><p>“I was desperate to fix a small bug and he managed to fix it within an hour, perfect work.”</p></blockquote>
+              <figcaption><strong>connorhallam602</strong><span>United Kingdom / Bug fix</span></figcaption>
+              <a href="/asset/3.png" target="_blank" rel="noreferrer">View original review <span aria-hidden="true">↗</span></a>
+            </figure>
+            <figure class="client-review reveal">
+              <div class="client-review_rating"><span aria-hidden="true">★★★★★</span><span>5.0 / 5</span></div>
+              <blockquote><p>“I needed a design implemented quickly and well. He's done it efficiently within the timeline I needed and had great communication along the way. If you need something done well, go with Hasnain.”</p></blockquote>
+              <figcaption><strong>yassoliman</strong><span>Canada / Design implementation</span></figcaption>
+              <a href="/asset/5.png" target="_blank" rel="noreferrer">View original review <span aria-hidden="true">↗</span></a>
+            </figure>
           </div>
         </section>
 
@@ -656,12 +686,7 @@ s0.parentNode.insertBefore(s1,s0);
         </section>
       </main>
 
-      <footer class="footer">
-        <div><strong>HasnainQ</strong><small>Full-stack developer</small></div>
-        <p>Karachi / Pakistan · Working worldwide</p>
-        <a href="#top">Back to top ↑</a>
-        <nav class="footer-services" aria-label="Services and resources"><a href="/services/commercial-property-websites/">Commercial property websites</a><a href="/services/service-marketplace-app-development/">Service marketplace apps</a><a href="/services/nextjs-development/">Next.js development</a><a href="/services/saas-mvp-development/">SaaS MVP development</a><a href="/insights/service-marketplace-mvp-checklist/">Marketplace MVP checklist</a><a href="/insights/jev-ai-vs-chatgpt-claude/">Jev AI vs ChatGPT and Claude</a><a href="/tools/website-cost-calculator/">Website cost calculator</a><a href="/tools/website-brief-builder/">Website brief builder</a><a href="/tools/website-health-check/">Website health check</a><a href="/tools/image-optimizer/">Image optimizer</a><a href="/tools/website-mockup-generator/">Website &amp; app mockups</a><a href="/tools/website-feedback-tool/">Website feedback planner</a><a href="/tools/csv-cleaner/">CSV cleaner &amp; import checker</a></nav>
-      </footer>
+      <footer class="shared-footer"><div class="shared-container"><div class="footer-columns"><div class="footer-intro"><a class="footer-brand" href="/">HasnainQ</a><p>Full-stack development for web and mobile.</p><p>Based in Karachi.<br />Working remotely with UK and US teams.</p></div><section><h2>Services</h2><nav aria-label="Services"><a href="/services/commercial-property-websites/">Commercial property websites</a><a href="/services/service-marketplace-app-development/">Service marketplace apps</a><a href="/services/nextjs-development/">Next.js development</a><a href="/services/saas-mvp-development/">SaaS MVP development</a><a href="/services/data-import-integration/">Data import &amp; integration</a></nav></section><section><h2>Free tools</h2><nav aria-label="Free tools"><a href="/tools/website-cost-calculator/">Website cost calculator</a><a href="/tools/website-brief-builder/">Website brief builder</a><a href="/tools/website-health-check/">Website health check</a><a href="/tools/image-optimizer/">Image optimizer</a><a href="/tools/website-mockup-generator/">Website &amp; app mockups</a><a href="/tools/website-feedback-tool/">Website feedback planner</a><a href="/tools/csv-cleaner/">CSV cleaner &amp; import checker</a></nav></section><section><h2>Explore</h2><nav aria-label="Explore"><a href="/#work">Selected work</a><a href="/insights/">Practical guides &amp; insights</a><a href="/insights/service-marketplace-mvp-checklist/">Marketplace MVP checklist</a><a href="/insights/jev-ai-vs-chatgpt-claude/">AI engineering insights</a><a href="/tools/">All browser tools</a><a href="/resources/business-workflow-sample-pack.zip" download>Download sample pack</a></nav></section></div><div class="footer-bottom"><p>&copy; 2026 Hasnain Qureshi</p><nav aria-label="Footer information"><a href="/privacy/">Privacy</a><a href="/#contact">Get in touch</a></nav></div></div></footer>
     </div>
 
     <button class="exit-feedback-trigger" type="button" data-open-exit-feedback>Have a suggestion? Share feedback ↗</button>

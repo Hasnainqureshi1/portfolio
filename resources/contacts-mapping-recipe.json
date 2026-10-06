@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "sourceHeaders": [
+    "Customer ID",
+    "Name",
+    "Email",
+    "Company"
+  ],
+  "targets": [
+    {
+      "name": "Email",
+      "source": 2,
+      "required": true
+    },
+    {
+      "name": "Full name",
+      "source": 1,
+      "required": true
+    },
+    {
+      "name": "External ID",
+      "source": 0,
+      "required": true
+    },
+    {
+      "name": "Company name",
+      "source": 3,
+      "required": false
+    }
+  ],
+  "options": {
+    "header": true,
+    "trim": false,
+    "blank": false,
+    "duplicates": false,
+    "protect": false,
+    "ragged": "block"
+  },
+  "key": 2,
+  "ignoreCase": false,
+  "quarantine": true
+}

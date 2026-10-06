@@ -1,0 +1,13 @@
+MARKETPLACE OPERATOR DASHBOARD - FIRST RELEASE WORKSHEET
+Core request states: submitted > reviewed > offered > accepted > completed
+Additional paths to agree: rejected, expired, cancelled, disputed
+For each transition: actor / permission / required evidence / notification / audit
+Pending request queue: ID, age, service, area, current owner, status, next action
+Provider queue: profile check, coverage, eligibility, suspension and appeal owner
+Exceptions: duplicate request, unreachable customer, provider declines, failed
+payment, cancelled booking; identify manual recovery and who owns it
+Payment screens and payment ledger must agree; define processor/backend ownership
+Role matrix: operator, supervisor, provider, customer; test server permissions
+Release gate: one end-to-end request plus failure/recovery test; defer automation
+until repeated exceptions and a clear owner justify it
+This is a proposed scope worksheet, not documentation of Vurks infrastructure.

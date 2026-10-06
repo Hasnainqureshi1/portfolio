@@ -623,7 +623,10 @@
       });
       const url = URL.createObjectURL(blob);
       const link = element("a"); link.href = url; link.download = `website-app-mockup-${output.width}x${output.height}.${type === "image/png" ? "png" : "webp"}`;
+      link.addEventListener("click",event=>event.stopPropagation());
       document.body.append(link); link.click(); link.remove();
+      window.trackBusinessEvent?.("tool_complete",{item_count:images.length});
+      window.trackBusinessEvent?.("tool_download",{format:type.split("/")[1],item_count:images.length});
       setTimeout(() => URL.revokeObjectURL(url), 60000);
       status.textContent = `Download requested: ${output.width} × ${output.height} px, ${(blob.size / 1024 / 1024).toFixed(2)} MB. ${isDemo ? "This export uses the demo screenshots." : "Your original screenshots are unchanged."}`;
     } catch (cause) { status.textContent = `Download failed: ${cause.message}`; }
