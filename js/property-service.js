@@ -2,13 +2,8 @@
   const form = document.querySelector("#property-brief-form");
   const status = document.querySelector("#property-form-status");
   const track = (name, method) => {
-    if (typeof window.gtag === "function") {
-      window.gtag("event", name, { method, service: "commercial-property-websites", page_location: window.location.href });
-    }
+    window.trackBusinessEvent?.(name, { method });
   };
-  document.querySelectorAll("[data-contact-method]").forEach((link) => {
-    link.addEventListener("click", () => track("contact_click", link.dataset.contactMethod));
-  });
   if (!form || !status) return;
   let submitting = false;
   form.addEventListener("submit", async (event) => {

@@ -1,0 +1,18 @@
+SYNTHETIC SAAS MVP SCOPE EXAMPLE
+This is a fictional planning demonstration, not a client delivery or quote.
+
+User: a support operator assigned a customer enquiry.
+Task: read the enquiry and record a next action.
+Success: a permitted operator sees confirmation and retained history.
+Roles: operator reads assigned records; administrator manages assignments.
+Data: enquiry, assignment, action and timestamp; approved application database is the source of truth.
+Required: sign-in, access checks, enquiry view, action save, history and exception visibility.
+Deferred for this example: billing plans, AI suggestions, mobile apps and advanced reports.
+Failure: retain the entered action on a failed save; do not display success before confirmation.
+Acceptance: unauthorized reads fail; successful writes appear in history; failed writes retain input; operator can find unresolved work.
+Dependencies: agreed identity and hosting setup; no external provider is assumed.
+Design/review: named owners to be agreed before implementation.
+Timing/budget: not estimated; confirm actual scope and constraints first.
+Handover: repository, setup notes, data model, acceptance checks and operating owner.
+
+https://hasnainqureshi.online/insights/saas-mvp-scope-template/

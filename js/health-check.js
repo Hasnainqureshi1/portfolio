@@ -1,7 +1,5 @@
 (() => {
-  // Create a free key in Google Cloud (PageSpeed Insights API) and restrict it to
-  // this website's address. Without a key, requests share a public quota that is
-  // often used up.
+  // Use server-managed quota when configured; retain the public API fallback.
   const PSI_ENDPOINT = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed";
   const CATEGORIES = ["performance", "seo", "accessibility", "best-practices"];
   const REQUEST_TIMEOUT = 100000;
@@ -20,7 +18,7 @@
   const reportStatus = $("#report-status");
 
   const track = (name, detail = {}) => {
-    if (typeof window.gtag === "function") window.gtag("event", name, { tool: "website-health-check", ...detail });
+    window.trackToolEvent?.(name, detail);
   };
 
   // Plain-English explanations. Several Lighthouse audits (old and new names) share one explanation.
@@ -361,8 +359,12 @@
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT);
     try {
-      const response = await fetch(`${PSI_ENDPOINT}?${params}`, { signal: controller.signal });
-      const data = await response.json().catch(() => ({}));
+      let response = await fetch(`/api/pagespeed?${params}`, { signal: controller.signal });
+      let data = await response.json().catch(() => ({}));
+      if (response.status === 404 || data.error?.code === "PAGESPEED_KEY_MISSING") {
+        response = await fetch(`${PSI_ENDPOINT}?${params}`, { signal: controller.signal });
+        data = await response.json().catch(() => ({}));
+      }
       if (!response.ok || !data.lighthouseResult) {
         const [reason, message] = explainApiError(response.status, data.error && data.error.message);
         track("check_error", { reason, strategy });

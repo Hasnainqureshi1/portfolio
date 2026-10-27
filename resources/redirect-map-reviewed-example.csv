@@ -1,0 +1,8 @@
+source_path,destination_path,decision,status_code
+/old,/new,redirect,301
+/middle,/new,redirect,301
+/loop-a,/new,redirect,301
+/loop-b,/new,redirect,301
+/contact,,keep,200
+/retired,,remove,410
+/missing,,keep,200

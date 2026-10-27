@@ -1,0 +1,215 @@
+{
+  "date": "2026-10-27",
+  "layouts": [
+    {
+      "path": "/",
+      "width": 375,
+      "status": 200,
+      "h1_visible": true,
+      "horizontal_overflow": false,
+      "analytics_configs": [
+        [
+          "config",
+          "G-W0624M03ZJ",
+          {
+            "page_location": "https://hasnainqureshi.online/",
+            "page_referrer": "",
+            "page_title": "Hasnain Qureshi | Remote Full-Stack React & Next.js Developer",
+            "allow_google_signals": false,
+            "allow_ad_personalization_signals": false
+          }
+        ]
+      ]
+    },
+    {
+      "path": "/services/nextjs-development/",
+      "width": 375,
+      "status": 200,
+      "h1_visible": true,
+      "horizontal_overflow": false,
+      "analytics_configs": [
+        [
+          "config",
+          "G-W0624M03ZJ",
+          {
+            "page_location": "https://hasnainqureshi.online/services/nextjs-development/",
+            "page_referrer": "",
+            "page_title": "Next.js & Headless WordPress Developer | Hasnain Qureshi",
+            "allow_google_signals": false,
+            "allow_ad_personalization_signals": false
+          }
+        ]
+      ]
+    },
+    {
+      "path": "/services/commercial-property-websites/",
+      "width": 375,
+      "status": 200,
+      "h1_visible": true,
+      "horizontal_overflow": false,
+      "analytics_configs": [
+        [
+          "config",
+          "G-W0624M03ZJ",
+          {
+            "page_location": "https://hasnainqureshi.online/services/commercial-property-websites/",
+            "page_referrer": "",
+            "page_title": "Commercial Property Website Development | Hasnain Qureshi",
+            "allow_google_signals": false,
+            "allow_ad_personalization_signals": false
+          }
+        ]
+      ]
+    },
+    {
+      "path": "/tools/",
+      "width": 375,
+      "status": 200,
+      "h1_visible": true,
+      "horizontal_overflow": false,
+      "analytics_configs": [
+        [
+          "config",
+          "G-W0624M03ZJ",
+          {
+            "page_location": "https://hasnainqureshi.online/tools/",
+            "page_referrer": "",
+            "page_title": "Free Website Tools for Business Owners | Hasnain Qureshi",
+            "allow_google_signals": false,
+            "allow_ad_personalization_signals": false
+          }
+        ]
+      ]
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "status": 200,
+      "h1_visible": true,
+      "horizontal_overflow": false,
+      "analytics_configs": [
+        [
+          "config",
+          "G-W0624M03ZJ",
+          {
+            "page_location": "https://hasnainqureshi.online/",
+            "page_referrer": "",
+            "page_title": "Hasnain Qureshi | Remote Full-Stack React & Next.js Developer",
+            "allow_google_signals": false,
+            "allow_ad_personalization_signals": false
+          }
+        ]
+      ]
+    },
+    {
+      "path": "/services/nextjs-development/",
+      "width": 1440,
+      "status": 200,
+      "h1_visible": true,
+      "horizontal_overflow": false,
+      "analytics_configs": [
+        [
+          "config",
+          "G-W0624M03ZJ",
+          {
+            "page_location": "https://hasnainqureshi.online/services/nextjs-development/",
+            "page_referrer": "",
+            "page_title": "Next.js & Headless WordPress Developer | Hasnain Qureshi",
+            "allow_google_signals": false,
+            "allow_ad_personalization_signals": false
+          }
+        ]
+      ]
+    },
+    {
+      "path": "/services/commercial-property-websites/",
+      "width": 1440,
+      "status": 200,
+      "h1_visible": true,
+      "horizontal_overflow": false,
+      "analytics_configs": [
+        [
+          "config",
+          "G-W0624M03ZJ",
+          {
+            "page_location": "https://hasnainqureshi.online/services/commercial-property-websites/",
+            "page_referrer": "",
+            "page_title": "Commercial Property Website Development | Hasnain Qureshi",
+            "allow_google_signals": false,
+            "allow_ad_personalization_signals": false
+          }
+        ]
+      ]
+    },
+    {
+      "path": "/tools/",
+      "width": 1440,
+      "status": 200,
+      "h1_visible": true,
+      "horizontal_overflow": false,
+      "analytics_configs": [
+        [
+          "config",
+          "G-W0624M03ZJ",
+          {
+            "page_location": "https://hasnainqureshi.online/tools/",
+            "page_referrer": "",
+            "page_title": "Free Website Tools for Business Owners | Hasnain Qureshi",
+            "allow_google_signals": false,
+            "allow_ad_personalization_signals": false
+          }
+        ]
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "path": "/",
+      "failure": {
+        "status": "The form could not send. Email husnainqureshi134@gmail.com directly.",
+        "message_preserved": true,
+        "lead_events": 0
+      },
+      "success": {
+        "status": "Thanks - your message is on its way. I will reply personally.",
+        "lead_events": 1
+      },
+      "delivery": "Formspree intercepted; inbox delivery not tested"
+    },
+    {
+      "path": "/services/commercial-property-websites/",
+      "failure": {
+        "status": "Your brief could not be sent. Your entries are still here. Try again or email Hasnain directly.",
+        "message_preserved": true,
+        "lead_events": 0
+      },
+      "success": {
+        "status": "Thank you. Your brief has been sent. I\u2019ll reply by email.",
+        "lead_events": 1
+      },
+      "delivery": "Formspree intercepted; inbox delivery not tested"
+    }
+  ],
+  "tracking": {
+    "campaign_config": [
+      [
+        "config",
+        "G-W0624M03ZJ",
+        {
+          "page_location": "https://hasnainqureshi.online/",
+          "page_referrer": "",
+          "page_title": "Hasnain Qureshi | Remote Full-Stack React & Next.js Developer",
+          "allow_google_signals": false,
+          "allow_ad_personalization_signals": false
+        }
+      ]
+    ],
+    "property_email_click_events": 2
+  },
+  "limitations": [],
+  "javascript_errors": [],
+  "without_javascript": {
+    "h1_visible": true,
+    "services_visible": true
+  }
+}

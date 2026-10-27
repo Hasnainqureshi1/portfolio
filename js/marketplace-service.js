@@ -1,15 +1,7 @@
 (() => {
   const form = document.querySelector("#marketplace-brief-form");
   const status = document.querySelector("#marketplace-form-status");
-  const track = (name, method) => {
-    if (typeof window.gtag === "function") {
-      window.gtag("event", name, { method, service: "service-marketplace-app-development" });
-    }
-  };
-
-  document.querySelectorAll("[data-contact-method]").forEach((link) => {
-    link.addEventListener("click", () => track("contact_click", link.dataset.contactMethod));
-  });
+  const track = (name, method) => window.trackToolEvent?.(name, method);
   if (!form || !status) return;
 
   let submitting = false;

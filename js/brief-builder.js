@@ -13,6 +13,14 @@
   const actionStatus = document.querySelector("#brief-action-status");
 
   const TYPES = {
+    automation: {
+      label: "AI application or automation",
+      audience: "e.g. an operations team handling incoming enquiries",
+      action: "e.g. review a qualified enquiry and record its next action",
+      pages: ["Input or conversation", "Review queue", "Workflow status", "Settings"],
+      features: ["AI assistant", "Document knowledge search (RAG)", "Human review", "CRM integration", "n8n or Zapier workflow", "WhatsApp messaging", "Voice receptionist", "Logs and failure handling"],
+      service: "/services/ai-development/"
+    },
     company: {
       label: "Company or marketing website",
       audience: "e.g. operations managers at mid-sized UK manufacturers",
@@ -48,9 +56,7 @@
   };
 
   const track = (name, detail = {}) => {
-    if (typeof window.gtag === "function") {
-      window.gtag("event", name, { tool: "website-brief-builder", ...detail });
-    }
+    window.trackToolEvent?.(name, detail);
   };
 
   const storage = {
@@ -161,6 +167,9 @@
     if (d.replacing === "replace") q.push("Which current pages get search traffic or are linked from elsewhere? They will need redirects if their addresses change.");
     if (d.editing === "often" && type && !d.features.includes("Content editing (CMS)")) q.push("Your team will update content often: should content editing (CMS) be in scope?");
     if (d.integrations) q.push(`Which accounts, API access and documentation are available for: ${d.integrations}?`);
+    if (type === "automation") q.push("Which inputs are approved, which actions require review, and who handles a failed or unsupported task?");
+    if (d.deliverySetup === "agency") q.push("Who owns end-client communication, design changes and final acceptance?");
+    if (d.deliverySetup === "migration") q.push("Has the existing URL inventory been reviewed and has each change been assigned an owner?");
     if (type === "product") q.push("What is the one workflow a first user must be able to complete end to end?");
     if (type === "product" && d.features.includes("Subscription billing")) q.push("Which billing provider and pricing model (plans, trials, usage) will you use?");
     if (type === "property" && d.features.includes("Availability schedule")) q.push("Where does availability data come from today, and who updates it?");
@@ -209,6 +218,10 @@
     list("Pages or screens", pageLines());
     if (d.projectType) list("Features", d.features);
     field("Integrations", d.integrations, false);
+    field("Delivery setup", ({direct:"Direct business project",agency:"Agency-supplied design or brief",migration:"Frontend/content migration"})[d.deliverySetup], false);
+    field("Existing URLs and content ownership", d.inventoryNotes, false);
+    field("Editing, preview and publishing", d.publishingNotes, false);
+    field("Review, acceptance and handover", d.handoffNotes, false);
 
     section("5. Timing and budget");
     field("Target launch", formatMonth(d.launch));

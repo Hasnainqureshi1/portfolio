@@ -1,0 +1,21 @@
+SAAS MVP SCOPE TEMPLATE
+Original planning resource by Hasnain Qureshi
+
+Target user and recurring problem:
+One end-to-end task:
+What establishes successful completion:
+Roles and access rules:
+Data to read/write and source of truth:
+Required first-release functionality:
+Explicitly deferred work:
+Failure and recovery behavior:
+Observable acceptance checks:
+Integrations and provider/account dependencies:
+Design and content owner:
+Reviewer and sign-off:
+Target pilot and timing constraints:
+Budget range and estimate assumptions:
+Hosting, handover and support owner:
+Open questions:
+
+https://hasnainqureshi.online/services/saas-mvp-development/

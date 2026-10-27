@@ -1,0 +1,21 @@
+priority,keyword,intent,target_path,location_runs,evidence_or_caveat
+1,freelance nextjs developer,hire developer,/services/nextjs-development/,London UK US separately,Public competitor service pages observed; volume pending
+1,freelance next.js developer uk,hire developer,/services/nextjs-development/,London UK US separately,Variant of same intent; not a new page
+1,hire nextjs developer,hire developer,/services/nextjs-development/,London UK US separately,Validate agency versus freelancer search mix
+1,remote nextjs developer,hire developer or employment,/services/nextjs-development/,London UK US separately,Inspect jobs versus commissioning intent
+1,nextjs developer london,local or remote hire,/services/nextjs-development/,London UK separately,State remote from Karachi; no local-office claim
+1,freelance react developer london,local or remote hire,/services/nextjs-development/,London UK separately,Mixed local and job intent; verify before prioritizing
+1,headless wordpress developer,hire specialist,/services/nextjs-development/,London UK US separately,Cambridge project supports implementation expertise
+1,headless wordpress developer uk,hire specialist,/services/nextjs-development/,London UK separately,Competitor specialist services observed
+1,nextjs wordpress developer,hire specialist,/services/nextjs-development/,London UK US separately,Keep on same initial specialist page
+1,graphql acf developer,hire specialist,/services/nextjs-development/,London UK US separately,Stack fit; demand unmeasured
+1,commercial property website development,commission property site,/services/commercial-property-websites/,London UK US separately,Supported UK campus and New York frontend work
+1,commercial property website design uk,commission property site,/services/commercial-property-websites/,London UK separately,Clarify implementation role and design responsibilities
+1,commercial real estate website developer,commission property site,/services/commercial-property-websites/,US separately,US wording hypothesis; volume pending
+1,property website developer london,commission property site,/services/commercial-property-websites/,London UK separately,Explain remote delivery and project evidence
+2,saas mvp developer,commission SaaS MVP,/services/saas-mvp-development/,London UK US separately,ChatKnot evidence; agency and platform competition
+2,saas mvp developer uk,commission SaaS MVP,/services/saas-mvp-development/,London UK separately,Own page seen in public results; no rank claim
+2,hire saas developer,hire or commission SaaS,/services/saas-mvp-development/,London UK US separately,Validate service versus employment intent
+2,react nodejs mvp developer,commission SaaS MVP,/services/saas-mvp-development/,London UK US separately,Technical buyer wording; volume pending
+2,service marketplace app development,commission marketplace,/services/service-marketplace-app-development/,London UK US separately,Vurks evidence; validate demand
+2,react native marketplace developer,commission mobile marketplace,/services/service-marketplace-app-development/,London UK US separately,Role and release scope must be accurate

@@ -1,0 +1,15 @@
+{
+  "example_type": "synthetic demonstration, not client data",
+  "building": {
+    "name": "Example Building",
+    "introduction": "A fictional campus building used to review an editor-to-page workflow.",
+    "brochure": null,
+    "availability": [{ "space": "Example Suite", "status": "Under review", "area_label": "To be confirmed by content owner" }]
+  },
+  "review": {
+    "title_owner": "Example content editor",
+    "availability_owner": "Example property operations",
+    "missing_brochure_behavior": "Do not render the brochure link",
+    "acceptance": "A published title appears on the page; draft access and refresh behavior are agreed separately."
+  }
+}

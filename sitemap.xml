@@ -1,81 +1,100 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://hasnainqureshi.online/</loc>
-    <lastmod>2026-10-05</lastmod>
-    <image:image><image:loc>https://hasnainqureshi.online/asset/portfolio-social.jpg</image:loc></image:image>
-    <image:image><image:loc>https://hasnainqureshi.online/asset/cambridge-showcase-hero.jpg</image:loc></image:image>
-    <image:image><image:loc>https://hasnainqureshi.online/asset/broadway-showcase-hero.jpg</image:loc></image:image>
+    <lastmod>2026-10-28</lastmod>
+    <image:image>
+      <image:loc>https://hasnainqureshi.online/asset/portfolio-social.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://hasnainqureshi.online/asset/cambridge-showcase-hero.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://hasnainqureshi.online/asset/broadway-showcase-hero.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/project-case-study-1.html</loc>
-    <lastmod>2026-10-05</lastmod>
-    <image:image><image:loc>https://hasnainqureshi.online/asset/chatknot-1.png</image:loc></image:image>
+    <lastmod>2026-10-27</lastmod>
+    <image:image>
+      <image:loc>https://hasnainqureshi.online/asset/chatknot-1.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/project-case-study-2.html</loc>
-    <lastmod>2026-10-05</lastmod>
-    <image:image><image:loc>https://hasnainqureshi.online/asset/cambridge-showcase-hero.jpg</image:loc></image:image>
+    <lastmod>2026-10-27</lastmod>
+    <image:image>
+      <image:loc>https://hasnainqureshi.online/asset/cambridge-showcase-hero.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/project-case-study-3.html</loc>
-    <lastmod>2026-10-05</lastmod>
-    <image:image><image:loc>https://hasnainqureshi.online/asset/broadway-showcase-hero.jpg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://hasnainqureshi.online/insights/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-27</lastmod>
+    <image:image>
+      <image:loc>https://hasnainqureshi.online/asset/broadway-showcase-hero.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/insights/service-marketplace-mvp-checklist/</loc>
-    <lastmod>2026-10-05</lastmod>
-    <image:image><image:loc>https://hasnainqureshi.online/asset/vurks-lead.png</image:loc></image:image>
+    <lastmod>2026-10-28</lastmod>
+    <image:image>
+      <image:loc>https://hasnainqureshi.online/asset/vurks-lead.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/insights/jev-ai-vs-chatgpt-claude/</loc>
-    <lastmod>2026-10-05</lastmod>
-    <image:image><image:loc>https://hasnainqureshi.online/asset/jev-ai-vs-chatgpt-claude.jpg</image:loc></image:image>
+    <lastmod>2026-10-28</lastmod>
+    <image:image>
+      <image:loc>https://hasnainqureshi.online/asset/jev-ai-vs-chatgpt-claude.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/project-case-study-4.html</loc>
-    <lastmod>2026-10-05</lastmod>
-    <image:image><image:loc>https://hasnainqureshi.online/asset/ai-pr-reviewer.png</image:loc></image:image>
+    <lastmod>2026-10-27</lastmod>
+    <image:image>
+      <image:loc>https://hasnainqureshi.online/asset/ai-pr-reviewer.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/services/saas-mvp-development/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-27</lastmod>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/services/nextjs-development/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/services/commercial-property-websites/</loc>
-    <lastmod>2026-10-05</lastmod>
-    <image:image><image:loc>https://hasnainqureshi.online/asset/broadway-showcase-hero.jpg</image:loc></image:image>
-    <image:image><image:loc>https://hasnainqureshi.online/asset/cambridge-showcase-hero-1280.webp</image:loc></image:image>
+    <lastmod>2026-10-28</lastmod>
+    <image:image>
+      <image:loc>https://hasnainqureshi.online/asset/broadway-showcase-hero.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://hasnainqureshi.online/asset/cambridge-showcase-hero-1280.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/services/service-marketplace-app-development/</loc>
     <lastmod>2026-10-05</lastmod>
-    <image:image><image:loc>https://hasnainqureshi.online/asset/vurks-app-1.webp</image:loc></image:image>
+    <image:image>
+      <image:loc>https://hasnainqureshi.online/asset/vurks-app-1.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/tools/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-27</lastmod>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/tools/website-cost-calculator/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/tools/website-brief-builder/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-27</lastmod>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/tools/website-health-check/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-27</lastmod>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/tools/image-optimizer/</loc>
@@ -83,24 +102,114 @@
   </url>
   <url>
     <loc>https://hasnainqureshi.online/tools/website-mockup-generator/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/tools/website-feedback-tool/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://hasnainqureshi.online/tools/csv-cleaner/</loc>
     <lastmod>2026-10-05</lastmod>
   </url>
-  <url><loc>https://hasnainqureshi.online/insights/fix-csv-import-errors/</loc><lastmod>2026-10-05</lastmod></url>
-  <url><loc>https://hasnainqureshi.online/insights/csv-column-mapping/</loc><lastmod>2026-10-05</lastmod></url>
-  <url><loc>https://hasnainqureshi.online/insights/website-redesign-brief-example/</loc><lastmod>2026-10-05</lastmod></url>
-  <url><loc>https://hasnainqureshi.online/insights/commercial-property-website-checklist/</loc><lastmod>2026-10-05</lastmod></url>
-  <url><loc>https://hasnainqureshi.online/insights/duplicate-customer-ids-csv/</loc><lastmod>2026-10-05</lastmod></url>
-  <url><loc>https://hasnainqureshi.online/insights/hubspot-contacts-csv-preparation/</loc><lastmod>2026-10-05</lastmod></url>
-  <url><loc>https://hasnainqureshi.online/insights/website-feedback-developer-handoff/</loc><lastmod>2026-10-05</lastmod></url>
-  <url><loc>https://hasnainqureshi.online/insights/service-marketplace-operator-dashboard/</loc><lastmod>2026-10-05</lastmod></url>
-  <url><loc>https://hasnainqureshi.online/services/data-import-integration/</loc><lastmod>2026-10-05</lastmod></url>
-  <url><loc>https://hasnainqureshi.online/privacy/</loc><lastmod>2026-10-05</lastmod></url>
+  <url>
+    <loc>https://hasnainqureshi.online/insights/fix-csv-import-errors/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/insights/csv-column-mapping/</loc>
+    <lastmod>2026-10-05</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/insights/website-redesign-brief-example/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/insights/commercial-property-website-checklist/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/insights/duplicate-customer-ids-csv/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/insights/hubspot-contacts-csv-preparation/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/insights/website-feedback-developer-handoff/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/insights/service-marketplace-operator-dashboard/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/services/data-import-integration/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/privacy/</loc>
+    <lastmod>2026-10-05</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/services/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/services/agency-development-support/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/services/ai-development/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/services/ai-voice-receptionist/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/services/n8n-automation/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/services/rag-chatbot-development/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/services/whatsapp-automation/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/services/zapier-automation/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/insights/headless-wordpress-vs-traditional-wordpress/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/insights/saas-mvp-scope-template/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/insights/wordpress-to-nextjs-migration-checklist/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/tools/redirect-map-checker/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/insights/ai-agents-for-business/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/insights/how-much-does-a-website-cost/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://hasnainqureshi.online/insights/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
 </urlset>

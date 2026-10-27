@@ -11,13 +11,16 @@
   const sendForm = $("#cost-send-form");
   let estimate = null;
 
-  const BASE = { business: 42, property: 68 };
+  const BASE = { business: 42, property: 68, headless: 68 };
+  const PROJECT_NAMES = { business: "Business website", property: "Commercial property website", headless: "Headless CMS website" };
   const FEATURE_HOURS = {
     cms: ["Content editing (CMS)", 14],
     crm: ["CRM connection", 18],
     booking: ["Booking flow", 12],
     languages: ["Extra language structure", 24],
-    listing: ["Availability feed", 32]
+    listing: ["Availability feed", 32],
+    preview: ["Editor preview", 10],
+    publishing: ["Content publishing refresh", 8]
   };
   const RATES = {
     USD: { symbol: "$", low: 55, high: 95 },
@@ -25,9 +28,7 @@
   };
 
   const track = (name, detail = {}) => {
-    if (typeof window.gtag === "function") {
-      window.gtag("event", name, { tool: "website-cost-calculator", ...detail });
-    }
+    window.trackToolEvent?.(name, detail);
   };
   const money = (amount, symbol) => symbol + Math.round(amount).toLocaleString("en-GB");
   const roundDown = (value) => Math.floor(value / 100) * 100;
@@ -42,13 +43,14 @@
       design: data.get("design"),
       content: data.get("content"),
       migration: data.has("migration"),
+      migrationPages: Number(data.get("migrationPages") || 0),
       features: data.getAll("features")
     };
   };
 
   const calculate = (input) => {
     const lines = [
-      [input.type === "property" ? "Commercial property base build" : "Business website base build", BASE[input.type]]
+      [PROJECT_NAMES[input.type] + " base build", BASE[input.type]]
     ];
     const extraPages = Math.max(0, input.pages - 5);
     if (extraPages) lines.push([`${extraPages} page${extraPages === 1 ? "" : "s"} beyond the first five`, extraPages * 3]);
@@ -56,7 +58,10 @@
     if (design) lines.push([input.design === "brand" ? "Page design from brand guidelines" : "Design from scratch", design]);
     const content = { ready: 0, partial: 10, missing: 20 }[input.content];
     if (content) lines.push([input.content === "partial" ? "Content preparation and page entry" : "Content planning and page entry", content]);
-    if (input.migration) lines.push(["Existing site migration and redirects", 18]);
+    if (input.migration) {
+      lines.push(["Existing site migration and redirects", 18]);
+      if (input.migrationPages) lines.push([`${input.migrationPages} existing URLs: inventory review`, Math.ceil(input.migrationPages / 20) * 2]);
+    }
     input.features.forEach((key) => {
       if (FEATURE_HOURS[key] && (key !== "listing" || input.type === "property")) lines.push(FEATURE_HOURS[key]);
     });
@@ -79,11 +84,12 @@
       "This is a planning model, not a quote or a market average.",
       "",
       "SCOPE",
-      `Project: ${input.type === "property" ? "Commercial property website" : "Business website"}`,
+      `Project: ${PROJECT_NAMES[input.type]}`,
       `Pages: ${input.pages}`,
       `Design: ${{ ready: "Finished desktop and mobile designs", brand: "Brand guidelines only", none: "Design from scratch" }[input.design]}`,
       `Content: ${{ ready: "Mostly ready", partial: "Partly ready", missing: "Mostly to be supplied" }[input.content]}`,
       `Replacing a site: ${input.migration ? "Yes" : "No"}`,
+      `Existing URL inventory: ${input.migration ? input.migrationPages : 0}`,
       `Features: ${input.features.length ? input.features.map((key) => FEATURE_HOURS[key][0]).join(", ") : "None selected"}`,
       "",
       "MODELED WORK",
@@ -133,7 +139,7 @@
 
   const run = (focus = true) => {
     errorBox.textContent = "";
-    if (!form.checkValidity() || !Number.isInteger(pageField.valueAsNumber) || pageField.valueAsNumber < 1 || pageField.valueAsNumber > 40) {
+    if (!Number.isInteger(pageField.valueAsNumber) || pageField.valueAsNumber < 1 || pageField.valueAsNumber > 40) {
       errorBox.textContent = "Enter a whole number of pages between 1 and 40.";
       estimate = null;
       $("#cost-range").textContent = "Check the page count";
@@ -144,7 +150,13 @@
       if (focus) pageField.focus();
       return;
     }
-    estimate = calculate(fields());
+    const input = fields();
+    if (input.migration && (!Number.isInteger(input.migrationPages) || input.migrationPages < 0 || input.migrationPages > 2000)) {
+      errorBox.textContent = "Enter a whole existing-URL count between 0 and 2,000.";
+      estimate = null; $("#cost-breakdown").hidden = true; $("#cost-actions").hidden = true;
+      return;
+    }
+    estimate = calculate(input);
     render(estimate);
     if (focus) {
       result.focus();
@@ -161,7 +173,7 @@
     if (estimate) run(false);
   });
   form.addEventListener("input", (event) => {
-    if (estimate && event.target.name === "pages") run(false);
+    if (estimate && ["pages", "migrationPages"].includes(event.target.name)) run(false);
   });
   updatePropertyFeature();
 

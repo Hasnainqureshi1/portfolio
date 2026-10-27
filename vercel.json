@@ -3,9 +3,394 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.hasnainqureshi.online" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.hasnainqureshi.online"
+        }
+      ],
       "destination": "https://hasnainqureshi.online/:path*",
       "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/index.html",
+      "destination": "/insights/",
+      "permanent": true
+    },
+    {
+      "source": "/insights",
+      "destination": "/insights/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/commercial-property-website-checklist/index.html",
+      "destination": "/insights/commercial-property-website-checklist/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/commercial-property-website-checklist",
+      "destination": "/insights/commercial-property-website-checklist/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/csv-column-mapping/index.html",
+      "destination": "/insights/csv-column-mapping/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/csv-column-mapping",
+      "destination": "/insights/csv-column-mapping/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/duplicate-customer-ids-csv/index.html",
+      "destination": "/insights/duplicate-customer-ids-csv/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/duplicate-customer-ids-csv",
+      "destination": "/insights/duplicate-customer-ids-csv/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/fix-csv-import-errors/index.html",
+      "destination": "/insights/fix-csv-import-errors/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/fix-csv-import-errors",
+      "destination": "/insights/fix-csv-import-errors/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/headless-wordpress-vs-traditional-wordpress/index.html",
+      "destination": "/insights/headless-wordpress-vs-traditional-wordpress/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/headless-wordpress-vs-traditional-wordpress",
+      "destination": "/insights/headless-wordpress-vs-traditional-wordpress/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/hubspot-contacts-csv-preparation/index.html",
+      "destination": "/insights/hubspot-contacts-csv-preparation/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/hubspot-contacts-csv-preparation",
+      "destination": "/insights/hubspot-contacts-csv-preparation/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/jev-ai-vs-chatgpt-claude/index.html",
+      "destination": "/insights/jev-ai-vs-chatgpt-claude/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/jev-ai-vs-chatgpt-claude",
+      "destination": "/insights/jev-ai-vs-chatgpt-claude/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/saas-mvp-scope-template/index.html",
+      "destination": "/insights/saas-mvp-scope-template/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/saas-mvp-scope-template",
+      "destination": "/insights/saas-mvp-scope-template/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/service-marketplace-mvp-checklist/index.html",
+      "destination": "/insights/service-marketplace-mvp-checklist/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/service-marketplace-mvp-checklist",
+      "destination": "/insights/service-marketplace-mvp-checklist/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/service-marketplace-operator-dashboard/index.html",
+      "destination": "/insights/service-marketplace-operator-dashboard/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/service-marketplace-operator-dashboard",
+      "destination": "/insights/service-marketplace-operator-dashboard/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/website-feedback-developer-handoff/index.html",
+      "destination": "/insights/website-feedback-developer-handoff/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/website-feedback-developer-handoff",
+      "destination": "/insights/website-feedback-developer-handoff/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/website-redesign-brief-example/index.html",
+      "destination": "/insights/website-redesign-brief-example/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/website-redesign-brief-example",
+      "destination": "/insights/website-redesign-brief-example/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/wordpress-to-nextjs-migration-checklist/index.html",
+      "destination": "/insights/wordpress-to-nextjs-migration-checklist/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/wordpress-to-nextjs-migration-checklist",
+      "destination": "/insights/wordpress-to-nextjs-migration-checklist/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy/index.html",
+      "destination": "/privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/index.html",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/agency-development-support/index.html",
+      "destination": "/services/agency-development-support/",
+      "permanent": true
+    },
+    {
+      "source": "/services/agency-development-support",
+      "destination": "/services/agency-development-support/",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-development/index.html",
+      "destination": "/services/ai-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-development",
+      "destination": "/services/ai-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-voice-receptionist/index.html",
+      "destination": "/services/ai-voice-receptionist/",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-voice-receptionist",
+      "destination": "/services/ai-voice-receptionist/",
+      "permanent": true
+    },
+    {
+      "source": "/services/commercial-property-websites/index.html",
+      "destination": "/services/commercial-property-websites/",
+      "permanent": true
+    },
+    {
+      "source": "/services/commercial-property-websites",
+      "destination": "/services/commercial-property-websites/",
+      "permanent": true
+    },
+    {
+      "source": "/services/data-import-integration/index.html",
+      "destination": "/services/data-import-integration/",
+      "permanent": true
+    },
+    {
+      "source": "/services/data-import-integration",
+      "destination": "/services/data-import-integration/",
+      "permanent": true
+    },
+    {
+      "source": "/services/n8n-automation/index.html",
+      "destination": "/services/n8n-automation/",
+      "permanent": true
+    },
+    {
+      "source": "/services/n8n-automation",
+      "destination": "/services/n8n-automation/",
+      "permanent": true
+    },
+    {
+      "source": "/services/nextjs-development/index.html",
+      "destination": "/services/nextjs-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/nextjs-development",
+      "destination": "/services/nextjs-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/rag-chatbot-development/index.html",
+      "destination": "/services/rag-chatbot-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/rag-chatbot-development",
+      "destination": "/services/rag-chatbot-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/saas-mvp-development/index.html",
+      "destination": "/services/saas-mvp-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/saas-mvp-development",
+      "destination": "/services/saas-mvp-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/service-marketplace-app-development/index.html",
+      "destination": "/services/service-marketplace-app-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/service-marketplace-app-development",
+      "destination": "/services/service-marketplace-app-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/whatsapp-automation/index.html",
+      "destination": "/services/whatsapp-automation/",
+      "permanent": true
+    },
+    {
+      "source": "/services/whatsapp-automation",
+      "destination": "/services/whatsapp-automation/",
+      "permanent": true
+    },
+    {
+      "source": "/services/zapier-automation/index.html",
+      "destination": "/services/zapier-automation/",
+      "permanent": true
+    },
+    {
+      "source": "/services/zapier-automation",
+      "destination": "/services/zapier-automation/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/index.html",
+      "destination": "/tools/",
+      "permanent": true
+    },
+    {
+      "source": "/tools",
+      "destination": "/tools/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/csv-cleaner/index.html",
+      "destination": "/tools/csv-cleaner/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/csv-cleaner",
+      "destination": "/tools/csv-cleaner/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/image-optimizer/index.html",
+      "destination": "/tools/image-optimizer/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/image-optimizer",
+      "destination": "/tools/image-optimizer/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/redirect-map-checker/index.html",
+      "destination": "/tools/redirect-map-checker/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/redirect-map-checker",
+      "destination": "/tools/redirect-map-checker/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/website-brief-builder/index.html",
+      "destination": "/tools/website-brief-builder/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/website-brief-builder",
+      "destination": "/tools/website-brief-builder/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/website-cost-calculator/index.html",
+      "destination": "/tools/website-cost-calculator/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/website-cost-calculator",
+      "destination": "/tools/website-cost-calculator/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/website-feedback-tool/index.html",
+      "destination": "/tools/website-feedback-tool/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/website-feedback-tool",
+      "destination": "/tools/website-feedback-tool/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/website-health-check/index.html",
+      "destination": "/tools/website-health-check/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/website-health-check",
+      "destination": "/tools/website-health-check/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/website-mockup-generator/index.html",
+      "destination": "/tools/website-mockup-generator/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/website-mockup-generator",
+      "destination": "/tools/website-mockup-generator/",
+      "permanent": true
     }
-  ]
+  ],
+  "functions": {
+    "api/pagespeed.js": {
+      "maxDuration": 90
+    }
+  }
 }

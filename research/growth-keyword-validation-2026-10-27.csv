@@ -1,0 +1,20 @@
+cluster,seed_keyword,candidate_path,action,primary_intent,search_volume,verification
+Migration,wordpress to nextjs migration checklist,/insights/wordpress-to-nextjs-migration-checklist/,New guide,Plan migration,Unverified,Public competitor pages observed; country metrics pending
+Migration,wordpress to nextjs migration seo,/insights/wordpress-to-nextjs-migration-checklist/,Same guide,Plan migration,Unverified,Check technical versus commissioning intent
+Migration,headless wordpress migration,/insights/wordpress-to-nextjs-migration-checklist/,Same guide,Plan migration,Unverified,Connect to existing implementation service
+Agency,white label nextjs development,/services/agency-development-support/,Conditional new service,Commission agency support,Unverified,Owner offering and capacity confirmation required
+Agency,freelance nextjs developer for agencies,/services/nextjs-development/,Enhance first,Commission agency support,Unverified,Move only if distinct service is established
+Agency,nextjs development partner uk,/services/nextjs-development/,Enhance first,Commission agency support,Unverified,Test London UK US independently
+Decision,headless wordpress vs traditional wordpress,/insights/headless-wordpress-vs-traditional-wordpress/,Conditional guide,Choose approach,Unverified,Needs original decision example
+Decision,nextjs vs wordpress for business website,/insights/headless-wordpress-vs-traditional-wordpress/,Same guide,Choose approach,Unverified,Explain combined architecture as an option
+Decision,is headless wordpress worth it,/insights/headless-wordpress-vs-traditional-wordpress/,Same guide,Choose approach,Unverified,No general ranking or speed promise
+Cost,headless wordpress cost uk,/tools/website-cost-calculator/,Extend existing calculator,Plan budget,Unverified,Actual owner rates and scope required for personal quote
+Cost,headless website cost,/tools/website-cost-calculator/,Extend existing calculator,Plan budget,Unverified,Avoid duplicate calculator URLs for variants
+SaaS,saas mvp scope template,/insights/saas-mvp-scope-template/,Secondary new guide,Prepare build brief,Unverified,Differentiate from existing marketplace guide
+SaaS,saas mvp requirements template,/insights/saas-mvp-scope-template/,Same guide,Prepare build brief,Unverified,Original blank and synthetic filled examples
+SaaS,how to brief an mvp developer,/insights/saas-mvp-scope-template/,Same guide,Prepare build brief,Unverified,Connect to existing brief builder
+Property,commercial property website brief,/insights/commercial-property-website-checklist/,Enhance existing guide,Plan property site,Unverified,Do not duplicate existing brief builder
+Property,commercial property website checklist,/insights/commercial-property-website-checklist/,Enhance existing guide,Plan property site,Unverified,Annotated implementation evidence and worksheet
+Redirect,redirect map checker,/tools/redirect-map-checker/,Hold for validation,Check migration map,Unverified,Multiple competing tools observed
+Redirect,website migration redirect mapping tool,/tools/redirect-map-checker/,Hold for validation,Check migration map,Unverified,Must distinguish inventory coverage and decisions
+Redirect,redirect csv checker,/tools/redirect-map-checker/,Same conditional tool,Check migration map,Unverified,Exact local checks are not live crawl verification

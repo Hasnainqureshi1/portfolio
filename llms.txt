@@ -10,7 +10,10 @@ Hasnain builds React and Next.js interfaces, Node.js APIs, SQL-backed SaaS produ
 - [Resume](https://hasnainqureshi.online/Hasnain-Qureshi-Resume.pdf): Background for hiring teams.
 - [LinkedIn](https://www.linkedin.com/in/husnain-alam-7a24ba1b4)
 - [GitHub](https://github.com/Hasnainqureshi1)
+## Tools
+
 - Email: husnainqureshi134@gmail.com
+
 
 ## Development services
 
@@ -19,7 +22,6 @@ Hasnain builds React and Next.js interfaces, Node.js APIs, SQL-backed SaaS produ
 - [SaaS MVP development](https://hasnainqureshi.online/services/saas-mvp-development/): React and Node.js product workflows, scope, project evidence and hiring questions.
 - [Next.js and headless WordPress development](https://hasnainqureshi.online/services/nextjs-development/): Responsive frontend implementation with editor-managed content.
 
-## Tools
 
 - [Free website tools](https://hasnainqureshi.online/tools/): Overview of the free browser-based tools below.
 - [Website cost calculator](https://hasnainqureshi.online/tools/website-cost-calculator/): Free planning range for business and commercial property websites, with visible work-hour and rate assumptions. It is not a quote.
@@ -65,3 +67,24 @@ Hasnain builds React and Next.js interfaces, Node.js APIs, SQL-backed SaaS produ
 ## Website information
 
 - [Privacy and usage analytics](https://hasnainqureshi.online/privacy/): Local file processing, contact services and browser analytics preferences.
+
+## AI and automation services
+
+- [All services](https://hasnainqureshi.online/services/)
+- [ai development](https://hasnainqureshi.online/services/ai-development/)
+- [ai voice receptionist](https://hasnainqureshi.online/services/ai-voice-receptionist/)
+- [whatsapp automation](https://hasnainqureshi.online/services/whatsapp-automation/)
+- [n8n automation](https://hasnainqureshi.online/services/n8n-automation/)
+- [zapier automation](https://hasnainqureshi.online/services/zapier-automation/)
+- [rag chatbot development](https://hasnainqureshi.online/services/rag-chatbot-development/)
+- [agency development support](https://hasnainqureshi.online/services/agency-development-support/)
+
+## New planning resources
+
+- [How much does a website cost?](https://hasnainqureshi.online/insights/how-much-does-a-website-cost/): Budgeting factors and the website cost calculator.
+- [AI agents for business](https://hasnainqureshi.online/insights/ai-agents-for-business/): Define tools, permissions, review and failure handling before release.
+
+- [Migration checklist](https://hasnainqureshi.online/insights/wordpress-to-nextjs-migration-checklist/)
+- [WordPress architecture decisions](https://hasnainqureshi.online/insights/headless-wordpress-vs-traditional-wordpress/)
+- [SaaS MVP scope template](https://hasnainqureshi.online/insights/saas-mvp-scope-template/)
+- [Redirect-map checker](https://hasnainqureshi.online/tools/redirect-map-checker/)

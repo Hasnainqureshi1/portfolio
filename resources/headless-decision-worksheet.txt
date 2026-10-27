@@ -1,0 +1,17 @@
+WORDPRESS ARCHITECTURE DECISION WORKSHEET
+Original planning resource by Hasnain Qureshi
+
+1. What visitor task is the existing setup failing to support?
+2. Who edits text, images, availability and other changing content?
+3. Which page types and content fields are required?
+4. Which plugins, forms and integrations must keep working?
+5. How will editors preview drafts and verify publishing?
+6. Which public URLs must be retained or mapped?
+7. Who owns CMS updates, frontend deployment and support?
+8. What budget and maintenance capacity are available?
+9. Can a simpler theme/template change meet the requirement?
+10. What evidence would justify a separate frontend?
+
+Decision, assumptions, unresolved questions and owner:
+
+https://hasnainqureshi.online/services/nextjs-development/

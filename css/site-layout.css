@@ -303,3 +303,11 @@ body:not(.content-page) .shared-header.topbar { position:fixed; }
   .earlier-work_card h4 { font-size:20px; line-height:26px; }
 }
 @media print { .shared-header,.shared-footer,.site-callout,.related-resources { display:none!important; } }
+
+/* Planning examples and local migration reviews. */
+.content-page pre { max-width:100%; overflow-x:auto; padding:20px; border:1px solid var(--line); background:#fbf9f3; font:400 14px/24px Consolas,monospace; }
+.content-page pre code { font:inherit; }
+.content-page .redirect-findings { max-height:480px; overflow:auto; overflow-wrap:anywhere; }
+.content-page .redirect-findings li { font-size:18px; line-height:28px; margin-bottom:12px; }
+.content-page .evidence-card { min-width:0; }
+@media (max-width:700px) { .content-page .evidence-grid { grid-template-columns:1fr; } }

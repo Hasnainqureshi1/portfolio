@@ -1,0 +1,5 @@
+existing_path,content_type,decision,destination_path,content_owner,review_required
+/buildings/one,building,keep,/buildings/one,fictional campus editor,Review title introduction brochure and availability
+/space,availability,redirect,/availability,fictional property operations,Confirm destination and update workflow
+/contact,contact,keep,/contact,fictional enquiry recipient,Test delivery and failure states
+/brochures/one.pdf,download,keep,/brochures/one.pdf,fictional campus editor,Confirm current brochure
