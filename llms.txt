@@ -17,6 +17,7 @@ Hasnain builds React and Next.js interfaces, Node.js APIs, SQL-backed SaaS produ
 
 ## Development services
 
+- [Custom CRM development](https://hasnainqureshi.online/services/crm-development/): Custom customer records, lead pipelines, permissions, dashboards and API workflows for London, UK and US teams, delivered remotely from Karachi.
 - [Commercial property website development](https://hasnainqureshi.online/services/commercial-property-websites/): Websites for buildings, campuses and property teams, with project contributions, scope and commissioning questions.
 - [Service marketplace app development](https://hasnainqureshi.online/services/service-marketplace-app-development/): Customer request, provider and operator workflows for service marketplaces, with attributed Vurks React Native work.
 - [SaaS MVP development](https://hasnainqureshi.online/services/saas-mvp-development/): React and Node.js product workflows, scope, project evidence and hiring questions.

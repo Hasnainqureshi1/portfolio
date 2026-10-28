@@ -2,6 +2,16 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
+      "source": "/services/crm-development/index.html",
+      "destination": "/services/crm-development/",
+      "permanent": true
+    },
+    {
+      "source": "/services/crm-development",
+      "destination": "/services/crm-development/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
